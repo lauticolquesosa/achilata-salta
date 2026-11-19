@@ -52,3 +52,9 @@ Para editar fotos también se usan `opencv-python`, `numpy` y `rembg`.
 | `05_Referencias` | Las cuentas y las imágenes de referencia, y su análisis |
 | `06_Assets` | Los logos, las tramas, el goteo, las fuentes y las fotos |
 | `07_Pendientes.md` | Lo que falta confirmar |
+
+## Uso y licencias
+- **Código:** los scripts, de `04_Contenido/Cronograma/fuente/` y `06_Assets/fotos/herramientas/`, se pueden usar libremente bajo licencia MIT.
+- **Marca:** el logo, el manual, las piezas y las fotos de Achilata Salta están para ver y aprender de ellos. El uso comercial de la marca no está permitido.
+- **Referencias:** las capturas de `05_Referencias/` son de sus dueños y están solo como referencia.
+- **Fuentes:** Bricolage Grotesque tiene licencia SIL Open Font License.
