@@ -48,6 +48,7 @@ Por ahora el trabajo es **solo Instagram**. La cuenta arranca con 0 publicacione
 5. `01_Contexto/`: el negocio, el producto, Salta, el público y la competencia.
 6. `05_Referencias/`: las cuentas y las imágenes de referencia, con lo que se toma de cada una.
 7. `07_Pendientes.md`: lo que todavía no está confirmado. Lo no confirmado no se publica como dato.
+8. `08_Eventos/`: el servicio de carrito de achilata para eventos, sumado el 19/11/2026. Para cualquier pieza, precio o contacto de eventos, leer primero `08_Eventos/00_LEEME.md`. **Los vasitos existen solo en eventos;** la venta a domicilio sigue siendo solo potes.
 
 ## La marca, en corto
 

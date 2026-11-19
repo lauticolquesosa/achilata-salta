@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="es-AR">
+<head>
+<meta charset="utf-8">
+<title>Propuesta achilata para eventos</title>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,800&display=swap" rel="stylesheet">
+<style>
+  @page{size:297mm 210mm;margin:0}
+  :root{--rojo:#E7364A;--crema:#FFF3E2;--rosa:#F3A3B5;--blanco:#FFFFFF;--bordo:#3A1320}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Bricolage Grotesque',sans-serif;color:var(--bordo);-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .pag{width:297mm;height:210mm;position:relative;overflow:hidden;page-break-after:always;display:grid}
+  .pag:last-child{page-break-after:auto}
+  h1,h2,h3,.xb{font-weight:800;line-height:.95;letter-spacing:-.02em;-webkit-text-stroke:.025em currentColor}
+  .ink{font-family:'Ink Free',cursive;font-weight:400}
+  .rojo{background:var(--rojo);color:var(--blanco)}
+  .crema{background:var(--crema)}
+  .pad{padding:18mm 20mm}
+  img.foto{width:100%;height:100%;object-fit:cover;display:block}
+  .logo{height:14mm;width:auto}
+  .pie{position:absolute;left:20mm;bottom:12mm;font-size:11pt}
+
+  /* 1 portada */
+  .p1{grid-template-columns:1.15fr .85fr}
+  .p1 .txt{display:flex;flex-direction:column;justify-content:space-between}
+  .p1 h1{font-size:54pt}
+  .p1 .ink{font-size:22pt;color:var(--crema);margin-top:6mm;display:block}
+  .p1 .tag{font-size:14pt}
+
+  /* 2 por qué */
+  .p2{grid-template-columns:.8fr 1.2fr}
+  .p2 h2{font-size:38pt;color:var(--rojo);margin-bottom:8mm}
+  .p2 .kick{font-size:18pt;color:var(--rojo);display:block;margin-bottom:3mm}
+  .p2 p{font-size:14pt;line-height:1.45;margin-bottom:5mm;max-width:140mm}
+  .datos{display:grid;grid-template-columns:repeat(3,1fr);gap:5mm;margin-top:8mm}
+  .dato{background:var(--blanco);border-radius:6mm;padding:6mm}
+  .dato b{display:block;font-weight:800;font-size:26pt;color:var(--rojo);line-height:1;margin-bottom:2mm}
+  .dato span{font-size:11pt}
+
+  /* 3 incluye */
+  .p3{grid-template-columns:1.3fr .7fr}
+  .p3 h2{font-size:38pt;margin-bottom:8mm}
+  .p3 .kick{font-size:18pt;color:var(--crema);display:block;margin-bottom:3mm}
+  .inc{display:grid;grid-template-columns:1fr 1fr;gap:4mm}
+  .inc div{border:.6mm solid var(--crema);border-radius:5mm;padding:5mm}
+  .inc h3{font-size:15pt;margin-bottom:1.5mm}
+  .inc p{font-size:10.5pt;line-height:1.35}
+
+  /* 4 paquetes */
+  .p4{grid-template-rows:auto 1fr}
+  .p4 h2{font-size:40pt;color:var(--rojo)}
+  .p4 .kick{font-size:18pt;color:var(--rojo);display:block;margin-bottom:2mm}
+  .paqs{display:grid;grid-template-columns:repeat(5,1fr);gap:5mm;margin-top:8mm}
+  .paq{background:var(--blanco);border-radius:6mm;padding:7mm 6mm;display:flex;flex-direction:column}
+  .paq.dest{background:var(--rojo);color:var(--blanco)}
+  .paq .e{font-family:'Ink Free',cursive;font-size:12.5pt;white-space:nowrap;color:var(--rojo);margin-bottom:1mm}
+  .paq.dest .e{color:var(--crema)}
+  .paq h3{font-size:25pt;color:var(--rojo);margin-bottom:3mm}
+  .paq.dest h3{color:var(--blanco)}
+  .paq .pr{font-weight:800;font-size:27pt;line-height:1;-webkit-text-stroke:.02em currentColor;color:var(--rojo)}
+  .paq.dest .pr{color:var(--blanco)}
+  .paq .ps{font-size:11pt;margin:2mm 0 5mm}
+  .paq ul{list-style:none;font-size:11.5pt}
+  .paq li{padding:2mm 0;border-top:.3mm solid var(--rosa)}
+  .notas{font-size:12pt;margin-top:9mm;line-height:1.5}
+
+  /* 5 reservar */
+  .p5{grid-template-columns:1fr 1fr}
+  .p5 h2{font-size:34pt;margin-bottom:6mm}
+  .p5 .kick{font-size:18pt;color:var(--crema);display:block;margin-bottom:2mm}
+  .pasos{list-style:none;counter-reset:p}
+  .pasos li{counter-increment:p;display:grid;grid-template-columns:12mm 1fr;gap:3mm;align-items:center;padding:3mm 0;border-bottom:.4mm solid var(--rosa);font-size:12pt}
+  .pasos li::before{content:counter(p);font-weight:800;font-size:15pt;color:var(--rojo);background:var(--crema);border-radius:50%;width:10mm;height:10mm;display:grid;place-items:center}
+  .zonas{font-size:11pt;margin-top:6mm;line-height:1.45}
+  .zonas b{font-weight:800}
+  .contacto{display:flex;flex-direction:column;justify-content:space-between}
+  .contacto .grande{font-weight:800;font-size:30pt;line-height:1.05;color:var(--rojo);-webkit-text-stroke:.02em currentColor}
+  .contacto p{font-size:13pt}
+</style>
+</head>
+<body>
+
+<!-- 1 portada -->
+<section class="pag p1 rojo">
+  <div class="txt pad">
+    <img class="logo" src="../../06_Pagina_web/img/achilata-sin-bajada-blanco.svg" alt="achilata.">
+    <div>
+      <h1>La achilata de las fiestas tucumanas, ahora en Salta.</h1>
+      <span class="ink">servicio para eventos</span>
+    </div>
+    <div class="tag">Casamientos · Fiestas de 15 · Empresas · Clubes · Cumpleaños</div>
+  </div>
+  <img class="foto" src="../../06_Pagina_web/img/hero.jpg" alt="">
+</section>
+
+<!-- 2 por qué -->
+<section class="pag p2 crema">
+  <img class="foto" src="../../06_Pagina_web/img/servicio.jpg" alt="">
+  <div class="pad">
+    <span class="kick ink">por qué achilata</span>
+    <h2>En Tucumán no hay fiesta sin carrito de achilata.</h2>
+    <p>Es el puesto con más gente de la noche. Fresca, granizada, sin leche y con el color más lindo de la fiesta.</p>
+    <p>En Salta nadie la ofrece. Somos dos amigos salteños y la trajimos para hacerla como se merece: con un carrito de diseño, atendida por nosotros y cuidada en cada detalle.</p>
+    <div class="datos">
+      <div class="dato"><b>2 a 3 h</b><span>de achilata libre. Cada invitado repite las veces que quiera</span></div>
+      <div class="dato"><b>2</b><span>personas atendiendo, uniformadas y con carnet de manipulador</span></div>
+      <div class="dato"><b>0</b><span>trabajo para vos. Armamos, servimos y limpiamos</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- 3 incluye -->
+<section class="pag p3 rojo">
+  <div class="pad">
+    <span class="kick ink">qué incluye</span>
+    <h2>Todo resuelto, de punta a punta.</h2>
+    <div class="inc">
+      <div><h3>El carrito</h3><p>Rojo, con la marca, armado una hora antes del servicio.</p></div>
+      <div><h3>Achilata libre</h3><p>Del sabor clásico tucumano, durante todo el horario contratado.</p></div>
+      <div><h3>Dos personas</h3><p>Uniformadas, atendiendo a cada invitado.</p></div>
+      <div><h3>Vasitos y cucharitas</h3><p>Vasitos de cartón con logo y cucharitas de madera.</p></div>
+      <div><h3>Frío asegurado</h3><p>Llega y se mantiene en su punto toda la noche.</p></div>
+      <div><h3>Traslado y limpieza</h3><p>Incluidos en Salta Capital y alrededores.</p></div>
+    </div>
+  </div>
+  <img class="foto" src="../../06_Pagina_web/img/fila.jpg" alt="">
+</section>
+
+<!-- 4 paquetes -->
+<section class="pag p4 crema pad">
+  <div>
+    <span class="kick ink">paquetes</span>
+    <h2>Precios claros, por invitado.</h2>
+  </div>
+  <div>
+    <div class="paqs">
+      <div class="paq"><span class="e">casamientos y 15</span><h3>Clásico</h3><div class="pr">$5.500</div><div class="ps">por invitado. Mínimo 60</div>
+        <ul><li>2 horas de servicio</li><li>Carrito y dos personas</li><li>Achilata libre</li><li>Vasitos, traslado y limpieza</li></ul></div>
+      <div class="paq dest"><span class="e">el completo</span><h3>Fiesta</h3><div class="pr">$6.800</div><div class="ps">por invitado. Mínimo 80</div>
+        <ul><li>3 horas de servicio</li><li>Todo lo del Clásico</li><li>Salsa y toppings</li><li>Cartel con sus nombres</li><li>Carrito iluminado</li></ul></div>
+      <div class="paq"><span class="e">fin de año</span><h3>Empresa</h3><div class="pr">$4.800</div><div class="ps">por invitado. Mínimo 50</div>
+        <ul><li>2 horas de servicio</li><li>Todo lo del Clásico</li><li>Con factura</li><li>Vasitos con tu logo, a cotizar</li></ul></div>
+      <div class="paq"><span class="e">eventos chicos</span><h3>Cumple</h3><div class="pr">$220.000</div><div class="ps">hasta 40 invitados</div>
+        <ul><li>90 minutos de servicio</li><li>Todo lo del Clásico</li><li>Invitado extra $4.500</li></ul></div>
+      <div class="paq"><span class="e">torneos y ferias</span><h3>Club</h3><div class="pr">$2.500</div><div class="ps">el vasito, venta al público</div>
+        <ul><li>Sin costo para el club</li><li>10 % de lo vendido para el club</li><li>Achilata para la organización</li></ul></div>
+    </div>
+    <p class="notas">Desde 150 invitados, 8 % menos por invitado. Desde 250, 12 % menos. Hora extra desde $90.000.<br>Precios vigentes hasta el 31/12/2026. El 24 y el 31 de diciembre llevan un recargo del 25 %.</p>
+  </div>
+</section>
+
+<!-- 5 reservar -->
+<section class="pag p5">
+  <div class="pad rojo">
+    <span class="kick ink">cómo reservar</span>
+    <h2>Cuatro pasos y listo.</h2>
+    <ol class="pasos">
+      <li>Nos escribís con la fecha, el lugar y la cantidad de invitados.</li>
+      <li>Te mandamos el presupuesto en el día. Si querés, te llevamos una degustación.</li>
+      <li>Reservás la fecha con una seña del 50 %.</li>
+      <li>Pagás el saldo una semana antes. Del resto nos encargamos nosotros.</li>
+    </ol>
+    <div class="zonas">
+      <b>Zona 1, traslado incluido.</b> Capital, San Lorenzo, Vaqueros, La Caldera, Cerrillos y La Merced.<br>
+      <b>Zona 2, $45.000.</b> Chicoana, El Carril, Rosario de Lerma, Campo Quijano y Güemes.<br>
+      <b>Zona 3, a cotizar.</b> Cafayate, los valles y el resto de la provincia.
+    </div>
+  </div>
+  <div class="pad crema contacto">
+    <img class="logo" src="../../06_Pagina_web/img/achilata-sin-bajada-rojo.svg" alt="achilata.">
+    <div>
+      <p class="ink" style="font-size:20pt;color:var(--rojo);margin-bottom:4mm">escribinos</p>
+      <div class="grande">387 483 4041</div>
+      <div class="grande">387 468 4498</div>
+      <p style="margin-top:6mm">Instagram @achilatasalta</p>
+    </div>
+    <p>Transferencia o efectivo. Facturamos a empresas.</p>
+  </div>
+</section>
+
+</body>
+</html>
