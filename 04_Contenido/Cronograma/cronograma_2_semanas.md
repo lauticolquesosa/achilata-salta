@@ -1,6 +1,6 @@
 # Cronograma de dos semanas · @achilatasalta
 
-Del jueves 19 de noviembre al miércoles 2 de diciembre de 2026: 13 publicaciones, 5 reels y 62 historias.
+Del jueves 19 de noviembre al miércoles 2 de diciembre de 2026: 13 publicaciones, 5 reels y 63 historias.
 Se sube algo todos los días, y más de jueves a domingo.
 
 Lo generan `Cronograma/fuente/datos.py` y `generar.py`.
@@ -19,16 +19,17 @@ Lo generan `Cronograma/fuente/datos.py` y `generar.py`.
 
 Contar que volvimos y que la achilata llegó a Salta, y enamorar con el producto en un segundo.
 
-**20.00 hs · Publicación P01 · Hay achilata en Salta** · Carrusel de 4 placas
+**20.00 hs · Publicación P01 · Hay achilata en Salta** · Carrusel de 5 placas
 
-La primera publicación desde la vuelta y la más cuidada de todas. La portada es una foto de producto sobre fondo rosa, con el título Hay achilata en Salta grande en bordó, metido detrás del producto para que tenga profundidad. La placa 2 cuenta, solo con tipografía sobre crema, que el nombre viene de los vendedores que gritaban hay gelata. La placa 3 es un primer plano del hielo, con tres líneas cortas: Hielo raspado. Color fucsia. Receta tucumana. La placa 4 cierra en rojo con el logo y en bordó con los potes, el delivery y los dos WhatsApp.
+La primera publicación desde la vuelta. Todo en el estudio rojo: cada foto pasada al rojo achilata con su luz y su sombra reales, y títulos blancos pesados. Placa 1: la palma que presenta el vasito, con Hay achilata en Salta pisado por la bocha. Placa 2: la cuchara que levanta, con la historia del nombre, hay gelata. Placa 3: la bocha de cerca, con Hielo raspado. Color fucsia. Receta tucumana. Placa 4: el vaso con tres bochas, con Potes de 1 kg y medio kilo. Placa 5: rojo con el logo blanco, los dos WhatsApp, las zonas y el pago.
 
 *Texto:* Volvimos y llegamos a Salta 🍧 El helado más tucumano, ahora a la vuelta de tu casa. Potes de 1 kg y medio kilo, pedidos por WhatsApp. ¿Vos ya la probaste?
 
 **Historias**
 
-- 19.30 hs. Volvimos. La marca sola, grande, para abrir la noche y avisar que algo se viene.
-- 20.05 hs. Nueva publicación. Se comparte la portada de P01 para que vayan al carrusel.
+- 19.30 hs. Volvimos. La bocha que cae al vaso, en el estudio rojo.
+- 20.05 hs. Nueva publicación. Se comparte la portada de P01 sobre rojo.
+- 20.30 hs. Precios: 1 kg a $12.000 y medio kilo a $8.000.
 - 21.00 hs. Encuesta: ¿Ya probaste achilata? Con las opciones Sí, la amo 🩷 y ¿Qué es eso?
 - 22.00 hs. Pedidos por WhatsApp. Los dos números, las zonas y el sticker de enlace.
 

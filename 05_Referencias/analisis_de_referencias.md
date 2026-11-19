@@ -235,6 +235,45 @@ Mirado bajando hasta el final de cada perfil, el 18/11/2026.
 
 Es la publicación P01 del cronograma.
 
+
+## 2d. Tercera vuelta, 19/11/2026 · el estudio rojo
+
+Lauti pidió fondos rojo achilata con letra blanca, títulos más pesados, fotos en casi todas las placas y un cuidado de imagen como el de Rocambolesc. Revisé de nuevo Rocambolesc y sumé cuatro cuentas que trabajan rojo y blanco: OddFellows, KitKat, Heinz y poppi.
+
+**Rocambolesc · @rrrocambolesc, 203 mil**
+- **El producto es enorme y sale del borde de abajo:** un cucurucho recortado sobre un rosa sin costuras, con luz pareja y nítida. El color del fondo es el mismo en toda la grilla. Eso es lo que la hace reconocible.
+- **El nombre del sabor va gigante, en blanco,** en la mitad de abajo, y el producto lo pisa. Una sola tipografía.
+- **El carrusel abre con esa portada gráfica** y después pasa a naturalezas muertas: el producto con sus ingredientes, piedra, luz dura y un fondo magenta. Cambia la escena pero no la paleta ni la luz.
+- **Los retratos** de la gente de la marca son de muy cerca y con color fuerte.
+- **Las destacadas** son círculos de color con una letra.
+
+**OddFellows · @oddfellowsicecream**
+- **CANDY JAR es exactamente lo que pidió Lauti:** rojo pleno, el helado recortado y gigante, y el nombre en blanco, muy pesado, que rodea al producto.
+- **El pote con su marca aparece como protagonista** sobre el mismo rojo.
+- **Las letras son gruesas y con cuerpo.** Por eso funciona engordar la ExtraBold con un borde.
+
+**KitKat · @kitkat y Heinz · @heinz**
+- **Rojo y blanco sostenidos en toda la grilla.** El producto aparece en escenas reales, una mano, la calle o un picnic, y el rojo del producto conecta todo.
+- **Heinz** pone el producto en manos y situaciones, con texto blanco corto arriba y tono de humor.
+
+**poppi · @drinkpoppi**
+- **El producto sobre rojo con hielo y fruta,** muy saturado y nítido.
+- **Carruseles tipo collage,** una grilla de fotos chicas del mismo rojo.
+
+### Lo que sale de esto para Achilata
+
+1. **El estudio rojo.**
+   - Toda foto de producto se lleva a un fondo **rojo achilata #E7364A** sin costuras. **Se conserva la luz y la sombra de la foto original:** se pasa su luminancia al rojo, así la sombra de contacto y la caída de luz son las reales.
+   - Así toda la grilla parece de la misma sesión, como el rosa de Rocambolesc.
+2. **El fucsia se despega del rojo.** El helado es un rosa frío y el rojo es cálido. Probado el 19/11, se lee bien.
+3. **Producto grande y título blanco pesado,** con borde para engordarlo, pisado por el producto: la cuchara o la bocha delante de la letra.
+4. **Carrusel:**
+   - Todas las placas con foto en el mismo estudio rojo, con la misma luz y el mismo tamaño de letra.
+   - Solo el cierre puede ser rojo liso con el logo.
+5. **Logo blanco, sin bajada y entero,** chico abajo. Nunca la `a.`.
+6. **Bordó solo en detalles mínimos.** Crema y blanco, para respirar.
+7. **Textos cortos, de una idea,** con el tono de dos amigos. El texto también se diseña: cortes de línea pensados y nada de relleno.
+
 ## 3. Lo que hacen las malas, que se evita
 
 - Degradés, emojis 3D y stickers brillantes.

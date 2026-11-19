@@ -1,28 +1,31 @@
-# Estudio de la foto de P01
+# P01 y H01 · versión 2 del 19/11/2026
 
-**Foto usada:** `06_Assets/fotos/originales 19-11/18 Sorbete de frambuesa helado.png`. Es una copa de vidrio sobre fondo rosa, de 1093 × 1439 px.
+La versión 1 no le gustó a Lauti y está en `_v1 descartada/`. Esta sigue las correcciones del 19/11 y el análisis 2d de `05_Referencias/analisis_de_referencias.md`.
 
-## Cómo es la imagen
-- **La luz:** es suave y entra de arriba a la izquierda, como de ventana.
-- **El fondo:** es rosa empolvado, cerca de #D797A9 arriba a la izquierda y de #C38092 arriba a la derecha. Se oscurece hacia la derecha.
-- **La sombra:** es corta y suave, hacia abajo a la derecha de la copa.
-- **El producto:** el fucsia es intenso, tirando a frambuesa. La textura es granulada y helada, la más parecida a la achilata real de todas las fotos.
+## El estudio rojo
+Todas las fotos se pasaron a un fondo rojo achilata #E7364A sin costuras:
+- **El recorte** combina rembg con una máscara por color, y se corrige a mano cuando hace falta. Al vaso de la 11 se le reconstruyó la forma.
+- **La luz del fondo original pasa al rojo:** su luminancia, con el producto sacado, multiplica al rojo. Así **la sombra de contacto y la caída de luz son las reales.**
+- **Los bordes** se limpian del color del fondo viejo, para que no queden halos.
+- **Los reflejos** amarillos de la cuchara de metal, en las fotos 02 y 13, se pasaron a rosa, que es lo que reflejaría sobre rojo.
 
-## Lo que se hizo
-1. **El fondo se mantuvo,** porque es realista y funciona.
-2. **Se extendió el propio fondo** 140 px a cada lado, 180 px arriba y 97 px abajo. Se continuó la caída de luz y se agregó grano parejo, sin bandas.
-3. **Se bajó a 1080 × 1350.** Como queda en escala 0,79, gana nitidez.
-4. **El primer plano** sale de la misma copa. Se ampliaron x2,37 los píxeles de 280 a 736 en horizontal y de 640 a 1210 en vertical, con Lanczos, enfoque suave y grano.
+Las herramientas están en `06_Assets/fotos/herramientas/`, y las fotos ya pasadas al estudio rojo, en `06_Assets/fotos/editadas/estudio rojo/`.
 
-## Para diseñar encima
-- **El texto va en bordó** sobre este rosa.
-- **El logo también va en bordó.** Rojo sobre rosa no se usa.
-- **La luz viene de la izquierda,** así que cualquier sombra agregada cae a la derecha.
+## Las piezas
 
-## Versión final, del 19/11
-- **La portada** lleva el título en ExtraBold de 150 px, detrás de la cuchara. Usa la máscara de la copa para dar profundidad.
-- **La historia Volvimos** usa la foto `30 Vaso de achilata tucumana artesanal`, la mano que levanta el vasito.
-  - El rojo oscuro original se cambió por bordó #3A1320. Se mantuvo su propia caída de luz detrás del vaso.
-  - Los bordes se limpiaron del rojo viejo.
-  - El fondo se extendió 483 px hacia arriba, hasta 9:16.
-  - Volvimos. va en crema, detrás de las bochas.
+| Pieza | Foto | Texto |
+|---|---|---|
+| P01 1 portada | 05, la palma que presenta el vasito | Hay achilata en Salta. La bocha pisa el título |
+| P01 2 | 16, la cuchara que levanta | La historia del nombre |
+| P01 3 | 10, la bocha en la cuchara de servir, de cerca | Hielo raspado. Color fucsia. Receta tucumana. |
+| P01 4 | 11, el vaso con tres bochas | Potes de 1 kg y medio kilo. |
+| P01 5 | Rojo liso con el logo | Pedidos, números, zonas y pago |
+| H01 1, 19.30 | 02, la bocha que cae al vaso | Volvimos. |
+| H01 2, 20.05 | Rojo liso | Nueva publicación |
+| H01 3, 20.30 | 07, con luz de ventana | Precios |
+| H01 4, 21.00 | 13, espejada | Encuesta |
+| H01 5, 22.00 | Rojo liso | Pedidos |
+
+- **Títulos:** Bricolage ExtraBold blanca, con un borde del mismo color del 3 % del tamaño.
+- **Logo:** sin bajada y blanco. Nunca la `a.`.
+- **Bordó:** no se usó.

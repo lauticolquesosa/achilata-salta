@@ -1,11 +1,11 @@
 # P01 · Hay achilata en Salta
 
-- **Tipo:** Publicación, carrusel de 4 placas
+- **Tipo:** Publicación, carrusel de 5 placas
 - **Cuándo:** día 1, jueves 19 de noviembre, a las 20.00 hs
 - **Medida:** 1080 × 1350 px por placa
 
 ## La idea
-La primera publicación desde la vuelta y la más cuidada de todas. La portada es una foto de producto sobre fondo rosa, con el título Hay achilata en Salta grande en bordó, metido detrás del producto para que tenga profundidad. La placa 2 cuenta, solo con tipografía sobre crema, que el nombre viene de los vendedores que gritaban hay gelata. La placa 3 es un primer plano del hielo, con tres líneas cortas: Hielo raspado. Color fucsia. Receta tucumana. La placa 4 cierra en rojo con el logo y en bordó con los potes, el delivery y los dos WhatsApp.
+La primera publicación desde la vuelta. Todo en el estudio rojo: cada foto pasada al rojo achilata con su luz y su sombra reales, y títulos blancos pesados. Placa 1: la palma que presenta el vasito, con Hay achilata en Salta pisado por la bocha. Placa 2: la cuchara que levanta, con la historia del nombre, hay gelata. Placa 3: la bocha de cerca, con Hielo raspado. Color fucsia. Receta tucumana. Placa 4: el vaso con tres bochas, con Potes de 1 kg y medio kilo. Placa 5: rojo con el logo blanco, los dos WhatsApp, las zonas y el pago.
 
 La idea es una propuesta. Las fotos se eligen recién cuando se pide la pieza, mirando toda la galería.
 
