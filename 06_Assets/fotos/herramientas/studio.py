@@ -50,7 +50,7 @@ def pad(arr,T,B,Lf,R):
     out=cv2.resize(acc,(W+Lf+R,H+T+B),interpolation=cv2.INTER_CUBIC)
     out[T:T+H,Lf:Lf+W]=arr
     return out
-def studio(im, alpha, T=0,B=0,Lf=0,R=0, gamma=1.0, color=ROJO, grain=1.4, seed=1, ref_pct=90):
+def studio(im, alpha, T=0,B=0,Lf=0,R=0, gamma=1.0, color=ROJO, grain=1.4, seed=1, ref_pct=90, Fo=None):
     lum=bg_lum(im,alpha)
     ref=np.percentile(lum[alpha<0.05],ref_pct)
     ratio=np.clip(lum/ref,0.25,1.25)**gamma
@@ -61,6 +61,7 @@ def studio(im, alpha, T=0,B=0,Lf=0,R=0, gamma=1.0, color=ROJO, grain=1.4, seed=1
     A=alpha[...,None]
     F=np.clip((im-(1-A)*bgcol)/np.maximum(A,0.2),0,255)
     F=np.where(A>0.97,im,F)
+    if Fo is not None: F=Fo
     if T or B or Lf or R:
         ratio=pad(ratio,T,B,Lf,R); F=pad(F,T,B,Lf,R) ; alpha=pad(alpha,T,B,Lf,R)
         Hn,Wn=alpha.shape; z=np.zeros((Hn,Wn),np.float32); z[T:T+H,Lf:Lf+W]=1

@@ -3,3 +3,4 @@
 - [Reglas de contenido Achilata](reglas-contenido-achilata.md) — no gradients, quotes, dashes or mixed weights per line; must not look AI-made
 - [Flujo de piezas a pedido](flujo-piezas-a-pedido.md) — flexible schedule; build pieces on request, send images + caption to WhatsApp
 - [Correcciones de diseño 19/11](correcciones-diseno-19-11.md) — red bg + white text, bordó minimal, stroked titles, photos on all slides, no a. logo
+- [Repo GitHub](repo-github-achilata.md) — public repo lauticolquesosa/achilata-salta; push after finished work

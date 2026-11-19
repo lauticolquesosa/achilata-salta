@@ -29,3 +29,13 @@ Las herramientas están en `06_Assets/fotos/herramientas/`, y las fotos ya pasad
 - **Títulos:** Bricolage ExtraBold blanca, con un borde del mismo color del 3 % del tamaño.
 - **Logo:** sin bajada y blanco. Nunca la `a.`.
 - **Bordó:** no se usó.
+
+## Ajustes del 19/11, segunda ronda de correcciones
+- **Recortes perfectos.**
+  - La transparencia del borde se refina con un guided filter de color, que sigue el detalle real de la foto.
+  - El color del producto en el borde se recupera con blur fusion, sin el fondo viejo.
+  - Así no quedan halos ni bordes escalonados. Está en `06_Assets/fotos/herramientas/matte.py`.
+- **Borde de los títulos:** bajó del 3 al 1,5 % del tamaño de la letra.
+- **Placa 5, el cierre:** pasó a la foto 07, con Pedí la tuya. y los dos números en botones blancos, como hacen OddFellows y Morgenstern's.
+- **Historia de precios:** Elegí tu pote., con dos tarjetas blancas, 1 kg a $12.000 y 1/2 kg a $8.000, sobre la foto 11.
+- **Historia 2:** se suma una opción simple que ya trae la portada puesta.

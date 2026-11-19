@@ -12,27 +12,29 @@ def logo(w,color='blanco'):
     im=Image.open(os.path.join(LG,f'achilata-sin-bajada-{color}.png')).convert('RGBA'); im=im.crop(im.getbbox())
     return im.resize((w,round(im.height*w/im.width)),Image.LANCZOS)
 cache={}
+def yfix(im):
+    L=cv2.cvtColor(np.clip(im,0,255).astype(np.uint8),cv2.COLOR_RGB2LAB).astype(np.float32)
+    yel=np.clip((L[...,2]-140)/12,0,1)*np.clip((142-L[...,1])/8,0,1)
+    L[...,1]=L[...,1]+yel*(L[...,2]-128)*0.9
+    L[...,2]=L[...,2]-yel*(L[...,2]-128)*0.85
+    return cv2.cvtColor(np.clip(L,0,255).astype(np.uint8),cv2.COLOR_LAB2RGB).astype(np.float32)
 def src(n,flip=False):
     im=np.asarray(Image.open(f'{V}/src{n}.png').convert('RGB')).astype(np.float32); a=np.load(f'{V}/a{n}.npy')
-    if n in ('02','13'):
-        L=cv2.cvtColor(im.astype(np.uint8),cv2.COLOR_RGB2LAB).astype(np.float32)
-        yel=np.clip((L[...,2]-140)/12,0,1)*np.clip((142-L[...,1])/8,0,1)
-        L[...,1]=L[...,1]+yel*(L[...,2]-128)*0.9
-        L[...,2]=L[...,2]-yel*(L[...,2]-128)*0.85
-        im=cv2.cvtColor(np.clip(L,0,255).astype(np.uint8),cv2.COLOR_LAB2RGB).astype(np.float32)
-    if flip: im=im[:,::-1].copy(); a=a[:,::-1].copy()
-    return im,a
+    Fo=np.load(f'{V}/f{n}.npy')
+    if n in ('02','13'): im=yfix(im); Fo=yfix(Fo)
+    if flip: im=im[:,::-1].copy(); a=a[:,::-1].copy(); Fo=Fo[:,::-1].copy()
+    return im,a,Fo
 def frame(n,box,size,flip=False,gamma=1.0):
     """box=(x0,y0,x1,y1) in source px, may exceed bounds -> background extended. returns bg, fg, alpha at final size"""
-    im,a=src(n,flip); H,W=a.shape; x0,y0,x1,y1=box
+    im,a,Fo=src(n,flip); H,W=a.shape; x0,y0,x1,y1=box
     T,B,L,R=max(0,-y0),max(0,y1-H),max(0,-x0),max(0,x1-W)
-    bg,F,A=studio(im,a,T,B,L,R,gamma=gamma)
+    bg,F,A=studio(im,a,T,B,L,R,gamma=gamma,Fo=Fo)
     cx0,cy0=x0+L,y0+T
     sl=(slice(cy0,cy0+(y1-y0)),slice(cx0,cx0+(x1-x0)))
     rs=lambda z:cv2.resize(z[sl],size,interpolation=cv2.INTER_AREA if (x1-x0)>size[0] else cv2.INTER_LANCZOS4)
     return rs(bg),rs(F),np.clip(rs(A),0,1)
 def tlines(d,x,top,lines,font,fill,lh,stroke=True,align='left',W=1080):
-    sw=max(2,round(font.size*0.03)) if stroke else 0
+    sw=max(1,round(font.size*0.015)) if stroke else 0
     asc=font.getbbox('H')[1]
     for i,t in enumerate(lines):
         xx=x
@@ -65,12 +67,18 @@ compose(bg,F,A,None,f).save(f'{O}/P01 3 textura.png')
 bg,F,A=frame('11',(-145,-335,1256,1415),P)
 def t(d,im): tlines(d,80,110,['Potes de 1 kg','y medio kilo.'],XB(108),W_,103)
 compose(bg,F,A,t,None).save(f'{O}/P01 4 potes.png')
-im=Image.new('RGB',P,ROJ).convert('RGBA'); d=ImageDraw.Draw(im)
-lg=logo(640); im.alpha_composite(lg,((1080-640)//2,250))
-tlines(d,80,600,['Pedidos por','WhatsApp.'],XB(96),W_,92)
-tlines(d,80,830,['387 483 4041','387 468 4498'],XB(64),W_,74)
-tlines(d,80,1060,['Delivery en Grand Bourg, San Lorenzo Chico,','San Lorenzo, El Tipal y La Almudena.','Transferencia o efectivo.'],RG(34),W_,46,stroke=False)
-im.convert('RGB').save(f'{O}/P01 5 pedidos.png')
+def pill(d,x,y,w,h,text,font,fill_bg=W_,fill_tx=ROJ,center=True):
+    d.rounded_rectangle((x,y,x+w,y+h),radius=h//2,fill=fill_bg)
+    tw=d.textlength(text,font=font); bb=font.getbbox('0')
+    d.text((x+(w-tw)/2 if center else x+h*0.45, y+(h-(bb[3]-bb[1]))/2-bb[1]),text,font=font,fill=fill_tx)
+bg,F,A=frame('07',(0,-395,1300,1230),P,gamma=0.12)
+def f(d,im):
+    tlines(d,80,110,['Pedí la tuya.'],XB(124),W_,118)
+    tlines(d,80,272,['Delivery en zonas seleccionadas. Transferencia o efectivo.'],RG(32),W_,44,stroke=False)
+    pill(d,80,340,470,92,'387 483 4041',XB(44))
+    pill(d,80,452,470,92,'387 468 4498',XB(44))
+    lg=logo(210); im.alpha_composite(lg,(1080-80-lg.width,1350-80-lg.height))
+compose(bg,F,A,None,f).save(f'{O}/P01 5 pedidos.png')
 # ---------- H01 ----------
 bg,F,A=frame('02',(0,-284,1024,1536),S)
 def t(d,im): tlines(d,0,330,['Volvimos.'],XB(186),W_,180,align='center')
@@ -81,11 +89,16 @@ tlines(d,0,300,['Nueva','publicación.'],XB(120),W_,114,align='center')
 d.text(((1080-d.textlength('deslizá hasta el final',font=INK(56)))/2,1560),'deslizá hasta el final',font=INK(56),fill=W_)
 lg=logo(220); im.alpha_composite(lg,((1080-220)//2,1670-lg.height+10))
 im.convert('RGB').save(f'{O}/H01 2 nueva publicacion 20.05.png')
-bg,F,A=frame('07',(0,-300,1089,1636),S,gamma=0.38)
+bg,F,A=frame('11',(-260,-1030,1371,1415),S)
 def f(d,im):
-    tlines(d,80,300,['1 kg  $12.000'],XB(104),W_,100)
-    tlines(d,80,440,['Medio kilo  $8.000'],XB(84),W_,90)
-    tlines(d,80,1560,['Delivery en zonas seleccionadas.','Pedidos por WhatsApp.'],RG(40),W_,52,stroke=False)
+    tlines(d,80,270,['Elegí tu pote.'],XB(118),W_,112)
+    tlines(d,80,410,['Sabor clásico, el de siempre.'],RG(40),W_,50,stroke=False)
+    for i,(kg,pr) in enumerate([('1 kg','$12.000'),('1/2 kg','$8.000')]):
+        x=80+i*470; y=490
+        d.rounded_rectangle((x,y,x+450,y+300),radius=44,fill=W_)
+        f1=XB(84); f2=XB(84)
+        d.text((x+40,y+40-f1.getbbox('H')[1]+0),kg,font=f1,fill=ROJ)
+        d.text((x+40,y+170-f2.getbbox('H')[1]),pr,font=f2,fill=ROJ)
 compose(bg,F,A,None,f).save(f'{O}/H01 3 precios 20.30.png')
 bg,F,A=frame('13',(0,-450,900,1150),S,flip=True)
 def t(d,im): tlines(d,80,300,['¿Ya probaste','achilata?'],XB(128),W_,122)
