@@ -7,5 +7,5 @@
 | 19/11/2026 19.30 a 22.00 | Instagram | 5 historias H01, v2 | Volvimos, nueva publicación, precios, encuesta y pedidos. Fotos 02, 07 y 13 | | Enviado al WhatsApp de Lauti |
 | 19/11/2026 20.30 | Instagram | H01 3 precios, v3 | Rehecha: potes de 1 kg y 1/2 kg lado a lado sobre rojo, foto 28 | | Enviado al WhatsApp de Lauti |
 | 20/11/2026 11.00 | Instagram | Historia H02 1 | Hoy hacemos envíos. Consultanos por tu zona. Foto 14 en el estudio rojo | | Enviado al WhatsApp de Lauti |
-| 20/11/2026 15.30 | Instagram | Historia H02 2 | Achilata hoy. Calor y siesta, foto 08 con sombra de sol | | Enviado al WhatsApp de Lauti |
+| 20/11/2026 15.30 | Instagram | Historia H02 2 | Achilata hoy. Calor y siesta, foto 08 con sombra de sol | | v2 con el logo en el pote. Enviado al WhatsApp de Lauti |
 | 20/11/2026 13.00 | Instagram | Carrusel P02 El menú, 4 placas | El menú, 1 kg $12.000, medio kilo $8.000, cómo pedir. Fotos 28, 11, 02 y 16 | | Enviado al WhatsApp de Lauti |

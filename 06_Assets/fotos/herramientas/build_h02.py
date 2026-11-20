@@ -93,6 +93,41 @@ rows=(aa_tmp:=cv2.resize(a8,(cw,ch),interpolation=cv2.INTER_AREA)>0.5).sum(1); b
 cx=420; base_y=1520; X=cx-cw//2; Y=base_y-bot
 A=np.zeros((1920,1080),np.float32); A[Y:Y+ch,X:X+cw]=aa
 Fc=np.zeros((1920,1080,3),np.float32); Fc[Y:Y+ch,X:X+cw]=ff
+
+# ---- logo impreso en el pote, envuelto en el cilindro y con la luz del pote ----
+labF=cv2.cvtColor(np.clip(Fc,0,255).astype(np.uint8),cv2.COLOR_RGB2LAB).astype(np.float32)
+white=(A>0.9)&(labF[...,0]>150)&(np.abs(labF[...,1]-128)<8)&(np.abs(labF[...,2]-128)<10)
+cnt=white.sum(1); rowsB=np.where(cnt>0.55*cw)[0]
+bt,bb=rowsB.min(),rowsB.max()
+edges={}
+for y in range(bt,bb+1):
+    xs_=np.where(white[y])[0]; edges[y]=(xs_.min(),xs_.max())
+LOGO=Image.open(os.path.join(LG,'achilata-principal-rojo.png')).convert('RGBA'); LOGO=LOGO.crop(LOGO.getbbox())
+lg_=np.asarray(LOGO).astype(np.float32)
+lh,lw=lg_.shape[:2]
+span=np.deg2rad(52)          # medio ancho angular del logo
+yc=bt+(bb-bt)*0.44           # centro vertical del logo en el cuerpo
+x0e,x1e=edges[int(yc)]; r0=(x1e-x0e)/2
+logo_h=(2*r0*np.sin(span))*lh/lw
+ell=0.07                     # curvatura de la vista apenas desde arriba
+src_x=np.full((1920,1080),-1,np.float32); src_y=np.full((1920,1080),-1,np.float32)
+for y in range(bt,bb+1):
+    xl,xr=edges[y]; cxr=(xl+xr)/2; r=(xr-xl)/2
+    xs_=np.arange(xl,xr+1)
+    sn=np.clip((xs_-cxr)/r,-1,1); th=np.arcsin(sn)
+    u=(th/span+1)/2
+    yy_=y-(yc-logo_h/2)+ell*r*(1-np.cos(th))
+    v=yy_/logo_h
+    ok=(u>=0)&(u<=1)&(v>=0)&(v<=1)
+    src_x[y,xs_[ok]]=u[ok]*(lw-1); src_y[y,xs_[ok]]=v[ok]*(lh-1)
+warp=cv2.remap(lg_,src_x,src_y,cv2.INTER_LINEAR,borderMode=cv2.BORDER_CONSTANT,borderValue=0)
+la=warp[...,3:4]/255*(A[...,None]>0.9)
+# luz: la del propio pote, relativa al blanco más claro
+lum=labF[...,0:1]
+ref=np.percentile(labF[...,0][white],95)
+shade=np.clip(lum/ref,0.55,1.05)
+ink=warp[...,:3]*shade
+Fc=Fc*(1-la*0.96)+ink*la*0.96
 # sombra de sol de siesta: proyectada hacia la derecha y abajo, larga y dura
 sil=(A>0.5).astype(np.float32)
 src_pts=np.float32([[X,base_y],[X+cw,base_y],[X,Y]])
