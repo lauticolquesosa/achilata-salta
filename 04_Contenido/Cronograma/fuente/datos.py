@@ -16,11 +16,12 @@ PIEZAS = {
   "Placa 4: el vaso con tres bochas, con Potes de 1 kg y medio kilo. "
   "Placa 5: rojo con el logo blanco, los dos WhatsApp, las zonas y el pago.",
   "Volvimos y llegamos a Salta 🍧 El helado más tucumano, ahora a la vuelta de tu casa. Potes de 1 kg y medio kilo, pedidos por WhatsApp. ¿Vos ya la probaste?"),
- "P02": ("El menú", "Publicación", "Carrusel de 3 placas",
-  "Una plantilla fija que después se repite cada vez que haya que recordar los precios. "
-  "Placa 1: crema, el pote de 1 kg al centro, arriba 1 KG en ExtraBold rojo y abajo $12.000. "
-  "Placa 2: la misma composición con MEDIO KILO y $8.000. "
-  "Placa 3: bordó, con cómo pedir, las zonas, transferencia o efectivo y los dos WhatsApp.",
+ "P02": ("El menú", "Publicación", "Carrusel de 4 placas",
+  "Hecho el 20/11 en el estudio rojo, fotos 28, 11, 02 y 16. "
+  "Placa 1: El menú, con la nota corto, como tiene que ser. "
+  "Placa 2: las tres bochas, con 1 kg y $12.000. "
+  "Placa 3: la bocha que cae al vaso, con Medio kilo y $8.000. "
+  "Placa 4: cómo pedir, los dos WhatsApp, las zonas y el pago.",
   "Dos tamaños y un solo sabor, el de siempre. Guardalo para cuando apriete el calor ☀️"),
  "R01": ("El ritual", "Reel", "Video vertical de 7 a 10 segundos",
   "Sin hablar. Primer plano de la cuchara entrando en el pote y sirviendo una copa, con el sonido real del hielo. "
@@ -100,7 +101,8 @@ DIAS = {
      "Antes de publicar: foto de perfil, presentación, enlaces y destacadas listas. En la primera hora se responden todos los comentarios y se fija uno propio: ¿Desde qué barrio nos escribís?"),
  2: ("Precios claros", "Que quede claro cuánto sale y cómo se pide, para llegar al primer finde con pedidos.",
      [("13.00", "P02")],
-     [("11.00", "Tomamos pedidos para el finde."),
+     [("11.00", "Hoy hacemos envíos. Consultanos por tu zona. Foto 14 en el estudio rojo."),
+      ("15.30", "Achilata hoy. Para la siesta y el calor, con la bocha derretida, foto 08."),
       ("13.05", "Se comparte El menú."),
       ("17.00", "Pregunta: ¿En qué zona estás? Sirve para ver dónde está la gente."),
       ("19.00", "Quiz: ¿De dónde viene el nombre? Hay gelata, un pueblo o un helado italiano."),

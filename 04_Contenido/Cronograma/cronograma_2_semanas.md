@@ -1,6 +1,6 @@
 # Cronograma de dos semanas · @achilatasalta
 
-Del jueves 19 de noviembre al miércoles 2 de diciembre de 2026: 13 publicaciones, 5 reels y 63 historias.
+Del jueves 19 de noviembre al miércoles 2 de diciembre de 2026: 13 publicaciones, 5 reels y 64 historias.
 Se sube algo todos los días, y más de jueves a domingo.
 
 Lo generan `Cronograma/fuente/datos.py` y `generar.py`.
@@ -39,15 +39,16 @@ La primera publicación desde la vuelta. Todo en el estudio rojo: cada foto pasa
 
 Que quede claro cuánto sale y cómo se pide, para llegar al primer finde con pedidos.
 
-**13.00 hs · Publicación P02 · El menú** · Carrusel de 3 placas
+**13.00 hs · Publicación P02 · El menú** · Carrusel de 4 placas
 
-Una plantilla fija que después se repite cada vez que haya que recordar los precios. Placa 1: crema, el pote de 1 kg al centro, arriba 1 KG en ExtraBold rojo y abajo $12.000. Placa 2: la misma composición con MEDIO KILO y $8.000. Placa 3: bordó, con cómo pedir, las zonas, transferencia o efectivo y los dos WhatsApp.
+Hecho el 20/11 en el estudio rojo, fotos 28, 11, 02 y 16. Placa 1: El menú, con la nota corto, como tiene que ser. Placa 2: las tres bochas, con 1 kg y $12.000. Placa 3: la bocha que cae al vaso, con Medio kilo y $8.000. Placa 4: cómo pedir, los dos WhatsApp, las zonas y el pago.
 
 *Texto:* Dos tamaños y un solo sabor, el de siempre. Guardalo para cuando apriete el calor ☀️
 
 **Historias**
 
-- 11.00 hs. Tomamos pedidos para el finde.
+- 11.00 hs. Hoy hacemos envíos. Consultanos por tu zona. Foto 14 en el estudio rojo.
+- 15.30 hs. Achilata hoy. Para la siesta y el calor, con la bocha derretida, foto 08.
 - 13.05 hs. Se comparte El menú.
 - 17.00 hs. Pregunta: ¿En qué zona estás? Sirve para ver dónde está la gente.
 - 19.00 hs. Quiz: ¿De dónde viene el nombre? Hay gelata, un pueblo o un helado italiano.

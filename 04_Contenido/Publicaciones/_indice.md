@@ -3,7 +3,7 @@
 | Código | Día | Hora | Pieza | Formato |
 |---|---|---|---|---|
 | P01 | jue 19 nov | 20.00 | Hay achilata en Salta | Carrusel de 5 placas |
-| P02 | vie 20 nov | 13.00 | El menú | Carrusel de 3 placas |
+| P02 | vie 20 nov | 13.00 | El menú | Carrusel de 4 placas |
 | P04 | sáb 21 nov | 20.00 | Hace 32 grados | Placa única |
 | P07 | dom 22 nov | 13.00 | La siesta salteña | Foto única |
 | P08 | lun 23 nov | 20.00 | Achilata, sustantivo | Placa única |
