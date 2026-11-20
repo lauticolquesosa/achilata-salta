@@ -1,0 +1,143 @@
+<!--meta {"titulo":"Precios de la achilata y pedidos · achilata.","descripcion":"Pote de 1 kg a {{potes.0.precio|pesos}} y medio kilo a {{potes.1.precio|pesos}}. Delivery en Grand Bourg, San Lorenzo, El Tipal y La Almudena. Armá tu pedido y mandalo por WhatsApp.","pagina":"precios","tono":"rojo"} -->
+<!--#head-->
+<body data-pagina="precios">
+<!--#cabecera-->
+<main id="contenido">
+  <section class="portada fondo-rojo" data-tono="rojo" aria-labelledby="titulo-pagina">
+    <div class="contenedor">
+      <h1 class="titulo t-hero" id="titulo-pagina" data-partir>Precios de la achilata</h1>
+      <p class="texto-grande revelar separado">Pedís por WhatsApp, pagás por transferencia o en efectivo y te la llevamos a casa. Un solo sabor, el clásico tucumano.</p>
+      <div class="precios separado">
+        <article class="precio revelar">
+          {{foto:pila-potes|Una persona con delantal rojo abraza una pila de potes de achilata|{"clase":"foto--apaisada","carga":"eager","revelar":false,"tamanos":"(max-width: 700px) 92vw, 46vw"}}}
+          <div class="precio__datos">
+            <h2 class="precio__nombre">{{potes.0.nombre}}</h2>
+            <p class="precio__monto" data-contar="{{potes.0.precio}}" data-prefijo="$"><small>$</small>{{potes.0.precio|num}}</p>
+          </div>
+        </article>
+        <article class="precio revelar" data-retraso="0.12">
+          {{foto:pote-cuchara|Pote de achilata con una cucharada servida|{"clase":"foto--apaisada","carga":"eager","revelar":false,"tamanos":"(max-width: 700px) 92vw, 46vw"}}}
+          <div class="precio__datos">
+            <h2 class="precio__nombre">{{potes.1.nombre}}</h2>
+            <p class="precio__monto" data-contar="{{potes.1.precio}}" data-prefijo="$"><small>$</small>{{potes.1.precio|num}}</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="seccion fondo-crema" data-tono="claro" aria-labelledby="titulo-pedido">
+    <div class="goteo goteo--abajo">{{goteo}}</div>
+    <div class="contenedor calculo">
+      <form class="formulario" id="form-pedido" novalidate aria-describedby="nota-pedido">
+        <div class="encabezado">
+          <h2 class="titulo t-1" id="titulo-pedido" data-partir>Armá tu pedido</h2>
+          <p class="texto-grande revelar" id="nota-pedido">Elegí los potes, completá tus datos y te abrimos WhatsApp con el pedido listo para mandar.</p>
+        </div>
+        <fieldset class="grupo">
+          <legend class="grupo__titulo t-3">Cuántos potes</legend>
+          <div class="dos-campos">
+            <div class="campo">
+              <label for="cant-kg1">{{potes.0.nombre}}, {{potes.0.precio|pesos}}</label>
+              <div class="cantidad">
+                <button type="button" data-sumar="kg1" data-paso="-1" aria-label="Uno menos de 1 kg">−</button>
+                <input id="cant-kg1" type="number" inputmode="numeric" min="0" max="50" value="1">
+                <button type="button" data-sumar="kg1" data-paso="1" aria-label="Uno más de 1 kg">+</button>
+              </div>
+            </div>
+            <div class="campo">
+              <label for="cant-kg05">{{potes.1.nombre}}, {{potes.1.precio|pesos}}</label>
+              <div class="cantidad">
+                <button type="button" data-sumar="kg05" data-paso="-1" aria-label="Uno menos de medio kilo">−</button>
+                <input id="cant-kg05" type="number" inputmode="numeric" min="0" max="50" value="0">
+                <button type="button" data-sumar="kg05" data-paso="1" aria-label="Uno más de medio kilo">+</button>
+              </div>
+            </div>
+          </div>
+        </fieldset>
+        <fieldset class="grupo">
+          <legend class="grupo__titulo t-3">Dónde y cuándo</legend>
+          <div class="dos-campos">
+            <div class="campo">
+              <label for="p-zona">Zona</label>
+              <div class="selector-caja"><select class="selector" id="p-zona" name="zona">{{bloque:opcionesDelivery}}</select></div>
+            </div>
+            <div class="campo">
+              <label for="p-cuando">Para cuándo</label>
+              <input class="entrada" id="p-cuando" type="text" maxlength="60" autocomplete="off" placeholder="Hoy a la tarde, el sábado">
+            </div>
+          </div>
+          <div class="campo">
+            <label for="p-direccion">Barrio o dirección</label>
+            <input class="entrada" id="p-direccion" type="text" maxlength="100" autocomplete="street-address" aria-describedby="ayuda-direccion">
+            <span class="ayuda" id="ayuda-direccion">Opcional. Si preferís, nos la pasás después por el chat.</span>
+          </div>
+        </fieldset>
+        <fieldset class="grupo">
+          <legend class="grupo__titulo t-3">Tus datos</legend>
+          <div class="campo">
+            <label for="p-nombre">Nombre</label>
+            <input class="entrada" id="p-nombre" type="text" maxlength="60" autocomplete="given-name" required aria-describedby="error-pedido">
+          </div>
+          <div class="campo">
+            <span class="negrita" id="pago-t">Cómo pagás</span>
+            <div class="opciones" role="radiogroup" aria-labelledby="pago-t">
+              <label class="opcion"><input type="radio" name="pago" value="transferencia" checked><span><b>Transferencia</b></span></label>
+              <label class="opcion"><input type="radio" name="pago" value="efectivo"><span><b>Efectivo</b></span></label>
+            </div>
+          </div>
+          <div class="campo">
+            <label for="p-numero">Mandar a</label>
+            <div class="selector-caja"><select class="selector" id="p-numero" name="numero"><option value="0">WhatsApp {{whatsapp.0.texto}}</option><option value="1">WhatsApp {{whatsapp.1.texto}}</option></select></div>
+          </div>
+        </fieldset>
+        <p class="chico">Tus datos no se guardan en esta web. Viajan solo en el mensaje de WhatsApp que vos enviás. <a class="enlace" href="privacidad.html">Política de privacidad</a></p>
+      </form>
+      <aside class="resumen" aria-labelledby="titulo-resumen-pedido">
+        <h2 class="resumen__titulo" id="titulo-resumen-pedido">Tu pedido</h2>
+        <p id="pedido-detalle">1 × pote de 1 kg</p>
+        <div class="resumen__total">
+          <span>Total sin envío</span>
+          <span class="resumen__monto" id="pedido-total">{{potes.0.precio|pesos}}</span>
+        </div>
+        <p class="error" id="error-pedido" role="alert"></p>
+        <button class="boton" type="submit" form="form-pedido">Enviar pedido por WhatsApp</button>
+        <p class="resumen__aviso">El envío se suma según la zona y te lo confirmamos en el chat antes de que pagues.</p>
+        <p class="oculto" id="estado-pedido" role="status" aria-live="polite"></p>
+      </aside>
+    </div>
+  </section>
+
+  <section class="seccion fondo-blanco" data-tono="claro" aria-labelledby="titulo-delivery">
+    <div class="contenedor">
+      <div class="encabezado">
+        <h2 class="titulo t-1" id="titulo-delivery" data-partir>Dónde hacemos delivery</h2>
+        <p class="texto-grande revelar">Te la llevamos bien fría a estas zonas. Si la tuya no está, escribinos igual.</p>
+      </div>
+      {{bloque:listaDelivery}}
+    </div>
+  </section>
+
+  <section class="seccion fondo-crema" data-tono="claro" aria-labelledby="titulo-preguntas">
+    <div class="contenedor dividido">
+      <div class="dividido__fijo">
+        <h2 class="titulo t-1" id="titulo-preguntas" data-partir>Preguntas sobre los pedidos</h2>
+      </div>
+      {{faq:precios}}
+    </div>
+  </section>
+
+  <section class="seccion fondo-rojo cierre" data-tono="rojo" aria-labelledby="titulo-cierre">
+    <div class="contenedor">
+      <h2 class="titulo t-1" id="titulo-cierre" data-partir>¿Tenés un evento?</h2>
+      <p class="texto-grande revelar centrado">Llevamos el carrito de achilata a casamientos, fiestas de 15, empresas, clubes y cumpleaños.</p>
+      <div class="botones revelar">
+        <a class="boton boton--blanco" href="eventos.html">Servicio para eventos</a>
+        <a class="boton boton--borde" href="presupuesto.html">Pedí tu presupuesto</a>
+      </div>
+    </div>
+  </section>
+</main>
+<!--#pie-->
+</body>
+</html>

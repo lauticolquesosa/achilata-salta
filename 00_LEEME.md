@@ -19,7 +19,8 @@ Esta carpeta es la memoria del proyecto. Las reglas para crear contenido están 
 | `05_Referencias/` | Producto, estilo de foto, marcas y cuentas de Instagram de referencia |
 | `06_Assets/` | Logos en PNG, SVG y PDF en cada versión y color, y las tramas |
 | `07_Pendientes.md` | Datos que faltan confirmar |
-| `08_Eventos/` | **El servicio de carrito de achilata para eventos:** investigación, diagnóstico, precios y cotizador, propuesta en PDF, web, contenido, cronograma, posibles clientes y operación. Empezar por su `00_LEEME.md` |
+| `08_Eventos/` | **El servicio de carrito de achilata para eventos:** investigación, diagnóstico, precios y cotizador, propuesta en PDF, contenido, cronograma, posibles clientes y operación. Empezar por su `00_LEEME.md` |
+| `09_Pagina_web/` | **La web de la marca,** publicada en https://achilata-salta.vercel.app: inicio con la achilata en 3D, precios y pedidos, eventos, presupuesto y legales. Empezar por su `LEEME.md` |
 
 ## Reglas del sistema
 1. El manual de marca manda sobre cualquier otra cosa.

@@ -49,6 +49,7 @@ Por ahora el trabajo es **solo Instagram**. La cuenta arranca con 0 publicacione
 6. `05_Referencias/`: las cuentas y las imágenes de referencia, con lo que se toma de cada una.
 7. `07_Pendientes.md`: lo que todavía no está confirmado. Lo no confirmado no se publica como dato.
 8. `08_Eventos/`: el servicio de carrito de achilata para eventos, sumado el 19/11/2026. Para cualquier pieza, precio o contacto de eventos, leer primero `08_Eventos/00_LEEME.md`. **Los vasitos existen solo en eventos;** la venta a domicilio sigue siendo solo potes.
+9. `09_Pagina_web/`: la web de la marca, publicada en https://achilata-salta.vercel.app. Se edita en `fuente/` y se genera con `node build.mjs`; los precios salen de `fuente/src/datos.json`. Leer su `LEEME.md` antes de tocarla. Mantiene las mismas reglas de texto: sin comillas, guiones ni paréntesis.
 
 ## La marca, en corto
 

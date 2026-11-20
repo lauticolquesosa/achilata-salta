@@ -1,0 +1,128 @@
+<!--meta {"titulo":"achilata. Helado tucumano en Salta","descripcion":"Achilata, el helado de agua tucumano, en Salta Capital. Pote de 1 kg a {{potes.0.precio|pesos}} y medio kilo a {{potes.1.precio|pesos}} con delivery, y carrito de achilata para eventos.","pagina":"inicio","tono":"rojo"} -->
+<!--#head-->
+<body data-pagina="inicio">
+<!--#cabecera-->
+<div class="cargador" aria-hidden="true">
+  <img class="cargador__logo" src="assets/img/logo-blanco.svg" alt="" width="1040" height="297">
+  <span class="cargador__numero">0</span>
+</div>
+<div class="escena" aria-hidden="true"></div>
+
+<main id="contenido">
+  <section class="heroe fondo-rojo" data-tono="rojo" aria-labelledby="titulo-inicio">
+    <h1 class="heroe__titulo titulo t-hero" id="titulo-inicio" aria-label="Helado tucumano en Salta">
+      <span class="linea-mascara" aria-hidden="true"><span class="linea">Helado</span></span>
+      <span class="linea-mascara" aria-hidden="true"><span class="linea">tucumano</span></span>
+      <span class="linea-mascara" aria-hidden="true"><span class="linea">en Salta.</span></span>
+    </h1>
+    <div class="heroe__respaldo">{{foto:rojo-pote|Pote de achilata con una cuchara servida, sobre fondo rojo|{"clase":"foto--retrato","carga":"eager","prioridad":"high","revelar":false,"tamanos":"(max-width: 700px) 46vw, 26rem"}}}</div>
+    <div class="heroe__pie">
+      <div>
+        <p class="texto-grande">La achilata de toda la vida, ahora en Salta Capital. En potes para tu casa y en carrito para tus eventos.</p>
+        <div class="botones">
+          <a class="boton boton--blanco" href="precios.html">Ver precios</a>
+          <a class="boton boton--borde" href="{{waPrincipal}}" target="_blank" rel="noopener noreferrer">Pedir por WhatsApp</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="intro fondo-crema" data-tono="claro" aria-labelledby="titulo-intro">
+    <div class="goteo goteo--abajo">{{goteo}}</div>
+    <div class="intro__texto contenedor">
+      <h2 class="oculto" id="titulo-intro">Quiénes somos</h2>
+      <p class="intro__frase">Somos dos amigos que trajimos de Tucumán el helado de la infancia. La achilata es fresca, liviana y bien fría, y ahora llega a tu casa en Salta.</p>
+      <div class="intro__nota">
+        <a class="boton" href="achilata.html">Conocé la achilata</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="seccion fondo-crema" data-tono="claro" aria-labelledby="titulo-galeria">
+    <div class="contenedor">
+      <div class="encabezado">
+        <h2 class="titulo t-1" id="titulo-galeria" data-partir>Así se ve la achilata</h2>
+        <p class="texto-grande revelar">Roja, granulada y bien fría. Un solo sabor, el clásico tucumano.</p>
+      </div>
+      <div class="collage">
+        <figure class="f1" data-velocidad="0.6">{{foto:pila-potes|Una persona con delantal rojo abraza una pila de potes de achilata|{"clase":"foto--alta","tamanos":"(max-width: 700px) 58vw, 40vw"}}}<figcaption class="acento">Para toda la familia</figcaption></figure>
+        <figure class="f2" data-velocidad="1.4">{{foto:cuchara-madera-cielo|Cuchara de madera con achilata frente al cielo azul|{"clase":"foto--retrato","tamanos":"(max-width: 700px) 42vw, 32vw"}}}</figure>
+        <figure class="f3" data-velocidad="2.2">{{foto:bocha-cuchara|Bocha de achilata en una cuchara de metal|{"clase":"foto--alta","tamanos":"(max-width: 700px) 1px, 16vw"}}}</figure>
+        <figure class="f4" data-velocidad="1.8">{{foto:remera-cuchara|Pote de achilata y una cucharada servida|{"clase":"foto--retrato","tamanos":"(max-width: 700px) 42vw, 24vw"}}}</figure>
+        <figure class="f5" data-velocidad="0.9">{{foto:pote-grande|Pote de achilata lleno hasta arriba|{"clase":"foto--cuadrada","tamanos":"(max-width: 700px) 58vw, 32vw"}}}<figcaption class="acento">Recién servida</figcaption></figure>
+        <figure class="f6" data-velocidad="1.2">{{foto:pasto|Pote de achilata en las manos, sobre el pasto|{"clase":"foto--retrato","tamanos":"(max-width: 700px) 75vw, 32vw"}}}</figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="seccion fondo-rojo" data-tono="rojo" aria-labelledby="titulo-precios">
+    <div class="contenedor">
+      <div class="encabezado">
+        <h2 class="titulo t-1" id="titulo-precios" data-partir>Precios de la achilata</h2>
+        <p class="texto-grande revelar">Pedís por WhatsApp, pagás por transferencia o en efectivo y te la llevamos a casa.</p>
+      </div>
+      <div class="precios">
+        <article class="precio revelar">
+          {{foto:fila-potes|Tres potes de achilata en fila|{"clase":"foto--apaisada","revelar":false,"tamanos":"(max-width: 700px) 92vw, 46vw"}}}
+          <div class="precio__datos">
+            <h3 class="precio__nombre">{{potes.0.nombre}}</h3>
+            <p class="precio__monto" data-contar="{{potes.0.precio}}" data-prefijo="$"><small>$</small>{{potes.0.precio|num}}</p>
+          </div>
+        </article>
+        <article class="precio revelar" data-retraso="0.12">
+          {{foto:oliva-servilleta|Pote de medio kilo de achilata sobre una servilleta|{"clase":"foto--apaisada","revelar":false,"tamanos":"(max-width: 700px) 92vw, 46vw"}}}
+          <div class="precio__datos">
+            <h3 class="precio__nombre">{{potes.1.nombre}}</h3>
+            <p class="precio__monto" data-contar="{{potes.1.precio}}" data-prefijo="$"><small>$</small>{{potes.1.precio|num}}</p>
+          </div>
+        </article>
+      </div>
+      <div class="botones revelar separado">
+        <a class="boton boton--blanco" href="precios.html">Armá tu pedido</a>
+        <a class="boton boton--borde" href="{{waPrincipal}}" target="_blank" rel="noopener noreferrer">Pedir por WhatsApp</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="apertura fondo-rojo" data-tono="rojo" aria-labelledby="titulo-eventos">
+    <div class="apertura__fijo">
+      <div class="apertura__marco">
+        {{foto:bordo-mano|Una mano sostiene un pote de achilata con cuchara|{"clase":"","revelar":false,"tamanos":"100vw"}}}
+        <div class="apertura__velo"></div>
+      </div>
+      <div class="apertura__texto">
+        <h2 class="titulo t-1" id="titulo-eventos">Achilata para tu evento</h2>
+        <p class="texto-grande centrado">En Tucumán, el carrito de achilata es el puesto con más gente de la fiesta. Ahora lo llevamos a los casamientos, cumpleaños y eventos de Salta.</p>
+        <div class="botones">
+          <a class="boton boton--blanco" href="eventos.html">Conocé el servicio</a>
+          <a class="boton boton--borde" href="presupuesto.html">Pedí tu presupuesto</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="seccion fondo-crema" data-tono="claro" aria-labelledby="titulo-delivery">
+    <div class="goteo goteo--abajo">{{goteo}}</div>
+    <div class="contenedor">
+      <div class="encabezado">
+        <h2 class="titulo t-1" id="titulo-delivery" data-partir>Dónde hacemos delivery</h2>
+        <p class="texto-grande revelar">Te la llevamos bien fría. El costo del envío te lo decimos al confirmar el pedido.</p>
+      </div>
+      {{bloque:listaDelivery}}
+    </div>
+  </section>
+
+  <section class="seccion fondo-rojo cierre" data-tono="rojo" aria-labelledby="titulo-cierre">
+    <div class="contenedor">
+      <h2 class="titulo t-hero" id="titulo-cierre" data-partir>Pedila hoy</h2>
+      <p class="texto-grande revelar centrado">Escribinos a cualquiera de los dos números.</p>
+      <div class="telefonos revelar">
+        <a class="t-3 negrita" href="{{waPrincipal}}" target="_blank" rel="noopener noreferrer">{{whatsapp.0.texto}}</a>
+        <a class="t-3 negrita" href="{{waSegundo}}" target="_blank" rel="noopener noreferrer">{{whatsapp.1.texto}}</a>
+      </div>
+    </div>
+  </section>
+</main>
+<!--#pie-->
+</body>
+</html>

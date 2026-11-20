@@ -1,0 +1,61 @@
+{
+  "sitio": {
+    "dominio": "https://achilata-salta.vercel.app",
+    "nombre": "achilata.",
+    "nombreLegal": "Achilata Salta",
+    "instagram": "https://www.instagram.com/achilatasalta/",
+    "instagramUsuario": "@achilatasalta",
+    "ciudad": "Salta Capital",
+    "provincia": "Salta",
+    "actualizado": "19 de noviembre de 2026",
+    "actualizadoISO": "2026-11-19",
+    "vigenciaEventos": "31 de diciembre de 2026"
+  },
+  "whatsapp": [
+    { "numero": "5493874834041", "texto": "387 483 4041" },
+    { "numero": "5493874684498", "texto": "387 468 4498" }
+  ],
+  "potes": [
+    { "id": "kg1", "nombre": "Pote de 1 kg", "precio": 12000 },
+    { "id": "kg05", "nombre": "Pote de medio kilo", "precio": 8000 }
+  ],
+  "delivery": ["Grand Bourg", "San Lorenzo Chico", "San Lorenzo", "El Tipal", "La Almudena"],
+  "paquetes": [
+    {
+      "id": "clasico", "nombre": "Clásico", "para": "Casamientos, fiestas de 15 y fiestas",
+      "porInvitado": 5500, "minimo": 60, "horas": 2,
+      "incluye": ["Dos horas de servicio en el momento que elijan", "Achilata libre para todos los invitados", "Estación con la marca, dos personas atendiendo", "Vasitos, cucharitas y limpieza"]
+    },
+    {
+      "id": "fiesta", "nombre": "Fiesta", "para": "Casamientos y fiestas de 15 que quieren algo especial",
+      "porInvitado": 6800, "minimo": 80, "horas": 3,
+      "incluye": ["Tres horas de servicio", "Todo lo del Clásico", "Carrito iluminado para la noche", "Cartel con sus nombres o la fecha", "Salsa de leche condensada y toppings a elección"]
+    },
+    {
+      "id": "empresa", "nombre": "Empresa", "para": "Fin de año, aniversarios y lanzamientos",
+      "porInvitado": 4800, "minimo": 50, "horas": 2,
+      "incluye": ["Dos horas de servicio, de día o de noche", "Todo lo del Clásico", "Factura", "Vasitos con el logo de la empresa, a cotizar"]
+    },
+    {
+      "id": "cumple", "nombre": "Cumple", "para": "Cumpleaños, bautismos y reuniones en casas y quintas",
+      "precioCerrado": 220000, "incluidos": 40, "extra": 4500, "horas": 1.5,
+      "incluye": ["Noventa minutos de servicio", "Hasta 40 invitados entre chicos y grandes", "Cada invitado extra, $4.500", "Vasitos, cucharitas y limpieza"]
+    },
+    {
+      "id": "club", "nombre": "Club cerrado", "para": "Clubes que invitan a jugadores, delegaciones o socios",
+      "porInvitado": 3500, "minimo": 80, "horas": 2,
+      "incluye": ["Dos horas de servicio", "Achilata para cada jugador o invitado", "Ideal para torneos, cierres y fiestas del club", "Vasitos, cucharitas y limpieza"]
+    }
+  ],
+  "ventaPublico": { "vasito": 2500, "dosVasitos": 4500, "comisionClub": 10 },
+  "descuentos": [ { "desde": 250, "porcentaje": 12 }, { "desde": 150, "porcentaje": 8 } ],
+  "horaExtra": { "hasta150": 90000, "masDe150": 120000 },
+  "zonas": [
+    { "id": 1, "nombre": "Zona 1", "lugares": "Salta Capital, San Lorenzo, Vaqueros, La Caldera, Cerrillos y La Merced", "distancia": "Hasta 25 km", "costo": 0 },
+    { "id": 2, "nombre": "Zona 2", "lugares": "Chicoana, El Carril, Rosario de Lerma, Campo Quijano y General Güemes", "distancia": "De 25 a 70 km", "costo": 45000 },
+    { "id": 3, "nombre": "Zona 3", "lugares": "Cafayate, los valles y el resto de la provincia", "distancia": "Más de 70 km", "costo": null }
+  ],
+  "recargoFechas": { "porcentaje": 25, "fechas": ["12-24", "12-31"] },
+  "sena": 50,
+  "anticipacionMinimaDias": 7
+}

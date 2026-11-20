@@ -1,0 +1,44 @@
+<!--meta {"titulo":"Seguridad · achilata.","descripcion":"Cómo protegemos esta web y tus datos, y cómo reportar un problema de seguridad.","pagina":"seguridad","tono":"claro"} -->
+<!--#head-->
+<body data-pagina="seguridad">
+<!--#cabecera-->
+<main id="contenido">
+  <section class="portada fondo-crema" data-tono="claro" aria-labelledby="titulo-pagina">
+    <div class="contenedor">
+      <h1 class="titulo t-1" id="titulo-pagina" data-partir>Seguridad</h1>
+      <p class="texto-grande revelar separado">Última actualización: {{sitio.actualizado}}.</p>
+    </div>
+  </section>
+  <section class="seccion--corta fondo-crema" data-tono="claro" aria-label="Texto sobre la seguridad de la web">
+    <div class="contenedor legal">
+      <p class="texto-grande">La forma más segura de cuidar un dato es no guardarlo. Por eso esta web no tiene usuarios, contraseñas, base de datos ni pagos en línea.</p>
+
+      <h2 id="cuidados">Cómo está protegida la web</h2>
+      <ul>
+        <li><strong>Conexión cifrada siempre.</strong> La web se sirve solo por HTTPS y le pide a tu navegador que nunca la abra sin cifrado.</li>
+        <li><strong>Sin servidor que atacar.</strong> Es una web estática: no ejecuta código del lado del servidor ni guarda lo que escribís.</li>
+        <li><strong>Sin código de terceros.</strong> Todas las fuentes, imágenes y scripts están alojados en la propia web. No cargamos publicidad, píxeles ni herramientas externas.</li>
+        <li><strong>Política de seguridad de contenido estricta.</strong> El navegador solo ejecuta los scripts de esta web y bloquea cualquier otro, incluido el código insertado en la página.</li>
+        <li><strong>Protección contra ventanas falsas.</strong> La web no se puede mostrar dentro de otra página, para evitar engaños por superposición.</li>
+        <li><strong>Permisos apagados.</strong> La web no pide ni puede usar tu cámara, tu micrófono, tu ubicación ni otros sensores.</li>
+        <li><strong>Formularios que no salen de tu dispositivo.</strong> El pedido y el presupuesto se calculan en tu navegador. Los datos solo viajan cuando vos mandás el mensaje por WhatsApp.</li>
+        <li><strong>Dependencias revisadas.</strong> Las librerías de animación se revisan contra vulnerabilidades conocidas antes de cada publicación.</li>
+      </ul>
+
+      <h2 id="estafas">Cuidate de las estafas</h2>
+      <ul>
+        <li>Nuestros únicos WhatsApp son el {{whatsapp.0.texto}} y el {{whatsapp.1.texto}}. Nuestro Instagram es {{sitio.instagramUsuario}}.</li>
+        <li>Nunca te vamos a pedir contraseñas, datos de tarjetas, ni códigos de verificación de WhatsApp o del banco.</li>
+        <li>Los datos para transferir te los damos solo por esos números, cuando confirmamos tu pedido o tu reserva.</li>
+        <li>Si alguien te escribe en nombre de achilata. desde otro número, no le pagues y avisanos.</li>
+      </ul>
+
+      <h2 id="reportar">Cómo reportar un problema de seguridad</h2>
+      <p>Si encontrás una falla de seguridad en esta web, te pedimos que nos avises por WhatsApp al {{whatsapp.0.texto}} antes de hacerla pública, con una descripción y los pasos para reproducirla. Te respondemos lo antes posible.</p>
+      <p>Si investigás de buena fe, sin afectar a otras personas, sin acceder a datos ajenos y sin interrumpir el servicio, no vamos a iniciar acciones en tu contra. También publicamos nuestro contacto en el archivo estándar <a class="enlace" href=".well-known/security.txt">security.txt</a>.</p>
+    </div>
+  </section>
+</main>
+<!--#pie-->
+</body>
+</html>

@@ -1,0 +1,122 @@
+{
+ "palmera-mano": {
+  "w": 1024,
+  "h": 1536
+ },
+ "cuchara-amarillo": {
+  "w": 1024,
+  "h": 1536
+ },
+ "mano-bordo": {
+  "w": 1024,
+  "h": 1536
+ },
+ "sol-cuchara-madera": {
+  "w": 1199,
+  "h": 1312
+ },
+ "cuchara-negro": {
+  "w": 1089,
+  "h": 1445
+ },
+ "pote-gris": {
+  "w": 1024,
+  "h": 1536
+ },
+ "bocha-cuchara": {
+  "w": 1024,
+  "h": 1536
+ },
+ "pote-grande": {
+  "w": 1111,
+  "h": 1415
+ },
+ "mano-cuchara-bordo": {
+  "w": 1086,
+  "h": 1448
+ },
+ "cielo": {
+  "w": 1086,
+  "h": 1448
+ },
+ "pila-potes": {
+  "w": 1137,
+  "h": 1383
+ },
+ "pote-cuchara": {
+  "w": 1254,
+  "h": 1254
+ },
+ "remera-cuchara": {
+  "w": 1089,
+  "h": 1445
+ },
+ "cuchara-madera-cielo": {
+  "w": 1199,
+  "h": 1312
+ },
+ "bochas": {
+  "w": 1111,
+  "h": 1415
+ },
+ "pasto": {
+  "w": 1086,
+  "h": 1448
+ },
+ "oliva": {
+  "w": 1089,
+  "h": 1445
+ },
+ "fila-tres": {
+  "w": 1312,
+  "h": 1199
+ },
+ "pote-oscuro": {
+  "w": 1024,
+  "h": 1536
+ },
+ "oliva-servilleta": {
+  "w": 1089,
+  "h": 1445
+ },
+ "bordo-mano": {
+  "w": 1089,
+  "h": 1445
+ },
+ "fila-potes": {
+  "w": 1312,
+  "h": 1199
+ },
+ "textura": {
+  "w": 1080,
+  "h": 1350
+ },
+ "rojo-cuchara": {
+  "w": 1024,
+  "h": 1536
+ },
+ "rojo-mano": {
+  "w": 1024,
+  "h": 1536
+ },
+ "rojo-negro": {
+  "w": 1089,
+  "h": 1445
+ },
+ "rojo-bocha": {
+  "w": 1024,
+  "h": 1536
+ },
+ "rojo-mano-cuchara": {
+  "w": 1111,
+  "h": 1415
+ },
+ "rojo-scoop": {
+  "w": 1024,
+  "h": 1536
+ },
+ "rojo-pote": {
+  "w": 1254,
+  "h": 1254
+ }
+}

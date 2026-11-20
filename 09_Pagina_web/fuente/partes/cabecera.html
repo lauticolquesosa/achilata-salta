@@ -1,0 +1,32 @@
+<a class="saltar" href="#contenido">Saltar al contenido</a>
+<header class="cabecera" data-tono="{{tono}}">
+  <a class="cabecera__logo" href="{{base}}index.html" aria-label="achilata., ir al inicio">
+    <img class="logo-oscuro" src="{{base}}assets/img/logo-rojo.svg" alt="" width="152" height="43">
+    <img class="logo-claro" src="{{base}}assets/img/logo-blanco.svg" alt="" width="152" height="43">
+  </a>
+  <nav class="menu" aria-label="Principal">
+    <a href="{{base}}index.html">Inicio</a>
+    <a href="{{base}}achilata.html">La achilata</a>
+    <a href="{{base}}precios.html">Precios</a>
+    <a href="{{base}}eventos.html">Eventos</a>
+    <a href="{{base}}presupuesto.html">Presupuesto</a>
+  </nav>
+  <a class="boton" href="{{waPrincipal}}" target="_blank" rel="noopener noreferrer">Pedir por WhatsApp</a>
+  <button class="boton-icono abrir-menu" type="button" aria-expanded="false" aria-controls="menu-movil" aria-label="Abrir el menú"><span></span></button>
+</header>
+<div class="menu-movil" id="menu-movil" role="dialog" aria-modal="true" aria-label="Menú">
+  <div class="menu-movil__arriba">
+    <img src="{{base}}assets/img/logo-blanco.svg" alt="achilata." width="120" height="34">
+    <button class="boton-icono cerrar" type="button" aria-label="Cerrar el menú"><span></span></button>
+  </div>
+  <nav aria-label="Principal en el celular">
+    <ul>
+      <li><a href="{{base}}index.html">Inicio</a></li>
+      <li><a href="{{base}}achilata.html">La achilata</a></li>
+      <li><a href="{{base}}precios.html">Precios</a></li>
+      <li><a href="{{base}}eventos.html">Eventos</a></li>
+      <li><a href="{{base}}presupuesto.html">Presupuesto</a></li>
+    </ul>
+  </nav>
+  <a class="boton boton--blanco" href="{{waPrincipal}}" target="_blank" rel="noopener noreferrer">Pedir por WhatsApp</a>
+</div>

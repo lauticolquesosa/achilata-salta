@@ -1,0 +1,6 @@
+Contact: https://achilata-salta.vercel.app/seguridad.html#reportar
+Contact: https://wa.me/5493874834041
+Expires: 2027-11-19T00:00:00.000Z
+Preferred-Languages: es, en
+Canonical: https://achilata-salta.vercel.app/.well-known/security.txt
+Policy: https://achilata-salta.vercel.app/seguridad.html

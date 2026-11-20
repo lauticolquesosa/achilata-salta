@@ -19,7 +19,7 @@ El servicio de carrito de achilata para casamientos, fiestas de 15, empresas, cl
 | `03_Servicio_y_precios/` | Los paquetes y precios, los costos y la rentabilidad, y `cotizador.py` para armar cualquier presupuesto |
 | `04_Presentacion/` | **La propuesta en PDF** para mandar, los guiones de contacto para cada cliente y cómo hacer la reunión |
 | `05_Contenido_redes/` | Las piezas para Instagram, la nueva serie En la fiesta y la destacada Eventos |
-| `06_Pagina_web/` | La web del servicio con calculadora de presupuesto que manda el pedido por WhatsApp |
+| `../09_Pagina_web/` | La web se mudó a la raíz del proyecto, en `09_Pagina_web`: ahí está la web completa de la marca, con eventos, precios y presupuesto |
 | `07_Cronograma/` | Qué hacer cada día de las primeras dos semanas y el plan hasta marzo de 2027 |
 | `08_Posibles_eventos/` | Los eventos y clientes a los que hay que ir, con prioridad, y `prospectos.csv` para ir tachando |
 | `09_Operacion/` | Logística, frío, cantidades, el checklist de cada evento, los requisitos y las condiciones del servicio para el cliente |
