@@ -73,9 +73,15 @@ node build.mjs         # genera sitio/ con los cambios
   - Están el botón de arrepentimiento y el enlace a Defensa del Consumidor.
 - **El 3D:**
   - Es un pote de achilata generado con código en three.js, sin descargar modelos.
-  - Para no frenar la primera pantalla, la página arranca con la foto y el 3D se arma con la primera interacción o a los 3,5 segundos.
-  - En equipos sin placa de video, con poca memoria o con ahorro de datos, queda la foto.
+  - Desde el 20/11/2026 es fiel a las fotos: un pote de papel con el logo y la bajada impresos, y tres bochas fucsia con el granulado del hielo raspado. El granulado se calcula por píxel en la placa de video. Sin palito ni gotas.
+  - En el inicio el 3D es lo único: no hay foto encima. Se arma apenas carga la página.
+  - La foto queda solo de respaldo, si el equipo no puede mostrar 3D.
   - Si la persona pidió menos movimiento en su sistema, el pote queda quieto.
+- **Tipografía:**
+  - Escala reducida el 20/11/2026, tomando como base sitios como Apple, Stripe, Linear y Vercel.
+  - Texto de 16 a 18 px y menú y botones de 16 px.
+  - Títulos de sección de 34 a 72 px y título principal de 44 a 120 px.
+  - Sobre rojo, el texto va en ExtraBold de 19 px para que el contraste siga cumpliendo.
 - **Animaciones:**
   - GSAP con ScrollTrigger y scroll suave con Lenis.
   - Títulos que suben por líneas, fotos que se abren, collage con parallax y la foto de eventos que se abre a pantalla completa.

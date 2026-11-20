@@ -170,9 +170,6 @@ function flotante() {
 /** El 3D solo se carga si el equipo tiene aceleración gráfica real. Si no, queda la foto. */
 function hayWebGL() {
   try { if (sessionStorage.getItem("achilata_3d") === "forzar") return true; } catch { /* nada */ }
-  if (navigator.hardwareConcurrency && navigator.hardwareConcurrency < 4) return false;
-  if (navigator.deviceMemory && navigator.deviceMemory < 3) return false;
-  if (navigator.connection?.saveData) return false;
   try {
     const c = document.createElement("canvas");
     const gl = c.getContext("webgl2") || c.getContext("webgl");
@@ -202,20 +199,21 @@ function cuandoInteractue(ms = 3500) {
 }
 
 async function cargarPote(contenedor, opciones) {
-  if (!contenedor || !hayWebGL()) return null;
-  await cuandoInteractue();
+  const sinTresD = () => { if (contenedor?.classList.contains("escena")) raiz.classList.add("sin-3d"); return null; };
+  if (!contenedor || !hayWebGL()) return sinTresD();
+  // el pote es lo principal del inicio: se arma apenas termina de cargar la página
+  await cuandoInteractue(contenedor.classList.contains("escena") ? 150 : 3500);
   try {
     const { montarPote } = await import("./cup.js");
     const pote = await montarPote(contenedor, { logo: "assets/img/logo-rojo.svg", ...opciones });
-    if (pote) {
-      contenedor.classList.add("con-3d");
-      if (contenedor.classList.contains("escena")) raiz.classList.add("con-3d");
-      ScrollTrigger.refresh();
-    }
+    if (!pote) return sinTresD();
+    contenedor.classList.add("con-3d");
+    if (contenedor.classList.contains("escena")) raiz.classList.add("con-3d");
+    ScrollTrigger.refresh();
     return pote;
   } catch (e) {
     console.warn("No se pudo cargar el 3D", e);
-    return null;
+    return sinTresD();
   }
 }
 
@@ -248,7 +246,7 @@ async function inicio() {
   if (pote && abrir) { abrir.scrollTrigger.kill(); abrir.kill(); }
   if (pote && quieto) {
     pote.estado.giroAuto = 0;
-    Object.assign(pote.estado, movil() ? { y: 0.3, escala: 0.66 } : { x: 2.25, y: 0.78, escala: 1.02 });
+    Object.assign(pote.estado, movil() ? { y: 0.42, escala: 0.84 } : { x: 1.75, y: 0.62, escala: 0.98 });
     pote.renderizar();
   } else if (pote) {
     coreografia(pote, lineas);
@@ -289,14 +287,14 @@ function coreografia(pote, lineas) {
   const mm = gsap.matchMedia();
   mm.add({ grande: "(min-width: 701px)", chico: "(max-width: 700px)" }, (ctx) => {
     const { grande } = ctx.conditions;
-    Object.assign(e, grande ? { x: 2.25, y: 0.78, escala: 1.02 } : { x: 0, y: 0.3, escala: 0.66 });
+    Object.assign(e, grande ? { x: 1.75, y: 0.62, escala: 0.98 } : { x: 0, y: 0.42, escala: 0.84 });
     // 1. al bajar del héroe: el pote viaja al centro, gira y se inclina; el título se abre a los costados
     gsap.timeline({ scrollTrigger: { trigger: ".heroe", start: "top top", end: "bottom top", scrub: 1 } })
       .to(e, { x: 0, y: grande ? 0.8 : 0, giroY: "+=" + Math.PI * 1.5, giroX: 0.55, escala: grande ? 1.25 : 1, ease: "none" }, 0)
       .to(lineas, { xPercent: (i) => (i % 2 ? 30 : -30), ease: "none" }, 0);
     // 2. en la presentación: el pote se corre a la derecha, al lado del texto
     gsap.timeline({ scrollTrigger: { trigger: ".intro", start: "top bottom", end: "top top", scrub: 1 } })
-      .to(e, grande ? { x: 2.1, y: 0.65, escala: 0.95, giroX: 0.22, ease: "none" } : { y: 2.4, escala: 0.6, visible: 0, ease: "none" });
+      .to(e, grande ? { x: 1.75, y: 0.6, escala: 0.92, giroX: 0.22, ease: "none" } : { y: 2.4, escala: 0.6, visible: 0, ease: "none" });
     // 3. al terminar la presentación: sube y desaparece
     gsap.timeline({ scrollTrigger: { trigger: ".intro", start: "bottom bottom", end: "bottom 30%", scrub: 1 } })
       .to(e, { y: grande ? 3.2 : 3.4, giroY: "+=" + Math.PI, visible: 0, ease: "none" });
