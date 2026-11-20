@@ -31,9 +31,9 @@ Desde `09_Pagina_web/fuente`, en Git Bash:
 ```
 npm install            # solo la primera vez
 node build.mjs         # genera sitio/ con los cambios
-cd ../sitio
-npx vercel deploy --prod --yes
 ```
+
+**Desde el 20/11/2026 la web se publica sola con cada push a main del repo.** Vercel toma la carpeta `09_Pagina_web/sitio`, así que alcanza con generar, hacer commit y push. Ese día un push publicó la raíz del repo y la web dio error 404; por eso se fijó la carpeta raíz del proyecto en Vercel. Para volver a publicar sin push: `npx vercel redeploy` con la última URL y `--target production`.
 
 - Si cambian las fotos o los logos, antes de `node build.mjs` correr `python assets.py`. Pasa las fotos de `06_Assets` a AVIF y WebP en dos tamaños.
 - Si cambian los precios de eventos, también hay que cambiarlos en `08_Eventos/03_Servicio_y_precios/cotizador.py` y en la propuesta en PDF.
