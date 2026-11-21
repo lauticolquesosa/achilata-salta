@@ -280,8 +280,11 @@ export async function montarPote(contenedor, opciones = {}) {
   const puntero = { x: 0, y: 0, ax: 0, ay: 0 };
   let arrastre = 0, arrastrando = false, ultimoX = 0, inercia = 0;
 
+  let medida = "";
   function medir() {
     const w = contenedor.clientWidth, h = contenedor.clientHeight;
+    if (!w || !h || medida === w + "x" + h) return;
+    medida = w + "x" + h;
     renderer.setSize(w, h, false);
     camara.aspect = w / h;
     // en pantallas angostas alejamos la cámara para que el pote entre entero

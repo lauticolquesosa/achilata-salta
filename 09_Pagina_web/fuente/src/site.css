@@ -212,11 +212,14 @@ h1[data-partir] { animation: entrar-titulo 1.2s var(--ease) both; }
   display: flex; align-items: flex-end; justify-content: space-between; gap: 1.5rem;
 }
 .heroe__pie .texto-grande { max-width: 30ch; margin: 0; }
+.heroe__pie .botones { margin-top: clamp(1.5rem, 2.2vw, 2rem); }
 .heroe__bajar { display: grid; justify-items: center; gap: .4rem; }
 .heroe__bajar i { display: block; width: 2px; height: 3.5rem; background: currentColor; transform-origin: top; animation: bajar 2.2s var(--ease) infinite; }
 @keyframes bajar { 0% { transform: scaleY(0); } 45% { transform: scaleY(1); transform-origin: top; } 55% { transform-origin: bottom; } 100% { transform: scaleY(0); transform-origin: bottom; } }
 
 .escena { position: fixed; inset: 0; z-index: 2; pointer-events: none; }
+/* alto fijo: cuando el celular esconde la barra el lienzo no se rearma */
+@supports (height: 100lvh) { .escena { bottom: auto; height: 100lvh; } }
 .escena canvas { width: 100% !important; height: 100% !important; }
 .heroe__respaldo { position: absolute; z-index: 2; left: 79%; top: 47%; width: min(24vw, 22rem); transform: translate(-50%, -50%); }
 @media (max-width: 700px) { .heroe__respaldo { left: 50%; top: 56%; width: min(58vw, 15rem); } }
@@ -551,11 +554,14 @@ textarea.entrada { min-height: 7rem; resize: vertical; }
   .rasgos li p { grid-column: 2; }
 }
 @media (max-width: 700px) {
-  :root { --t-hero: clamp(2.6rem, 12.5vw, 3.6rem); }
+  :root { --t-hero: clamp(2.35rem, 10.6vw, 3rem); }
   .heroe { align-items: start; }
-  .heroe__titulo { margin-top: 0; padding-top: 6.5rem; }
-  .fondo-rojo .heroe__pie .texto-grande { font-size: 1.1875rem; font-weight: 800; line-height: 1.35; letter-spacing: -.005em; }
-  .heroe__pie .botones .boton { min-height: 2.9rem; padding: .65rem 1.15rem; }
+  .heroe__titulo { margin-top: 0; padding-top: 6.25rem; line-height: .9; }
+  .heroe__pie { bottom: calc(2.25rem + env(safe-area-inset-bottom, 0px)); }
+  /* 18,67 px en ExtraBold es el mínimo para que el blanco sobre rojo cumpla el contraste de texto grande */
+  .fondo-rojo .heroe__pie .texto-grande { font-size: 1.1667rem; font-weight: 800; line-height: 1.32; letter-spacing: -.01em; max-width: 26ch; }
+  .heroe__pie .botones { margin-top: 1.75rem; gap: .625rem; }
+  .heroe__pie .botones .boton { min-height: 2.75rem; padding: .6rem 1.15rem; }
   .cookies .boton { padding: .5rem .8rem; }
   .precios { grid-template-columns: minmax(0, 1fr); }
   .collage .f1 { grid-column: 1 / span 7; }

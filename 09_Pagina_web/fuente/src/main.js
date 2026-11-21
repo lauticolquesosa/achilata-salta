@@ -249,8 +249,7 @@ async function inicio() {
     Object.assign(pote.estado, movil() ? { y: 0.42, escala: 0.84 } : { x: 1.75, y: 0.62, escala: 0.98 });
     pote.renderizar();
   } else if (pote) {
-    coreografia(pote, lineas);
-    gsap.from(pote.estado, { y: "+=6", giroY: "-=4", duration: 2, ease: "expo.out", delay: visto ? 0 : 0.6 });
+    coreografia(pote, lineas, visto ? 0 : 0.6);
   }
 
   // la frase de presentación se ilumina palabra por palabra
@@ -282,23 +281,85 @@ async function inicio() {
   }
 }
 
-function coreografia(pote, lineas) {
+// La posición del pote sale siempre de la posición del scroll, con una función pura:
+// así no hay animaciones que se pisen ni valores que queden a mitad de camino,
+// y al volver arriba el pote está exactamente donde empezó.
+const PI = Math.PI;
+const POSES = {
+  grande: [
+    { p: 0, x: 1.75, y: 0.62, escala: 0.98, giroY: 0, giroX: 0.12, visible: 1 },
+    { p: 0.5, x: 0, y: 0.8, escala: 1.15, giroY: PI * 0.8, giroX: 0.45, visible: 1 },
+    { p: 1, x: 1.75, y: 0.6, escala: 0.92, giroY: PI * 1.5, giroX: 0.22, visible: 1 },
+    { p: 2, x: 1.75, y: 0.6, escala: 0.92, giroY: PI * 1.5, giroX: 0.22, visible: 1 },
+    { p: 3, x: 1.75, y: 3.2, escala: 0.92, giroY: PI * 2.5, giroX: 0.22, visible: 0 },
+  ],
+  // en el celular el pote sube pegado al héroe, así nunca se monta sobre el texto; acá y es un extra
+  chico: [
+    { p: 0, x: 0, y: 0, escala: 0.84, giroY: 0, giroX: 0.12, visible: 1 },
+    { p: 0.3, x: 0, y: 0, escala: 0.81, giroY: PI * 0.55, giroX: 0.26, visible: 1 },
+    { p: 0.62, x: 0, y: 0, escala: 0.76, giroY: PI * 1.1, giroX: 0.42, visible: 0 },
+  ],
+};
+const suave = (t) => t * t * (3 - 2 * t);
+function pose(lista, p) {
+  if (p <= lista[0].p) return lista[0];
+  for (let i = 1; i < lista.length; i++) {
+    const a = lista[i - 1], b = lista[i];
+    if (p <= b.p) {
+      const t = suave((p - a.p) / (b.p - a.p || 1));
+      const r = {};
+      for (const k in a) r[k] = a[k] + (b[k] - a[k]) * t;
+      return r;
+    }
+  }
+  return lista[lista.length - 1];
+}
+
+function coreografia(pote, lineas, demora) {
   const e = pote.estado;
-  const mm = gsap.matchMedia();
-  mm.add({ grande: "(min-width: 701px)", chico: "(max-width: 700px)" }, (ctx) => {
-    const { grande } = ctx.conditions;
-    Object.assign(e, grande ? { x: 1.75, y: 0.62, escala: 0.98 } : { x: 0, y: 0.42, escala: 0.84 });
-    // 1. al bajar del héroe: el pote viaja al centro, gira y se inclina; el título se abre a los costados
-    gsap.timeline({ scrollTrigger: { trigger: ".heroe", start: "top top", end: "bottom top", scrub: 1 } })
-      .to(e, { x: 0, y: grande ? 0.8 : 0, giroY: "+=" + Math.PI * 1.5, giroX: 0.55, escala: grande ? 1.25 : 1, ease: "none" }, 0)
-      .to(lineas, { xPercent: (i) => (i % 2 ? 30 : -30), ease: "none" }, 0);
-    // 2. en la presentación: el pote se corre a la derecha, al lado del texto
-    gsap.timeline({ scrollTrigger: { trigger: ".intro", start: "top bottom", end: "top top", scrub: 1 } })
-      .to(e, grande ? { x: 1.75, y: 0.6, escala: 0.92, giroX: 0.22, ease: "none" } : { y: 2.4, escala: 0.6, visible: 0, ease: "none" });
-    // 3. al terminar la presentación: sube y desaparece
-    gsap.timeline({ scrollTrigger: { trigger: ".intro", start: "bottom bottom", end: "bottom 30%", scrub: 1 } })
-      .to(e, { y: grande ? 3.2 : 3.4, giroY: "+=" + Math.PI, visible: 0, ease: "none" });
+  const base = e.giroY;
+  const heroe = $(".heroe"), intro = $(".intro");
+  // marcas en píxeles de scroll; se miden solo cuando cambia el ancho, no cuando el celular esconde la barra
+  let marcas = [0, 1, 2, 3], ancho = 0, altoEscena = 800;
+  const medir = () => {
+    altoEscena = $(".escena").clientHeight || innerHeight;
+    const alto = heroe.offsetHeight;
+    const vh = document.documentElement.clientHeight;
+    const finIntro = intro ? intro.offsetTop + intro.offsetHeight : alto * 2;
+    marcas = [0, alto, Math.max(finIntro - vh, alto + 1), Math.max(finIntro - vh * 0.3, alto + 2)];
+    ancho = innerWidth;
+  };
+  medir();
+  addEventListener("resize", () => { if (innerWidth !== ancho) medir(); }, { passive: true });
+  ScrollTrigger.addEventListener("refresh", medir);
+  const progreso = (y) => {
+    if (y <= marcas[1]) return y / marcas[1];
+    if (y <= marcas[2]) return 1 + (y - marcas[1]) / (marcas[2] - marcas[1]);
+    return 2 + Math.min((y - marcas[2]) / (marcas[3] - marcas[2]), 1);
+  };
+  const entrada = { y: 6, giro: -4 };
+  gsap.to(entrada, { y: 0, giro: 0, duration: 2, ease: "expo.out", delay: demora });
+  let actual = null;
+  gsap.ticker.add((_t, dt) => {
+    const y = lenis ? lenis.scroll : scrollY;
+    const chico = movil();
+    const objetivo = { ...pose(chico ? POSES.chico : POSES.grande, progreso(Math.max(y, 0))) };
+    // unidades del mundo por píxel de pantalla, con la cámara del celular a 11,5 y 30 grados de apertura
+    if (chico) objetivo.y = 0.42 + Math.min(Math.max(y, 0), marcas[1]) * (2 * 11.5 * Math.tan(PI / 12)) / altoEscena;
+    if (!actual) actual = { ...objetivo };
+    // suavizado con el tiempo real del cuadro, igual en 60 y en 120 Hz
+    const k = 1 - Math.exp(-Math.min(dt, 100) / 110);
+    for (const c in objetivo) actual[c] += (objetivo[c] - actual[c]) * k;
+    e.x = actual.x;
+    e.y = actual.y + entrada.y;
+    e.escala = actual.escala;
+    e.giroX = actual.giroX;
+    e.giroY = base + actual.giroY + entrada.giro;
+    e.visible = Math.min(Math.max(actual.visible, 0), 1);
   });
+  // el título se abre a los costados al bajar del héroe
+  gsap.to(lineas, { xPercent: (i) => (i % 2 ? 30 : -30), ease: "none",
+    scrollTrigger: { trigger: ".heroe", start: "top top", end: "bottom top", scrub: 0.6 } });
 }
 
 function laAchilata() {

@@ -76,6 +76,7 @@ node build.mjs         # genera sitio/ con los cambios
   - Desde el 20/11/2026 es fiel a las fotos: un pote de papel con el logo y la bajada impresos, y tres bochas fucsia con el granulado del hielo raspado. El granulado se calcula por píxel en la placa de video. Sin palito ni gotas.
   - En el inicio el 3D es lo único: no hay foto encima. Se arma apenas carga la página.
   - La foto queda solo de respaldo, si el equipo no puede mostrar 3D.
+  - La posición del pote sale de una tabla de poses en `main.js`, POSES, según cuánto se bajó. No usa animaciones encadenadas, así al volver arriba queda siempre igual. En el celular sube pegado al inicio y se desvanece.
   - Si la persona pidió menos movimiento en su sistema, el pote queda quieto.
 - **Tipografía:**
   - Escala reducida el 20/11/2026, tomando como base sitios como Apple, Stripe, Linear y Vercel.
