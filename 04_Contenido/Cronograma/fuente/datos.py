@@ -129,6 +129,8 @@ DIAS = {
  5: ("Qué es la achilata", "Explicarle al salteño que no la conoce qué es, con humor.",
      [("20.00", "P08")],
      [("12.00", "Resumen del finde."),
+      ("13.00", "Hoy salimos a repartir, con las zonas de envío. Hecha a pedido de Lauti."),
+      ("17.00", "Pedidos al 387 483 4041 y 387 468 4498. Hecha a pedido de Lauti."),
       ("20.05", "Se comparte Achilata, sustantivo."),
       ("21.00", "Pregunta: ¿Qué querés ver por acá?")],
      "Lunes tranquilo: pocas historias y una pieza para guardar y compartir."),

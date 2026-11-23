@@ -1,6 +1,6 @@
 # Cronograma de dos semanas · @achilatasalta
 
-Del jueves 19 de noviembre al miércoles 2 de diciembre de 2026: 13 publicaciones, 5 reels y 64 historias.
+Del jueves 19 de noviembre al miércoles 2 de diciembre de 2026: 13 publicaciones, 5 reels y 66 historias.
 Se sube algo todos los días, y más de jueves a domingo.
 
 Lo generan `Cronograma/fuente/datos.py` y `generar.py`.
@@ -113,6 +113,8 @@ Como una entrada de diccionario sobre crema: achilata en ExtraBold rojo, debajo 
 **Historias**
 
 - 12.00 hs. Resumen del finde.
+- 13.00 hs. Hoy salimos a repartir, con las zonas de envío. Hecha a pedido de Lauti.
+- 17.00 hs. Pedidos al 387 483 4041 y 387 468 4498. Hecha a pedido de Lauti.
 - 20.05 hs. Se comparte Achilata, sustantivo.
 - 21.00 hs. Pregunta: ¿Qué querés ver por acá?
 

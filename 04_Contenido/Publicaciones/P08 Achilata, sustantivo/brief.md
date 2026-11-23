@@ -13,9 +13,9 @@ La idea es una propuesta. Las fotos se eligen recién cuando se pide la pieza, m
 Para los que todavía preguntan qué es 🍧 Mandáselo a ese amigo que no la conoce.
 
 ## Estado
-- [ ] Fotos elegidas de toda la galería, en el momento de hacerla
-- [ ] Fotos estudiadas, editadas y adaptadas al formato
-- [ ] Diseño siguiendo el manual
-- [ ] Revisado con `04_Contenido/reglas_de_contenido.md`
-- [ ] Enviado al WhatsApp de Lauti, imágenes y texto
+- [x] Fotos elegidas de toda la galería, en el momento de hacerla
+- [x] Fotos estudiadas, editadas y adaptadas al formato
+- [x] Diseño siguiendo el manual
+- [x] Revisado con `04_Contenido/reglas_de_contenido.md`
+- [x] Enviado al WhatsApp de Lauti, imágenes y texto
 - [ ] Publicado y anotado en `registro_publicaciones.md`

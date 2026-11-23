@@ -9,3 +9,6 @@
 | 20/11/2026 11.00 | Instagram | Historia H02 1 | Hoy hacemos envíos. Consultanos por tu zona. Foto 14 en el estudio rojo | | Enviado al WhatsApp de Lauti |
 | 20/11/2026 15.30 | Instagram | Historia H02 2 | Achilata hoy. Calor y siesta, foto 08 con sombra de sol | | v2 con el logo en el pote. Enviado al WhatsApp de Lauti |
 | 20/11/2026 13.00 | Instagram | Carrusel P02 El menú, 4 placas | El menú, 1 kg $12.000, medio kilo $8.000, cómo pedir. Fotos 28, 11, 02 y 16 | | Enviado al WhatsApp de Lauti |
+| 23/11/2026 13.00 | Instagram | Historia H05 1 | Hoy salimos a repartir, con las cinco zonas. Banda roja y foto 15 de los brazos llenos de potes | | Hecha a pedido. Enviado al WhatsApp de Lauti |
+| 23/11/2026 17.00 | Instagram | Historia H05 2 | Pedidos al 387 483 4041 y 387 468 4498. Banda crema y foto 01 con su fondo de palmeras | | Hecha a pedido. Enviado al WhatsApp de Lauti |
+| 23/11/2026 20.00 | Instagram | Publicación P08 Achilata, sustantivo | Entrada de diccionario sobre crema, foto 10 de la bocha en la cuchara | | Sin lo de hielo raspado, no confirmado. Enviado al WhatsApp de Lauti |
