@@ -1,11 +1,11 @@
 # P08 · Achilata, sustantivo
 
-- **Tipo:** Publicación, placa única
+- **Tipo:** Publicación, carrusel de 4 placas
 - **Cuándo:** día 5, lunes 23 de noviembre, a las 20.00 hs
 - **Medida:** 1080 × 1350 px por placa
 
 ## La idea
-Como una entrada de diccionario sobre crema: achilata en ExtraBold rojo, debajo sustantivo femenino en Regular y la definición: helado de agua tucumano, color fucsia, hecho de hielo raspado. Se come con calor y en buena compañía.
+Carrusel en el estudio rojo con letra crema, como una definición contada en cuatro placas: achilata, sustantivo femenino; helado de agua tucumano; dicen que viene de hay gelata; se come con calor y en buena compañía. Textos cortos, producto grande pisando el título.
 
 La idea es una propuesta. Las fotos se eligen recién cuando se pide la pieza, mirando toda la galería.
 

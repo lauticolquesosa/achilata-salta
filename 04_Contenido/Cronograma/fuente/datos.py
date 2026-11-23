@@ -36,9 +36,9 @@ PIEZAS = {
   "La foto más luminosa de la galería: una mano con el pote o la copa al sol, con fondo de cielo, árboles o calle. "
   "Sin texto encima, solo el logo reducido chico. Es la publicación que le da aire a la grilla después de una placa de texto.",
   "El postre oficial de la siesta salteña ☀️ ¿Vos desde dónde la comés?"),
- "P08": ("Achilata, sustantivo", "Publicación", "Placa única",
-  "Como una entrada de diccionario sobre crema: achilata en ExtraBold rojo, debajo sustantivo femenino en Regular y la definición: "
-  "helado de agua tucumano, color fucsia, hecho de hielo raspado. Se come con calor y en buena compañía.",
+ "P08": ("Achilata, sustantivo", "Publicación", "Carrusel de 4 placas",
+  "Carrusel en el estudio rojo con letra crema, como una definición contada en cuatro placas: achilata, sustantivo femenino; "
+  "helado de agua tucumano; dicen que viene de hay gelata; se come con calor y en buena compañía. Textos cortos, producto grande pisando el título.",
   "Para los que todavía preguntan qué es 🍧 Mandáselo a ese amigo que no la conoce."),
  "R03": ("La textura", "Reel", "Video vertical de 6 segundos en loop",
   "Primer plano de la cuchara entrando en el hielo fucsia, en cámara lenta. Sin texto o con una sola palabra: Hielo. "

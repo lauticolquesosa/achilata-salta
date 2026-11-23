@@ -41,6 +41,18 @@ ESTADO = ["## Estado", "- [ ] Fotos elegidas de toda la galería, en el momento 
           "- [ ] Fotos estudiadas, editadas y adaptadas al formato", "- [ ] Diseño siguiendo el manual",
           "- [ ] Revisado con `04_Contenido/reglas_de_contenido.md`", "- [ ] Enviado al WhatsApp de Lauti, imágenes y texto",
           "- [ ] Publicado y anotado en `registro_publicaciones.md`", ""]
+def escribir_brief(ruta, lineas):
+    """Escribe el brief sin perder los tildes de estado ya marcados ni lo agregado debajo del estado."""
+    if ruta.exists():
+        viejo = ruta.read_text(encoding="utf-8").split("\n")
+        hechos = {l[6:].strip() for l in viejo if l.startswith("- [x] ")}
+        lineas = [("- [x] " + l[6:]) if l.startswith("- [ ] ") and l[6:].strip() in hechos else l for l in lineas]
+        if "## Estado" in viejo:
+            cola = viejo[viejo.index("## Estado") + 1:]
+            extra = [l for l in cola if not l.startswith("- [")]
+            while extra and not extra[0].strip(): extra.pop(0)
+            if extra: lineas = lineas + extra
+    ruta.write_text("\n".join(lineas), encoding="utf-8")
 for c, (t, tipo, formato, desc, texto) in PIEZAS.items():
     i = dia_de[c]; d = F[i]
     car = carpeta_pieza(c); car.mkdir(parents=True, exist_ok=True)
@@ -49,13 +61,13 @@ for c, (t, tipo, formato, desc, texto) in PIEZAS.items():
          f"- **Medida:** {'1080 × 1920 px' if tipo == 'Reel' else '1080 × 1350 px por placa'}", "",
          "## La idea", desc, "", "La idea es una propuesta. Las fotos se eligen recién cuando se pide la pieza, mirando toda la galería.", "",
          "## Texto de la publicación", texto, ""] + ESTADO
-    (car / "brief.md").write_text("\n".join(s), encoding="utf-8")
+    escribir_brief(car / "brief.md", s)
 for i, (tema, obj, feed, hist, nota) in DIAS.items():
     car = carpeta_dia(i); car.mkdir(parents=True, exist_ok=True)
     s = [f"# Historias del día {i} · {larga(F[i])}", "", f"**Tema:** {tema}. {obj}", ""]
     s += [f"{k}. **{h} hs.** {x}" for k, (h, x) in enumerate(hist, 1)]
     s += ["", "Medida 1080 × 1920 px, con 250 px libres arriba y abajo.", ""] + ESTADO
-    (car / "brief.md").write_text("\n".join(s), encoding="utf-8")
+    escribir_brief(car / "brief.md", s)
 
 def indice(nombre, codes):
     s = [f"# {nombre}", "", "| Código | Día | Hora | Pieza | Formato |", "|---|---|---|---|---|"]
