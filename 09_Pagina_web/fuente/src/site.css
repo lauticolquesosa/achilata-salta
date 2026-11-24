@@ -204,11 +204,12 @@ html:not(.sin-cargador) .heroe__titulo .linea-mascara:nth-child(3) .linea { anim
 @keyframes subir { from { transform: translateY(108%); } }
 h1[data-partir] { animation: entrar-titulo 1.2s var(--ease) both; }
 @keyframes entrar-titulo { from { transform: translateY(.28em); } }
-.heroe__titulo { text-align: left; padding-inline: var(--gutter); }
+.heroe__titulo { text-align: left; padding-inline: var(--borde) var(--gutter); }
+@media (min-width: 701px) { .heroe__titulo { font-size: calc(var(--t-hero) * .84); } }
 .heroe__titulo > :nth-child(2) { padding-left: 7vw; }
 .heroe__titulo { padding-top: 2rem; margin-top: -6vh; }
 .heroe__pie {
-  position: absolute; z-index: 4; left: var(--gutter); right: var(--gutter); bottom: clamp(1.25rem, 3vw, 2.5rem);
+  position: absolute; z-index: 4; left: var(--borde); right: var(--borde); bottom: clamp(1.25rem, 3vw, 2.5rem);
   display: flex; align-items: flex-end; justify-content: space-between; gap: 1.5rem;
 }
 .heroe__pie .texto-grande { max-width: 30ch; margin: 0; }
@@ -217,15 +218,15 @@ h1[data-partir] { animation: entrar-titulo 1.2s var(--ease) both; }
 .heroe__bajar i { display: block; width: 2px; height: 3.5rem; background: currentColor; transform-origin: top; animation: bajar 2.2s var(--ease) infinite; }
 @keyframes bajar { 0% { transform: scaleY(0); } 45% { transform: scaleY(1); transform-origin: top; } 55% { transform-origin: bottom; } 100% { transform: scaleY(0); transform-origin: bottom; } }
 
-.escena { position: fixed; inset: 0; z-index: 2; pointer-events: none; }
-/* alto fijo: cuando el celular esconde la barra el lienzo no se rearma */
-@supports (height: 100lvh) { .escena { bottom: auto; height: 100lvh; } }
-.escena canvas { width: 100% !important; height: 100% !important; }
-.heroe__respaldo { position: absolute; z-index: 2; left: 79%; top: 47%; width: min(24vw, 22rem); transform: translate(-50%, -50%); }
-@media (max-width: 700px) { .heroe__respaldo { left: 50%; top: 56%; width: min(58vw, 15rem); } }
-.heroe__respaldo { transition: opacity .6s var(--ease), transform .8s var(--ease); }
-.heroe__respaldo { display: none; }
-.sin-3d .heroe__respaldo { display: block; }
+/* el héroe arranca donde arranca el texto del resto del inicio */
+.heroe { --borde: max(var(--gutter), (100% - var(--max)) / 2); }
+.heroe__foto { position: absolute; z-index: 2; right: var(--borde); bottom: 0; width: min(44vw, 72svh); pointer-events: none; }
+.heroe__foto img { display: block; width: 100%; height: auto; animation: foto-heroe 1.4s var(--ease) both; }
+html:not(.sin-cargador) .heroe__foto img { animation-delay: .95s; }
+@keyframes foto-heroe { from { transform: translateY(14%); opacity: 0; } }
+@media (max-width: 700px) {
+  .heroe__foto { right: auto; left: 50%; bottom: auto; top: 52%; width: min(172vw, 48rem); transform: translate(-50%, -50%); }
+}
 
 .intro { position: relative; z-index: 1; min-height: 160vh; }
 .intro__texto { position: sticky; top: 0; min-height: 100svh; display: grid; align-content: center; }

@@ -3,7 +3,7 @@
 **La web está publicada en https://achilata-salta.vercel.app**, en Vercel, con la cuenta de Lauti, proyecto `achilata-salta`.
 
 Es una web de varias páginas, hecha desde cero el 19/11/2026:
-- Inicio con el pote de achilata en 3D que se mueve con el scroll.
+- Inicio con una foto real del pote, recortada con el método del estudio rojo. Desde el 24/11/2026 ya no lleva el 3D.
 - Qué es la achilata, con un pote 3D que se gira con el dedo.
 - Precios y armador de pedidos.
 - **Hacer un pedido, `pedir.html`, el enlace para la bio de Instagram.** Potes, día y turno de entrega, zona, dirección y pago, con el pedido mínimo. Los turnos y las reglas se cambian en `datos.json`, en `turnos` y `pedidos`: `dias` va de 0, domingo, a 6, sábado; `cierre` es la hora límite del mismo día en Salta; con `"dias": []` el turno se cierra. Se prueba con `node probar_pedir.mjs carpeta`, con el sitio servido. Sale del plan de turnos del 24/11/2026.
@@ -37,6 +37,7 @@ node build.mjs         # genera sitio/ con los cambios
 **Desde el 20/11/2026 la web se publica sola con cada push a main del repo.** Vercel toma la carpeta `09_Pagina_web/sitio`, así que alcanza con generar, hacer commit y push. Ese día un push publicó la raíz del repo y la web dio error 404; por eso se fijó la carpeta raíz del proyecto en Vercel. Para volver a publicar sin push: `npx vercel redeploy` con la última URL y `--target production`.
 
 - Si cambian las fotos o los logos, antes de `node build.mjs` correr `python assets.py`. Pasa las fotos de `06_Assets` a AVIF y WebP en dos tamaños.
+- La foto del héroe del inicio sale de `06_Assets/fotos/herramientas/web_heroe.py`, que deja dos PNG con transparencia en `06_Assets/fotos/editadas/web`: la 11 para escritorio y la 16 para celular. Después se corre `python assets.py heroe`.
 - Si cambian los precios de eventos, también hay que cambiarlos en `08_Eventos/03_Servicio_y_precios/cotizador.py` y en la propuesta en PDF.
 
 ## Cómo revisar antes de publicar

@@ -6,7 +6,6 @@
   <img class="cargador__logo" src="assets/img/logo-blanco.svg" alt="" width="1040" height="297">
   <span class="cargador__numero">0</span>
 </div>
-<div class="escena" aria-hidden="true"></div>
 
 <main id="contenido">
   <section class="heroe fondo-rojo" data-tono="rojo" aria-labelledby="titulo-inicio">
@@ -15,7 +14,13 @@
       <span class="linea-mascara" aria-hidden="true"><span class="linea">tucumano</span></span>
       <span class="linea-mascara" aria-hidden="true"><span class="linea">en Salta.</span></span>
     </h1>
-    <div class="heroe__respaldo">{{foto:rojo-pote|Pote de achilata con una cuchara servida, sobre fondo rojo|{"clase":"foto--retrato","carga":"lazy","revelar":false,"tamanos":"(max-width: 700px) 46vw, 26rem"}}}</div>
+    <picture class="heroe__foto">
+      <source media="(max-width: 700px)" type="image/avif" srcset="assets/img/heroe-pote-movil-1100.avif 1100w, assets/img/heroe-pote-movil-2164.avif 2164w" sizes="min(172vw, 48rem)">
+      <source media="(max-width: 700px)" type="image/webp" srcset="assets/img/heroe-pote-movil-1100.webp 1100w, assets/img/heroe-pote-movil-2164.webp 2164w" sizes="min(172vw, 48rem)">
+      <source type="image/avif" srcset="assets/img/heroe-pote-700.avif 700w, assets/img/heroe-pote-1161.avif 1161w" sizes="min(44vw, 72svh)">
+      <source type="image/webp" srcset="assets/img/heroe-pote-700.webp 700w, assets/img/heroe-pote-1161.webp 1161w" sizes="min(44vw, 72svh)">
+      <img src="assets/img/heroe-pote-1161.webp" width="1161" height="1355" alt="Pote de achilata con tres bochas de helado fucsia, sobre fondo rojo" fetchpriority="high" decoding="async">
+    </picture>
     <div class="heroe__pie">
       <div>
         <p class="texto-grande">La achilata de toda la vida, ahora en Salta Capital. En potes para tu casa y en carrito para tus eventos.</p>

@@ -8,6 +8,7 @@ las fotos o los logos. Las fotos salen en AVIF y WebP, en dos anchos.
 """
 
 import json
+import sys
 import pathlib
 import re
 
@@ -144,7 +145,25 @@ def iconos():
     print("iconos ok")
 
 
+def heroe():
+    """El pote del héroe del inicio, recortado con transparencia por 06_Assets/fotos/herramientas/web_heroe.py."""
+    IMG.mkdir(parents=True, exist_ok=True)
+    medidas = json.loads((AQUI / "src" / "medidas.json").read_text(encoding="utf-8"))
+    for nombre, anchos in (("heroe-pote", (700, 1161)), ("heroe-pote-movil", (1100, 2164))):
+        im = Image.open(FOTOS / "editadas" / "web" / f"{nombre}.png").convert("RGBA")
+        medidas[nombre] = {"w": im.width, "h": im.height}
+        for ancho in anchos:
+            r = im.resize((ancho, round(im.height * ancho / im.width)), Image.LANCZOS) if ancho != im.width else im
+            r.save(IMG / f"{nombre}-{ancho}.avif", quality=72, speed=4)
+            r.save(IMG / f"{nombre}-{ancho}.webp", quality=88, method=6)
+    (AQUI / "src" / "medidas.json").write_text(json.dumps(medidas, indent=1), encoding="utf-8")
+    print("heroe ok")
+
+
 if __name__ == "__main__":
+    if sys.argv[1:] == ["heroe"]:
+        heroe()
+        sys.exit()
     fotos()
     fuentes()
     logos()
