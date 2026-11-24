@@ -75,7 +75,32 @@ class Lienzo:
         p=cv2.warpAffine((A>0.5).astype(np.float32),M,(s.W,s.H))
         p=cv2.GaussianBlur(p,(0,0),blur)*0.75+cv2.GaussianBlur(p,(0,0),blur*0.35)*0.25
         s.sh=np.maximum(s.sh,p*fuerza)
-    def render(s,atras=None,adelante=None):
+    def integrar(s,b):
+        """Que el recorte no parezca pegado: saca el halo, cierra la máscara, envuelve el borde con la luz
+        del fondo, suma rebote rojo y unifica el grano. b es el fondo ya con texto y sombra."""
+        A=s.A.copy(); F=s.F.copy()
+        # 1 · defringe: el borde toma el color de adentro del objeto, no el del fondo original
+        core=cv2.erode((A>0.97).astype(np.uint8),np.ones((5,5),np.uint8)).astype(np.float32)
+        num=cv2.GaussianBlur(F*core[...,None],(0,0),3); den=cv2.GaussianBlur(core,(0,0),3)[...,None]
+        inner=num/np.maximum(den,1e-4)
+        band=np.clip((0.985-A)/0.4,0,1)*(A>0.01)*(den[...,0]>0.02)
+        band=cv2.GaussianBlur(band,(0,0),1.2)[...,None]
+        F=F*(1-band)+inner*band
+        # 2 · máscara: se cierra un pixel y se suaviza apenas, como un borde óptico
+        A=cv2.erode(A,np.ones((3,3),np.uint8)); A=cv2.GaussianBlur(A,(0,0),0.9)
+        # 3 · light wrap: la luz roja del fondo se mete en el borde del objeto
+        bgb=cv2.GaussianBlur(b,(0,0),14)
+        wrap=cv2.GaussianBlur(1-A,(0,0),7)*A
+        F=F*(1-wrap[...,None]*0.55)+bgb*wrap[...,None]*0.55
+        # 4 · rebote: el rojo del estudio tiñe un poco las zonas en sombra del objeto
+        lum=F.mean(-1,keepdims=True)/255
+        k=0.10*np.clip(1-lum,0,1)**1.2
+        F=F*(1-k)+(F*RO/RO.max())*k
+        out=F*A[...,None]+b*(1-A[...,None])
+        # 5 · un solo grano para todo, como si fuera una sola foto
+        g=cv2.GaussianBlur(np.random.default_rng(99).normal(0,1,out.shape[:2]).astype(np.float32),(0,0),0.6); g/=g.std()
+        return out+g[...,None]*2.2
+    def render(s,atras=None,adelante=None,natural=False):
         base=Image.fromarray(np.clip(s.bg,0,255).astype(np.uint8)).convert('RGBA')
         if atras: atras(ImageDraw.Draw(base),base)
         b=np.asarray(base.convert('RGB')).astype(np.float32)
@@ -83,7 +108,7 @@ class Lienzo:
         # multiplicar hacia el rojo profundo, no hacia el negro: la sombra conserva color
         tint=SOMBRA/255.0
         b=b*(1-k)+b*tint*1.9*k
-        out=s.F*s.A[...,None]+b*(1-s.A[...,None])
+        out=s.integrar(b) if natural else s.F*s.A[...,None]+b*(1-s.A[...,None])
         img=Image.fromarray(np.clip(out,0,255).astype(np.uint8)).convert('RGBA')
         if adelante: adelante(ImageDraw.Draw(img),img)
         return img.convert('RGB')

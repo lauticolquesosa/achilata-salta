@@ -11,19 +11,21 @@ def fit(t,w,fn=XB,mx=400):
 
 # ================= H05 1 · envíos · foto 05, la mano que te la alcanza =================
 L=Lienzo(*S,seed=21)
-F,a=cut(V,'05'); sc=1.12; x=1080-round(a.shape[1]*sc); y=455
+# arriba el título, debajo la nota, después la foto y abajo la bajada
+TB=500                                  # base del título
+G=fit('Envíos.',930)
+NB=TB+72                                # base de la nota, con el mismo aire que tenía con el título
+sc=1.12; y=NB+58-round(435*sc)          # el helado arranca con ese mismo aire debajo de la nota
+F,a=cut(V,'05'); x=1080-round(a.shape[1]*sc)
 A=L.poner(F,a,sc,x,y); L.sombra_aire(A,dx=30,dy=46,blur=34,fuerza=0.30)
-G=fit('envíos.',930)
 def atras(d,im):
-    im.alpha_composite(logo(150),(80,250))
-    d.text((1000,292),'Salta, lunes 23.',font=RG(32),fill=CREMA,anchor='rs')
-    T(d,80,470,'Hoy salimos a repartir.',RG(50),stroke=False)
-    T(d,82,538,'Grand Bourg, San Lorenzo Chico, San Lorenzo,',RG(32),stroke=False)
-    T(d,82,580,'El Tipal y La Almudena.',RG(32),stroke=False)
-    T(d,72,1000,'envíos.',G)
+    T(d,72,TB,'Envíos.',G)
+    T(d,80,1560,'Hoy salimos a repartir.',RG(50),stroke=False)
+    T(d,82,1614,'Grand Bourg, San Lorenzo Chico, San Lorenzo,',RG(32),stroke=False)
+    T(d,82,1656,'El Tipal y La Almudena.',RG(32),stroke=False)
 def adelante(d,im):
-    d.text((1000,700),'llega bien fría.',font=INK(54),fill=CREMA,anchor='rs')
-L.render(atras,adelante).save(f'{O}/H05 1 envios.png')
+    d.text((1000,NB),'llega bien fría.',font=INK(40),fill=CREMA,anchor='rs')
+L.render(atras,adelante,natural=True).save(f'{O}/H05 1 envios.png')
 
 # ================= H05 2 · pedidos · foto 07, pote apoyado con su cuchara =================
 L=Lienzo(*S,seed=22)
