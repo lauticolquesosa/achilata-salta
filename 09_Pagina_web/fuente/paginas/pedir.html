@@ -16,7 +16,7 @@
       <form class="formulario" id="form-pedir" novalidate aria-describedby="nota-pedir">
         <div class="encabezado">
           <h2 class="titulo t-1" id="titulo-pedido" data-partir>Tu pedido</h2>
-          <p class="texto-grande revelar" id="nota-pedir">El pedido mínimo es de {{pedidos.minimoPotes}} potes, del tamaño que quieras.</p>
+          <p class="texto-grande revelar" id="nota-pedir">Pedís desde un pote, del tamaño que quieras.</p>
         </div>
         <fieldset class="grupo">
           <legend class="grupo__titulo t-3">Cuántos potes</legend>
@@ -25,7 +25,7 @@
               <label for="pd-kg1">{{potes.0.nombre}}, {{potes.0.precio|pesos}}</label>
               <div class="cantidad">
                 <button type="button" data-mas="kg1" data-paso="-1" aria-label="Uno menos de 1 kg">−</button>
-                <input id="pd-kg1" type="number" inputmode="numeric" min="0" max="50" value="2">
+                <input id="pd-kg1" type="number" inputmode="numeric" min="0" max="50" value="1">
                 <button type="button" data-mas="kg1" data-paso="1" aria-label="Uno más de 1 kg">+</button>
               </div>
             </div>
@@ -90,11 +90,11 @@
       </form>
       <aside class="resumen" aria-labelledby="titulo-resumen-pedir">
         <h2 class="resumen__titulo" id="titulo-resumen-pedir">Resumen</h2>
-        <p id="pd-detalle">2 × pote de 1 kg</p>
+        <p id="pd-detalle">1 × pote de 1 kg</p>
         <p id="pd-cuando">Elegí el día y el turno</p>
         <div class="resumen__total">
           <span>Total sin envío</span>
-          <span class="resumen__monto" id="pd-total">$24.000</span>
+          <span class="resumen__monto" id="pd-total">{{potes.0.precio|pesos}}</span>
         </div>
         <p class="error" id="error-pedir" role="alert"></p>
         <button class="boton" type="submit" form="form-pedir">Enviar pedido por WhatsApp</button>

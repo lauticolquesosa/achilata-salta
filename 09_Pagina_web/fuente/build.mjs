@@ -292,7 +292,8 @@ function extras(lista) {
 - Delivery en ${datos.delivery.join(", ")}. Otras zonas de Salta se consultan.
 - Pago por transferencia o en efectivo.
 - Pedidos por WhatsApp: ${datos.whatsapp.map((w) => tel(w.numero)).join(" y ")}.
-- Pedido mínimo: ${datos.pedidos.minimoPotes} potes. Turnos de entrega: ${datos.turnos.filter((t) => t.dias.length).map((t) => `${t.nombre}, de ${t.entrega}`).join("; ")}.
+${datos.pedidos.minimoPotes > 1 ? `- Pedido mínimo: ${datos.pedidos.minimoPotes} potes.
+` : ""}- Turnos de entrega: ${datos.turnos.filter((t) => t.dias.length).map((t) => `${t.nombre}, de ${t.entrega}`).join("; ")}.
 
 ## Servicio para eventos
 Carrito de achilata con dos personas atendiendo y achilata libre durante el horario contratado. Precios por invitado, vigentes hasta el ${datos.sitio.vigenciaEventos}:

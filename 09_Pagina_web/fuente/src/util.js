@@ -26,9 +26,13 @@ export function enlaceWhatsApp(mensaje, indice = 0) {
   return url.toString();
 }
 
+/** Abre WhatsApp una sola vez. Con noopener, window.open devuelve null aunque abra la pestaña,
+ * y eso hacía que también se cargara WhatsApp en la página actual: dos destinos para un pedido. */
 export function abrirWhatsApp(mensaje, indice = 0) {
-  const w = window.open(enlaceWhatsApp(mensaje, indice), "_blank", "noopener,noreferrer");
-  if (!w) location.href = enlaceWhatsApp(mensaje, indice);
+  const url = enlaceWhatsApp(mensaje, indice);
+  const w = window.open(url, "_blank");
+  if (w) { try { w.opener = null; } catch { /* nada */ } return; }
+  location.href = url;
 }
 
 /** Código corto para identificar cada pedido o presupuesto en el chat. */
