@@ -22,7 +22,7 @@ def atras(d,im):
     T(d,72,TB,'Envíos.',G)
     T(d,80,1560,'Hoy salimos a repartir.',RG(50),stroke=False)
     T(d,82,1614,'Grand Bourg, San Lorenzo Chico, San Lorenzo,',RG(32),stroke=False)
-    T(d,82,1656,'El Tipal y La Almudena.',RG(32),stroke=False)
+    T(d,82,1656,'El Tipal, La Almudena y más.',RG(32),stroke=False)
 def adelante(d,im):
     d.text((1000,NB),'llega bien fría.',font=INK(40),fill=CREMA,anchor='rs')
 L.render(atras,adelante,natural=True).save(f'{O}/H05 1 envios.png')
