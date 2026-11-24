@@ -28,6 +28,5 @@ Carrito de achilata con dos personas atendiendo y achilata libre durante el hora
 - [Qué es la achilata](https://achilata-salta.vercel.app/achilata.html)
 - [Precios](https://achilata-salta.vercel.app/precios.html)
 - [Hacer un pedido con día y turno de entrega](https://achilata-salta.vercel.app/pedir.html)
-- [Servicio para eventos](https://achilata-salta.vercel.app/eventos.html)
-- [Presupuesto para eventos](https://achilata-salta.vercel.app/presupuesto.html)
+- [Servicio para eventos y presupuesto](https://achilata-salta.vercel.app/eventos.html)
 - [Instagram](https://www.instagram.com/achilatasalta/)

@@ -62,12 +62,22 @@ export function iniciarPresupuesto() {
   maxima.setFullYear(maxima.getFullYear() + 2);
   fecha.max = isoLocal(maxima);
 
-  // paquete desde la dirección, por ejemplo presupuesto.html?paquete=fiesta
+  // paquete desde la dirección, por ejemplo eventos.html?paquete=fiesta#presupuesto
   const pedido = new URLSearchParams(location.search).get("paquete");
   if (pedido && (paquete(pedido) || pedido === PUBLICO)) {
     const r = form.querySelector(`input[name="paquete"][value="${CSS.escape(pedido)}"]`);
     if (r) r.checked = true;
   }
+
+  // las tarjetas de paquetes eligen el paquete y bajan a la calculadora sin recargar
+  $$("[data-elegir]").forEach((a) => a.addEventListener("click", (e) => {
+    const r = form.querySelector(`input[name="paquete"][value="${CSS.escape(a.dataset.elegir)}"]`);
+    if (!r) return;
+    e.preventDefault();
+    r.checked = true;
+    r.dispatchEvent(new Event("change", { bubbles: true }));
+    $("#presupuesto").scrollIntoView({ behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" });
+  }));
 
   const leerForm = () => ({
     tipo: form.tipo.value,

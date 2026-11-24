@@ -1,5 +1,5 @@
 /*
-  Content-Security-Policy: default-src 'none'; script-src 'self' 'sha256-gfsMBzeUOGpc3gkFWDBuDinJOp8nKvuKfYHkqcMdYbc='; style-src 'self' 'sha256-TcMZiGnqIdbI7oezg8WPaoTFRbUHMH4XU6s5iDXtmjY='; img-src 'self'; font-src 'self'; connect-src 'self'; manifest-src 'self'; base-uri 'none'; form-action 'none'; object-src 'none'; upgrade-insecure-requests; require-trusted-types-for 'script'; trusted-types 'none'; frame-ancestors 'none'
+  Content-Security-Policy: default-src 'none'; script-src 'self' 'sha256-gfsMBzeUOGpc3gkFWDBuDinJOp8nKvuKfYHkqcMdYbc='; style-src 'self' 'sha256-MFFw/PGYJmP41k2NIyOxEAiyIfNMKizawpjB6hJNqYI='; img-src 'self'; font-src 'self'; connect-src 'self'; manifest-src 'self'; base-uri 'none'; form-action 'none'; object-src 'none'; upgrade-insecure-requests; require-trusted-types-for 'script'; trusted-types 'none'; frame-ancestors 'none'
   Strict-Transport-Security: max-age=63072000; includeSubDomains
   X-Content-Type-Options: nosniff
   X-Frame-Options: DENY

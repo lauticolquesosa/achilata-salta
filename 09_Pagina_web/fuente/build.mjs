@@ -65,12 +65,8 @@ const FAQ = {
   eventos: [
     ["¿Con cuánta anticipación hay que reservar?", `Lo antes posible, porque los fines de semana de verano se llenan. Pedimos al menos ${datos.anticipacionMinimaDias} días y una seña del ${datos.sena} % para tomar la fecha.`],
     ["¿Qué necesitan en el lugar?", "Un espacio de dos por dos metros, plano y con acceso para el carrito. Si el servicio es de noche, un enchufe cerca."],
-    ["¿Cuándo llegan?", "Una hora antes del horario contratado, para armar todo sin molestar. Al terminar dejamos el espacio limpio."],
     ["¿Y si llueve?", "Si el evento es al aire libre, nos tienen que prever un lugar techado. Si se suspende por lluvia, la seña se usa para otra fecha dentro de los 90 días."],
-    ["¿Y si se termina la achilata?", "No pasa: llevamos un 20 % más de lo que calculamos para la cantidad de invitados y las horas de servicio."],
-    ["¿Tiene leche?", "La achilata no tiene leche. La salsa de leche condensada del paquete Fiesta sí, y lo avisamos en el carrito."],
     ["¿Hacen factura?", "Sí, para empresas. Avisanos al pedir el presupuesto."],
-    ["¿Puedo sumar horas en el momento?", `Sí, si tenemos producto. La hora extra cuesta ${pesos(datos.horaExtra.hasta150)} hasta 150 invitados y ${pesos(datos.horaExtra.masDe150)} si son más.`],
   ],
 };
 const faqHTML = (lista) => `<div class="preguntas">${lista.map(([p, r]) =>
@@ -129,7 +125,6 @@ const LD = {
     offers: { "@type": "AggregateOffer", priceCurrency: "ARS", lowPrice: 3500, highPrice: 6800, offerCount: datos.paquetes.length,
       description: "Precio por invitado según el paquete, con mínimo de invitados" },
   }, faqLD(FAQ.eventos)],
-  presupuesto: () => [negocio, migas("Presupuesto", "presupuesto.html")],
   pedir: () => [negocio, migas("Hacer un pedido", "pedir.html")],
   privacidad: () => [migas("Política de privacidad", "privacidad.html")],
   cookies: () => [migas("Política de cookies", "cookies.html")],
@@ -167,8 +162,16 @@ const BLOQUES = {
     </div>
     <ul>${p.incluye.map((i) => `<li>${esc(i)}</li>`).join("")}</ul>
     <div class="datos-paquete chico"><span>${horasTexto(p.horas)} de servicio</span><span>${p.precioCerrado ? `Invitado extra ${pesos(p.extra)}` : `Desde ${pesos(p.porInvitado * p.minimo)}`}</span></div>
-    <a class="boton" href="presupuesto.html?paquete=${p.id}">Calcular con este paquete</a>
+    <a class="boton" href="eventos.html?paquete=${p.id}#presupuesto">Calcular con este paquete</a>
   </div>
+</article>`).join("")}</div>`,
+  planes: () => `<div class="planes">${datos.paquetes.map((p, i) => `
+<article class="plan revelar"${i ? ` data-retraso="${(i * 0.06).toFixed(2)}"` : ""}>
+  <h3 class="plan__nombre">${esc(p.nombre)}</h3>
+  <p class="plan__para">${esc(p.para)}</p>
+  <p class="plan__precio">${pesos(p.precioCerrado ?? p.porInvitado)}</p>
+  <p class="plan__unidad">${p.precioCerrado ? `Hasta ${p.incluidos} invitados` : `Por invitado, mínimo ${p.minimo}`}<br>${horasTexto(p.horas)} de servicio</p>
+  <a class="enlace plan__ir" href="?paquete=${p.id}#presupuesto" data-elegir="${p.id}">Calcular</a>
 </article>`).join("")}</div>`,
   opcionesPaquete: () => datos.paquetes.map((p, i) => `
 <label class="opcion"><input type="radio" name="paquete" value="${p.id}"${i === 0 ? " checked" : ""}><span><b>${esc(p.nombre)}</b><small>${p.precioCerrado ? `${pesos(p.precioCerrado)} hasta ${p.incluidos} invitados` : `${pesos(p.porInvitado)} por invitado, mínimo ${p.minimo}`}</small><small>${horasTexto(p.horas)}</small></span></label>`).join("") +
@@ -271,7 +274,7 @@ function paginas(v) {
 function extras(lista) {
   const hoy = datos.sitio.actualizadoISO;
   const indexables = lista.filter((p) => !p.meta.robots?.includes("noindex"));
-  const prioridad = { inicio: "1.0", precios: "0.9", pedir: "0.9", eventos: "0.9", presupuesto: "0.8", achilata: "0.8" };
+  const prioridad = { inicio: "1.0", precios: "0.9", pedir: "0.9", eventos: "0.9", achilata: "0.8" };
   writeFileSync(join(SITIO, "sitemap.xml"),
     `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n` +
     indexables.map((p) => `  <url><loc>${D}/${p.ruta}</loc><lastmod>${hoy}</lastmod><priority>${prioridad[p.meta.pagina] || "0.3"}</priority></url>`).join("\n") +
@@ -307,8 +310,7 @@ ${p.map((x) => x.precioCerrado ? `- ${x.nombre}: ${pesos(x.precioCerrado)} preci
 - [Qué es la achilata](${D}/achilata.html)
 - [Precios](${D}/precios.html)
 - [Hacer un pedido con día y turno de entrega](${D}/pedir.html)
-- [Servicio para eventos](${D}/eventos.html)
-- [Presupuesto para eventos](${D}/presupuesto.html)
+- [Servicio para eventos y presupuesto](${D}/eventos.html)
 - [Instagram](${datos.sitio.instagram})
 `);
   writeFileSync(join(SITIO, "site.webmanifest"), JSON.stringify({
@@ -338,6 +340,7 @@ ${p.map((x) => x.precioCerrado ? `- ${x.nombre}: ${pesos(x.precioCerrado)} preci
   writeFileSync(join(SITIO, "vercel.json"), JSON.stringify({
     $schema: "https://openapi.vercel.sh/vercel.json",
     cleanUrls: false, trailingSlash: false,
+    redirects: [{ source: "/presupuesto.html", destination: "/eventos.html#presupuesto", permanent: true }],
     headers: [
       { source: "/(.*)", headers: lista2(CABECERAS) },
       { source: "/assets/(js|css|fonts)/(.*)", headers: [{ key: "Cache-Control", value: "public, max-age=31536000, immutable" }] },

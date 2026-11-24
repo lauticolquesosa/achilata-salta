@@ -31,7 +31,7 @@ const poner = (p, sel, valor, evento = "input") => p.evaluate((sel, valor, event
 
 // 1. Presupuesto: los mismos números que cotizador.py
 let p = await nueva();
-await p.goto(BASE + "presupuesto.html?paquete=fiesta", { waitUntil: "load" });
+await p.goto(BASE + "eventos.html?paquete=fiesta#presupuesto", { waitUntil: "load" });
 await poner(p, "#invitados", "120");
 ok((await texto(p, "#r-monto")) === "$816.000", "Fiesta, 120 invitados, zona 1 = $816.000 → " + await texto(p, "#r-monto"));
 await p.click('input[name="paquete"][value="clasico"]');

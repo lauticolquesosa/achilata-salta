@@ -1,145 +1,183 @@
-<!--meta {"titulo":"Carrito de achilata para eventos en Salta · achilata.","descripcion":"Carrito de achilata para casamientos, fiestas de 15, empresas, clubes y cumpleaños en Salta. Achilata libre, dos personas atendiendo y paquetes desde {{paquetes.4.porInvitado|pesos}} por invitado.","pagina":"eventos","tono":"claro"} -->
+<!--meta {"titulo":"Carrito de achilata para eventos en Salta · achilata.","descripcion":"Carrito de achilata para casamientos, fiestas de 15, empresas, clubes y cumpleaños en Salta. Achilata libre, dos personas atendiendo y presupuesto al instante.","pagina":"eventos","tono":"claro"} -->
 <!--#head-->
 <body data-pagina="eventos">
 <!--#cabecera-->
 <main id="contenido">
-  <section class="portada fondo-crema" data-tono="claro" aria-labelledby="titulo-pagina">
+  <section class="portada fondo-crema no-imprimir" data-tono="claro" aria-labelledby="titulo-pagina">
     <div class="contenedor">
-      <h1 class="titulo t-hero" id="titulo-pagina" data-partir>Achilata para eventos</h1>
+      <h1 class="titulo t-hero" id="titulo-pagina" data-partir>Achilata para tu evento</h1>
       <div class="portada__fila">
-        <p class="texto-grande revelar">Llevamos el carrito de achilata a casamientos, fiestas de 15, empresas, clubes y cumpleaños en Salta. Achilata libre para todos los invitados durante el horario que elijan.</p>
+        <p class="texto-grande revelar">El carrito de achilata en casamientos, fiestas de 15, empresas, clubes y cumpleaños. Achilata libre para todos, durante el horario que elijas.</p>
         <div class="botones revelar">
-          <a class="boton" href="presupuesto.html">Pedí tu presupuesto</a>
-          <a class="boton boton--borde" href="{{waEventos}}" target="_blank" rel="noopener noreferrer">Consultar por WhatsApp</a>
+          <a class="boton" href="#presupuesto">Calculá tu presupuesto</a>
         </div>
       </div>
       <div class="portada__foto">{{foto:fila-potes|Potes de achilata servidos en fila|{"clase":"","carga":"eager","prioridad":"high","tamanos":"(max-width: 1440px) 94vw, 1360px"}}}</div>
     </div>
   </section>
 
-  <section class="seccion fondo-rojo" data-tono="rojo" aria-labelledby="titulo-razones">
+  <section class="seccion fondo-rojo no-imprimir" data-tono="rojo" aria-labelledby="titulo-incluye">
     <div class="contenedor">
       <div class="encabezado">
-        <h2 class="titulo t-1" id="titulo-razones" data-partir>Por qué achilata en tu evento</h2>
+        <h2 class="titulo t-1" id="titulo-incluye" data-partir>Siempre incluye</h2>
+      </div>
+      <div class="razones razones--cuatro">
+        <article class="razon revelar"><p class="razon__num" aria-hidden="true">01</p><h3 class="t-3">El carrito</h3><p class="texto">Con la marca y dos personas atendiendo.</p></article>
+        <article class="razon revelar" data-retraso="0.08"><p class="razon__num" aria-hidden="true">02</p><h3 class="t-3">Achilata libre</h3><p class="texto">Para todos, durante todo el horario.</p></article>
+        <article class="razon revelar" data-retraso="0.16"><p class="razon__num" aria-hidden="true">03</p><h3 class="t-3">Todo listo</h3><p class="texto">Vasitos, cucharitas y el lugar limpio al irnos.</p></article>
+        <article class="razon revelar" data-retraso="0.24"><p class="razon__num" aria-hidden="true">04</p><h3 class="t-3">Traslado</h3><p class="texto">Incluido en Salta Capital y alrededores.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="seccion fondo-blanco no-imprimir" data-tono="claro" aria-labelledby="titulo-paquetes">
+    <div class="contenedor">
+      <div class="encabezado">
+        <h2 class="titulo t-1" id="titulo-paquetes" data-partir>Paquetes</h2>
+        <p class="texto-grande revelar">Precio por invitado, vigente hasta el {{sitio.vigenciaEventos}}. Desde 150 invitados hay descuento.</p>
+      </div>
+      {{bloque:planes}}
+      <p class="planes__nota revelar">En clubes y torneos también vendemos al público: el vasito sale {{ventaPublico.vasito|pesos}} y el {{ventaPublico.comisionClub}} % de lo vendido es para el club.</p>
+    </div>
+  </section>
+
+  <section class="seccion fondo-crema" data-tono="claro" id="presupuesto" aria-labelledby="titulo-presupuesto">
+    <div class="goteo goteo--abajo no-imprimir">{{goteo}}</div>
+    <div class="contenedor">
+      <div class="encabezado no-imprimir">
+        <h2 class="titulo t-1" id="titulo-presupuesto" data-partir>Calculá tu presupuesto</h2>
+        <p class="texto-grande revelar">Ves el precio al instante y nos lo mandás armado por WhatsApp.</p>
+      </div>
+    </div>
+    <div class="contenedor calculo">
+      <form class="formulario" id="form-presupuesto" novalidate>
+        <fieldset class="grupo">
+          <legend class="grupo__titulo t-3">Qué evento es</legend>
+          <div class="opciones">
+            <label class="opcion"><input type="radio" name="tipo" value="casamiento" checked><span><b>Casamiento</b></span></label>
+            <label class="opcion"><input type="radio" name="tipo" value="quince"><span><b>Fiesta de 15</b></span></label>
+            <label class="opcion"><input type="radio" name="tipo" value="empresa"><span><b>Empresa</b></span></label>
+            <label class="opcion"><input type="radio" name="tipo" value="cumple"><span><b>Cumpleaños o reunión</b></span></label>
+            <label class="opcion"><input type="radio" name="tipo" value="club"><span><b>Club o torneo</b></span></label>
+            <label class="opcion"><input type="radio" name="tipo" value="otro"><span><b>Otro</b></span></label>
+          </div>
+        </fieldset>
+
+        <fieldset class="grupo">
+          <legend class="grupo__titulo t-3">Qué paquete querés</legend>
+          <p class="chico">Te sugerimos uno según el evento. Podés cambiarlo.</p>
+          <div class="opciones">{{bloque:opcionesPaquete}}</div>
+        </fieldset>
+
+        <fieldset class="grupo">
+          <legend class="grupo__titulo t-3">Cuántos invitados</legend>
+          <div class="campo">
+            <label for="invitados">Invitados</label>
+            <div class="invitados-fila">
+              <input class="deslizador" id="invitados-rango" type="range" min="10" max="500" step="5" value="120" aria-label="Invitados, deslizador" tabindex="-1">
+              <input class="entrada" id="invitados" type="number" inputmode="numeric" min="1" max="2000" value="120" required aria-describedby="error-invitados">
+            </div>
+            <span class="error" id="error-invitados"></span>
+          </div>
+          <div class="campo solo-cerrado">
+            <label for="horas-extra">Horas extra</label>
+            <div class="cantidad">
+              <button type="button" data-paso="-1" aria-label="Una hora menos">−</button>
+              <input id="horas-extra" type="number" inputmode="numeric" min="0" max="4" value="0">
+              <button type="button" data-paso="1" aria-label="Una hora más">+</button>
+            </div>
+            <span class="ayuda">{{horaExtra.hasta150|pesos}} la hora hasta 150 invitados, {{horaExtra.masDe150|pesos}} si son más.</span>
+          </div>
+        </fieldset>
+
+        <fieldset class="grupo">
+          <legend class="grupo__titulo t-3">Cuándo y dónde</legend>
+          <div class="dos-campos">
+            <div class="campo">
+              <label for="fecha">Fecha</label>
+              <input class="entrada" id="fecha" type="date" required aria-describedby="error-fecha">
+              <span class="error" id="error-fecha"></span>
+            </div>
+            <div class="campo">
+              <label for="hora">Hora en que empieza el servicio</label>
+              <input class="entrada" id="hora" type="time" aria-describedby="ayuda-hora">
+              <span class="ayuda" id="ayuda-hora">Opcional</span>
+            </div>
+          </div>
+          <div class="campo">
+            <label for="zona">Zona</label>
+            <div class="selector-caja"><select class="selector" id="zona" name="zona">{{bloque:opcionesZona}}</select></div>
+          </div>
+          <div class="campo">
+            <label for="lugar">Salón, quinta o club</label>
+            <input class="entrada" id="lugar" type="text" maxlength="80" autocomplete="off" aria-describedby="ayuda-lugar">
+            <span class="ayuda" id="ayuda-lugar">Opcional. Nos ayuda a saber si el lugar cobra algo por proveedor externo.</span>
+          </div>
+        </fieldset>
+
+        <fieldset class="grupo">
+          <legend class="grupo__titulo t-3">Tus datos</legend>
+          <div class="campo">
+            <label for="nombre">Nombre</label>
+            <input class="entrada" id="nombre" type="text" maxlength="60" autocomplete="given-name" required aria-describedby="error-nombre">
+            <span class="error" id="error-nombre"></span>
+          </div>
+          <div class="campo">
+            <label for="comentario">Algo más que tengamos que saber</label>
+            <textarea class="entrada" id="comentario" maxlength="400" rows="4"></textarea>
+          </div>
+        </fieldset>
+        <p class="chico">Tus datos no se guardan en esta web. Viajan solo en el mensaje de WhatsApp que vos enviás. <a class="enlace" href="privacidad.html">Política de privacidad</a></p>
+      </form>
+
+      <aside class="resumen" aria-labelledby="titulo-resumen">
+        <h2 class="resumen__titulo" id="titulo-resumen">Tu presupuesto</h2>
+        <dl>
+          <div class="renglon"><dt>Paquete</dt><dd id="r-paquete">Clásico</dd></div>
+          <div class="renglon solo-cerrado"><dt>Invitados</dt><dd id="r-invitados">120</dd></div>
+          <div class="renglon solo-cerrado"><dt>Servicio</dt><dd id="r-servicio"></dd></div>
+          <div class="renglon" id="f-descuento" hidden><dt>Descuento</dt><dd id="r-descuento"></dd></div>
+          <div class="renglon" id="f-horas" hidden><dt>Horas extra</dt><dd id="r-horas"></dd></div>
+          <div class="renglon solo-cerrado"><dt>Traslado</dt><dd id="r-traslado">Incluido</dd></div>
+          <div class="renglon" id="f-recargo" hidden><dt>Recargo de fecha especial</dt><dd id="r-recargo"></dd></div>
+        </dl>
+        <div class="resumen__total" aria-live="polite">
+          <span>Total estimado</span>
+          <span class="resumen__monto" id="r-monto"></span>
+          <span class="chico" id="r-monto-nota"></span>
+        </div>
+        <button class="boton no-imprimir" type="button" id="enviar-presupuesto">Enviar por WhatsApp</button>
+        <div class="botones no-imprimir">
+          <button class="boton boton--borde" type="button" id="imprimir-presupuesto">Guardar en PDF</button>
+          <button class="boton boton--borde" type="button" id="copiar-presupuesto">Copiar</button>
+        </div>
+        <p class="resumen__aviso">Es un estimado. Lo confirmamos por WhatsApp según la disponibilidad de la fecha. Código <span class="codigo" id="r-codigo"></span></p>
+        <p class="resumen__aviso" id="estado-presupuesto" role="status" aria-live="polite"></p>
+      </aside>
+    </div>
+  </section>
+
+  <section class="seccion fondo-rojo no-imprimir" data-tono="rojo" aria-labelledby="titulo-reservar">
+    <div class="contenedor">
+      <div class="encabezado">
+        <h2 class="titulo t-1" id="titulo-reservar" data-partir>Cómo reservar</h2>
       </div>
       <div class="razones">
-        <article class="razon revelar">
-          <p class="razon__num" aria-hidden="true">01</p>
-          <h3 class="t-3">Es el puesto con más gente</h3>
-          <p class="texto">En Tucumán, en cada casamiento la fila más larga es la del carrito de achilata.</p>
-        </article>
-        <article class="razon revelar" data-retraso="0.1">
-          <p class="razon__num" aria-hidden="true">02</p>
-          <h3 class="t-3">En Salta no lo tiene nadie</h3>
-          <p class="texto">Es algo distinto, que tus invitados no vieron en ninguna otra fiesta.</p>
-        </article>
-        <article class="razon revelar" data-retraso="0.2">
-          <p class="razon__num" aria-hidden="true">03</p>
-          <h3 class="t-3">Es fresca y es para todos</h3>
-          <p class="texto">Sin leche, liviana y perfecta para el calor de la trasnoche. Gusta a chicos y grandes.</p>
-        </article>
+        <article class="razon revelar"><p class="razon__num" aria-hidden="true">01</p><h3 class="t-3">Mandá el presupuesto</h3><p class="texto">Te respondemos con la disponibilidad de la fecha.</p></article>
+        <article class="razon revelar" data-retraso="0.1"><p class="razon__num" aria-hidden="true">02</p><h3 class="t-3">Señá el {{sena}} %</h3><p class="texto">Por transferencia o en efectivo, y la fecha es tuya.</p></article>
+        <article class="razon revelar" data-retraso="0.2"><p class="razon__num" aria-hidden="true">03</p><h3 class="t-3">Disfrutá la fiesta</h3><p class="texto">Siete días antes confirmás los invitados. Del resto nos ocupamos nosotros.</p></article>
       </div>
     </div>
   </section>
 
-  <section class="seccion fondo-crema" data-tono="claro" aria-labelledby="titulo-incluye">
-    <div class="goteo goteo--abajo">{{goteo}}</div>
-    <div class="contenedor">
-      <div class="encabezado">
-        <h2 class="titulo t-1" id="titulo-incluye" data-partir>Qué incluye el servicio</h2>
-        <p class="texto-grande revelar">En cualquier paquete, siempre.</p>
-      </div>
-      <ul class="incluye">
-        <li class="revelar">El carrito de achilata con la marca, armado y desarmado</li>
-        <li class="revelar">Dos personas atendiendo, con el uniforme de la marca</li>
-        <li class="revelar">Achilata libre durante todo el horario contratado</li>
-        <li class="revelar">Vasitos, cucharitas de madera y servilletas</li>
-        <li class="revelar">Frío asegurado de principio a fin</li>
-        <li class="revelar">Llegamos una hora antes y dejamos todo limpio</li>
-        <li class="revelar">Cesto de residuos propio</li>
-        <li class="revelar">Traslado incluido en la Zona 1</li>
-      </ul>
-    </div>
-  </section>
-
-  <section class="seccion fondo-blanco" data-tono="claro" aria-labelledby="titulo-paquetes">
-    <div class="contenedor">
-      <div class="encabezado">
-        <h2 class="titulo t-1" id="titulo-paquetes" data-partir>Paquetes para eventos</h2>
-        <p class="texto-grande revelar">Precios por invitado, vigentes hasta el {{sitio.vigenciaEventos}}. Iguales de lunes a domingo.</p>
-      </div>
-      {{bloque:paquetes}}
-    </div>
-  </section>
-
-  <section class="seccion fondo-rojo" data-tono="rojo" aria-labelledby="titulo-publico">
-    <div class="contenedor">
-      <div class="encabezado">
-        <h2 class="titulo t-1" id="titulo-publico" data-partir>Venta al público en clubes y torneos</h2>
-        <p class="texto-grande revelar">Para torneos, partidos, ferias y eventos abiertos. Al organizador no le cobramos: vendemos a cada persona.</p>
-      </div>
-      <div class="venta">
-        <div class="revelar"><span>Un vasito</span><span class="monto">{{ventaPublico.vasito|pesos}}</span></div>
-        <div class="revelar" data-retraso="0.1"><span>Dos vasitos</span><span class="monto">{{ventaPublico.dosVasitos|pesos}}</span></div>
-        <div class="revelar" data-retraso="0.2"><span>Para el club u organizador</span><span class="monto">{{ventaPublico.comisionClub}} %</span><span>de lo vendido</span></div>
-      </div>
-      <div class="botones revelar separado">
-        <a class="boton boton--blanco" href="presupuesto.html?paquete=publico">Proponer un torneo</a>
-      </div>
-    </div>
-  </section>
-
-  <section class="seccion fondo-crema" data-tono="claro" aria-labelledby="titulo-ajustes">
-    <div class="goteo goteo--abajo">{{goteo}}</div>
-    <div class="contenedor">
-      <div class="encabezado">
-        <h2 class="titulo t-1" id="titulo-ajustes" data-partir>Descuentos, horas extra y zonas</h2>
-        <p class="texto-grande revelar">El 24 y el 31 de diciembre tienen un recargo del {{recargoFechas.porcentaje}} %.</p>
-      </div>
-      <div class="tablas revelar">
-        {{bloque:tablaZonas}}
-        {{bloque:tablaDescuentos}}
-        {{bloque:tablaHoras}}
-      </div>
-    </div>
-  </section>
-
-  <section class="seccion fondo-rojo" data-tono="rojo" aria-labelledby="titulo-reservar">
-    <div class="contenedor dividido">
-      <div class="dividido__fijo">
-        <h2 class="titulo t-1" id="titulo-reservar" data-partir>Cómo reservar</h2>
-        <p class="texto-grande revelar separado">Cuatro pasos y la fecha es tuya.</p>
-      </div>
-      <div class="pasos">
-        <span class="pasos__linea" aria-hidden="true"></span>
-        <ol class="pasos__lista">
-        <li class="paso revelar"><span class="paso__num" aria-hidden="true">1</span><h3 class="t-3">Pedí tu presupuesto</h3><p class="texto">Usá la calculadora o escribinos por WhatsApp con la fecha, el lugar y la cantidad de invitados.</p></li>
-        <li class="paso revelar"><span class="paso__num" aria-hidden="true">2</span><h3 class="t-3">Reservá la fecha</h3><p class="texto">Con una seña del {{sena}} % la fecha queda tomada. Sin seña no podemos guardarla.</p></li>
-        <li class="paso revelar"><span class="paso__num" aria-hidden="true">3</span><h3 class="t-3">Confirmá los invitados</h3><p class="texto">Siete días antes nos confirmás la cantidad final y pagás el saldo, por transferencia o en efectivo.</p></li>
-        <li class="paso revelar"><span class="paso__num" aria-hidden="true">4</span><h3 class="t-3">Disfrutá la fiesta</h3><p class="texto">Llegamos una hora antes, servimos durante todo el horario y nos vamos dejando todo limpio.</p></li>
-        </ol>
-      </div>
-    </div>
-  </section>
-
-  <section class="seccion fondo-crema" data-tono="claro" aria-labelledby="titulo-preguntas">
+  <section class="seccion fondo-crema no-imprimir" data-tono="claro" aria-labelledby="titulo-preguntas">
     <div class="goteo goteo--abajo">{{goteo}}</div>
     <div class="contenedor dividido">
       <div class="dividido__fijo">
-        <h2 class="titulo t-1" id="titulo-preguntas" data-partir>Preguntas sobre el servicio para eventos</h2>
+        <h2 class="titulo t-1" id="titulo-preguntas" data-partir>Preguntas</h2>
         <p class="revelar separado">Las condiciones completas están en los <a class="enlace" href="terminos.html#eventos">términos y condiciones</a>.</p>
       </div>
       {{faq:eventos}}
-    </div>
-  </section>
-
-  <section class="seccion fondo-rojo cierre" data-tono="rojo" aria-labelledby="titulo-cierre">
-    <div class="contenedor">
-      <h2 class="titulo t-1" id="titulo-cierre" data-partir>Calculá tu presupuesto</h2>
-      <p class="texto-grande revelar centrado">En un minuto, con el precio estimado y listo para mandar por WhatsApp.</p>
-      <div class="botones revelar">
-        <a class="boton boton--blanco" href="presupuesto.html">Ir a la calculadora</a>
-      </div>
     </div>
   </section>
 </main>
