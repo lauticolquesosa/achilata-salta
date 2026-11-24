@@ -243,23 +243,6 @@ async function inicio() {
   if (!quieto) gsap.to(lineas, { xPercent: (i) => (i % 2 ? 30 : -30), ease: "none", scrollTrigger: { trigger: ".heroe", start: "top top", end: "bottom top", scrub: 1 } });
   // el héroe usa una foto real del pote: el 3D queda solo en la página de la achilata
 
-  // la frase de presentación se ilumina palabra por palabra
-  const frase = $(".intro__frase");
-  if (frase && !quieto) {
-    const texto = frase.textContent.replace(/\s+/g, " ").trim();
-    frase.textContent = "";
-    const palabras = texto.split(" ").map((w, i, a) => {
-      const s = document.createElement("span");
-      s.className = "p";
-      s.textContent = w;
-      frase.append(s);
-      if (i < a.length - 1) frase.append(" ");
-      return s;
-    });
-    gsap.to(palabras, { opacity: 1, y: 0, stagger: 0.05, ease: "power1.out",
-      scrollTrigger: { trigger: ".intro", start: "top 55%", end: "bottom 85%", scrub: true } });
-  }
-
   // la banda de eventos: la foto se abre hasta ocupar toda la pantalla
   const marco = $(".apertura__marco");
   if (marco && !quieto) {
