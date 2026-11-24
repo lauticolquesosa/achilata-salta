@@ -6,6 +6,7 @@ Es una web de varias páginas, hecha desde cero el 19/11/2026:
 - Inicio con el pote de achilata en 3D que se mueve con el scroll.
 - Qué es la achilata, con un pote 3D que se gira con el dedo.
 - Precios y armador de pedidos.
+- **Hacer un pedido, `pedir.html`, el enlace para la bio de Instagram.** Potes, día y turno de entrega, zona, dirección y pago, con el pedido mínimo. Los turnos y las reglas se cambian en `datos.json`, en `turnos` y `pedidos`: `dias` va de 0, domingo, a 6, sábado; `cierre` es la hora límite del mismo día en Salta; con `"dias": []` el turno se cierra. Se prueba con `node probar_pedir.mjs carpeta`, con el sitio servido. Sale del plan de turnos del 24/11/2026.
 - Servicio para eventos.
 - Calculadora de presupuesto.
 - Las páginas legales: privacidad, cookies, términos con botón de arrepentimiento, y seguridad.

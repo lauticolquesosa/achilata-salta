@@ -22,7 +22,8 @@
      7. Ustedes dos preparando, entregando o probando, si quieren aparecer.
      8. Clientes probando por primera vez, con su permiso.
 2. **Fecha del primer día de venta.**
-3. **Costo de envío y días y horarios de pedidos.**
+3. **Costo de envío por zona y alias o CBU para las transferencias.** Se pasan por el chat al confirmar cada pedido.
+   - Los turnos de entrega y el pedido mínimo de 2 potes ya están en la web, en `pedir.html`, desde el 24/11/2026. Son la propuesta del plan de turnos y se ajustan después del primer fin de semana. Hasta que los dos los confirmen, no se publican como dato en las piezas.
 4. **Nombres de los socios**, si van a aparecer en la cuenta.
 
 ## Marca, para confirmar

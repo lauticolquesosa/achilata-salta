@@ -1,0 +1,129 @@
+<!--meta {"titulo":"Hacé tu pedido de achilata · achilata.","descripcion":"Elegí tus potes, el día y el turno de entrega y mandá el pedido por WhatsApp. Delivery en Grand Bourg, San Lorenzo, El Tipal y La Almudena.","pagina":"pedir","tono":"rojo"} -->
+<!--#head-->
+<body data-pagina="pedir">
+<!--#cabecera-->
+<main id="contenido">
+  <section class="portada fondo-rojo" data-tono="rojo" aria-labelledby="titulo-pagina">
+    <div class="contenedor">
+      <h1 class="titulo t-hero" id="titulo-pagina" data-partir>Hacé tu pedido</h1>
+      <p class="texto-grande revelar separado">Elegí los potes, el día y el turno. Te abrimos WhatsApp con el pedido listo y te confirmamos la hora exacta por el chat.</p>
+    </div>
+  </section>
+
+  <section class="seccion fondo-crema" data-tono="claro" aria-labelledby="titulo-pedido">
+    <div class="goteo goteo--abajo">{{goteo}}</div>
+    <div class="contenedor calculo">
+      <form class="formulario" id="form-pedir" novalidate aria-describedby="nota-pedir">
+        <div class="encabezado">
+          <h2 class="titulo t-1" id="titulo-pedido" data-partir>Tu pedido</h2>
+          <p class="texto-grande revelar" id="nota-pedir">El pedido mínimo es de {{pedidos.minimoPotes}} potes, del tamaño que quieras.</p>
+        </div>
+        <fieldset class="grupo">
+          <legend class="grupo__titulo t-3">Cuántos potes</legend>
+          <div class="dos-campos">
+            <div class="campo">
+              <label for="pd-kg1">{{potes.0.nombre}}, {{potes.0.precio|pesos}}</label>
+              <div class="cantidad">
+                <button type="button" data-mas="kg1" data-paso="-1" aria-label="Uno menos de 1 kg">−</button>
+                <input id="pd-kg1" type="number" inputmode="numeric" min="0" max="50" value="2">
+                <button type="button" data-mas="kg1" data-paso="1" aria-label="Uno más de 1 kg">+</button>
+              </div>
+            </div>
+            <div class="campo">
+              <label for="pd-kg05">{{potes.1.nombre}}, {{potes.1.precio|pesos}}</label>
+              <div class="cantidad">
+                <button type="button" data-mas="kg05" data-paso="-1" aria-label="Uno menos de medio kilo">−</button>
+                <input id="pd-kg05" type="number" inputmode="numeric" min="0" max="50" value="0">
+                <button type="button" data-mas="kg05" data-paso="1" aria-label="Uno más de medio kilo">+</button>
+              </div>
+            </div>
+          </div>
+        </fieldset>
+        <fieldset class="grupo">
+          <legend class="grupo__titulo t-3">Cuándo te la llevamos</legend>
+          <div class="campo">
+            <label for="pd-dia">Día</label>
+            <div class="selector-caja"><select class="selector" id="pd-dia" name="dia"></select></div>
+          </div>
+          <div class="campo">
+            <span class="negrita" id="turno-t">Turno</span>
+            <div class="opciones" id="pd-turnos" role="radiogroup" aria-labelledby="turno-t"></div>
+            <span class="ayuda" id="pd-sin-turno" hidden>Ese día ya no quedan turnos. Elegí otro día.</span>
+          </div>
+        </fieldset>
+        <fieldset class="grupo">
+          <legend class="grupo__titulo t-3">Dónde</legend>
+          <div class="campo">
+            <label for="pd-zona">Zona</label>
+            <div class="selector-caja"><select class="selector" id="pd-zona" name="zona">{{bloque:opcionesDelivery}}</select></div>
+          </div>
+          <div class="campo">
+            <label for="pd-direccion">Dirección</label>
+            <input class="entrada" id="pd-direccion" type="text" maxlength="100" autocomplete="street-address" aria-describedby="ayuda-pd-direccion">
+            <span class="ayuda" id="ayuda-pd-direccion">Calle, número y alguna referencia para encontrarte.</span>
+          </div>
+        </fieldset>
+        <fieldset class="grupo">
+          <legend class="grupo__titulo t-3">Tus datos</legend>
+          <div class="campo">
+            <label for="pd-nombre">Nombre</label>
+            <input class="entrada" id="pd-nombre" type="text" maxlength="60" autocomplete="given-name" required aria-describedby="error-pedir">
+          </div>
+          <div class="campo">
+            <span class="negrita" id="pd-pago-t">Cómo pagás</span>
+            <div class="opciones" role="radiogroup" aria-labelledby="pd-pago-t">
+              <label class="opcion"><input type="radio" name="pago" value="transferencia" checked><span><b>Transferencia</b><small>Te pasamos el alias por el chat</small></span></label>
+              <label class="opcion"><input type="radio" name="pago" value="efectivo"><span><b>Efectivo</b><small>Le pagás a quien te la lleva</small></span></label>
+            </div>
+          </div>
+          <div class="campo" id="pd-con-caja" hidden>
+            <label for="pd-con">Con cuánto pagás</label>
+            <input class="entrada" id="pd-con" type="text" inputmode="numeric" maxlength="12" autocomplete="off" aria-describedby="ayuda-pd-con">
+            <span class="ayuda" id="ayuda-pd-con">Opcional. Así llevamos el cambio justo.</span>
+          </div>
+          <div class="campo">
+            <label for="pd-numero">Mandar a</label>
+            <div class="selector-caja"><select class="selector" id="pd-numero" name="numero"><option value="0">WhatsApp {{whatsapp.0.texto}}</option><option value="1">WhatsApp {{whatsapp.1.texto}}</option></select></div>
+          </div>
+        </fieldset>
+        <p class="chico">Tus datos no se guardan en esta web. Viajan solo en el mensaje de WhatsApp que vos enviás. <a class="enlace" href="privacidad.html">Política de privacidad</a></p>
+      </form>
+      <aside class="resumen" aria-labelledby="titulo-resumen-pedir">
+        <h2 class="resumen__titulo" id="titulo-resumen-pedir">Resumen</h2>
+        <p id="pd-detalle">2 × pote de 1 kg</p>
+        <p id="pd-cuando">Elegí el día y el turno</p>
+        <div class="resumen__total">
+          <span>Total sin envío</span>
+          <span class="resumen__monto" id="pd-total">$24.000</span>
+        </div>
+        <p class="error" id="error-pedir" role="alert"></p>
+        <button class="boton" type="submit" form="form-pedir">Enviar pedido por WhatsApp</button>
+        <p class="resumen__aviso">El envío depende de la zona. Te lo confirmamos en el chat, junto con la hora exacta, antes de que pagues.</p>
+        <p class="oculto" id="estado-pedir" role="status" aria-live="polite"></p>
+      </aside>
+    </div>
+  </section>
+
+  <section class="seccion fondo-blanco" data-tono="claro" aria-labelledby="titulo-turnos">
+    <div class="contenedor">
+      <div class="encabezado">
+        <h2 class="titulo t-1" id="titulo-turnos" data-partir>Los turnos</h2>
+        <p class="texto-grande revelar">Salimos a repartir una vez por turno, con todo bien frío en la conservadora. Te confirmamos una hora de llegada de media hora dentro del turno.</p>
+      </div>
+      {{bloque:tablaTurnos}}
+    </div>
+  </section>
+
+  <section class="seccion fondo-crema" data-tono="claro" aria-labelledby="titulo-delivery">
+    <div class="contenedor">
+      <div class="encabezado">
+        <h2 class="titulo t-1" id="titulo-delivery" data-partir>Dónde hacemos delivery</h2>
+        <p class="texto-grande revelar">Te la llevamos bien fría a estas zonas. Si la tuya no está, escribinos igual.</p>
+      </div>
+      {{bloque:listaDelivery}}
+    </div>
+  </section>
+</main>
+<!--#pie-->
+</body>
+</html>

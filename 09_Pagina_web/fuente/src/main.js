@@ -6,6 +6,7 @@ import { $, $$, pesos } from "./util.js";
 import { iniciarConsentimiento } from "./consent.js";
 import { iniciarPresupuesto } from "./presupuesto.js";
 import { iniciarPedido } from "./pedido.js";
+import { iniciarPedir } from "./pedir.js";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -402,6 +403,7 @@ function arrancar() {
   iniciarConsentimiento();
   iniciarPresupuesto();
   iniciarPedido();
+  iniciarPedir();
   if (pagina === "inicio") inicio();
   if (pagina === "achilata") laAchilata();
   if (pagina === "eventos") eventos();

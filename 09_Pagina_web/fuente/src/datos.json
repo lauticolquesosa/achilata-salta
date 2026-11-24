@@ -20,6 +20,13 @@
     { "id": "kg05", "nombre": "Pote de medio kilo", "precio": 8000 }
   ],
   "delivery": ["Grand Bourg", "San Lorenzo Chico", "San Lorenzo", "El Tipal", "La Almudena"],
+  "turnos": [
+    { "id": "mediodia", "nombre": "Mediodía", "entrega": "12:00 a 14:00", "cierre": "10:00", "dias": [0], "nota": "Para el postre del almuerzo" },
+    { "id": "tarde", "nombre": "Tarde", "entrega": "15:30 a 18:00", "cierre": "13:30", "dias": [4, 5, 6, 0], "nota": "Con el calor de la siesta" },
+    { "id": "noche", "nombre": "Noche", "entrega": "19:30 a 21:30", "cierre": "18:00", "dias": [4, 5, 6, 0], "nota": "Para después de la cena" },
+    { "id": "unico", "nombre": "Un solo turno", "entrega": "17:00 a 20:00", "cierre": "15:00", "dias": [1, 2, 3], "nota": "Un solo reparto en el día" }
+  ],
+  "pedidos": { "minimoPotes": 2, "diasAdelante": 7, "efectivoCon": true },
   "paquetes": [
     {
       "id": "clasico", "nombre": "Clásico", "para": "Casamientos, fiestas de 15 y fiestas",

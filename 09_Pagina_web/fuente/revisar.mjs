@@ -8,7 +8,7 @@ import { join } from "node:path";
 const BASE = process.env.BASE || "http://127.0.0.1:8765/";
 const SALIDA = process.argv[2] || "capturas";
 const CHROME = process.env.CHROME || "C:/Program Files/Google/Chrome/Application/chrome.exe";
-const PAGINAS = ["index.html", "achilata.html", "precios.html", "eventos.html", "presupuesto.html", "privacidad.html", "cookies.html", "terminos.html", "seguridad.html", "no-existe.html"];
+const PAGINAS = ["index.html", "achilata.html", "precios.html", "pedir.html", "eventos.html", "presupuesto.html", "privacidad.html", "cookies.html", "terminos.html", "seguridad.html", "no-existe.html"];
 const PANTALLAS = { escritorio: { width: 1440, height: 900, deviceScaleFactor: 1 }, celular: { width: 390, height: 844, deviceScaleFactor: 2, isMobile: true, hasTouch: true } };
 const CAPTURAS = Number(process.env.CAPTURAS || 6);
 const SOLO = process.env.SOLO ? process.env.SOLO.split(",") : null;

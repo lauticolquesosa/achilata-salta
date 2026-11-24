@@ -10,6 +10,7 @@
 - Delivery en Grand Bourg, San Lorenzo Chico, San Lorenzo, El Tipal, La Almudena. Otras zonas de Salta se consultan.
 - Pago por transferencia o en efectivo.
 - Pedidos por WhatsApp: +5493874834041 y +5493874684498.
+- Pedido mínimo: 2 potes. Turnos de entrega: Mediodía, de 12:00 a 14:00; Tarde, de 15:30 a 18:00; Noche, de 19:30 a 21:30; Un solo turno, de 17:00 a 20:00.
 
 ## Servicio para eventos
 Carrito de achilata con dos personas atendiendo y achilata libre durante el horario contratado. Precios por invitado, vigentes hasta el 31 de diciembre de 2026:
@@ -25,7 +26,8 @@ Carrito de achilata con dos personas atendiendo y achilata libre durante el hora
 ## Páginas
 - [Inicio](https://achilata-salta.vercel.app/)
 - [Qué es la achilata](https://achilata-salta.vercel.app/achilata.html)
-- [Precios y pedidos](https://achilata-salta.vercel.app/precios.html)
+- [Precios](https://achilata-salta.vercel.app/precios.html)
+- [Hacer un pedido con día y turno de entrega](https://achilata-salta.vercel.app/pedir.html)
 - [Servicio para eventos](https://achilata-salta.vercel.app/eventos.html)
 - [Presupuesto para eventos](https://achilata-salta.vercel.app/presupuesto.html)
 - [Instagram](https://www.instagram.com/achilatasalta/)

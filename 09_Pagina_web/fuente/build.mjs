@@ -130,6 +130,7 @@ const LD = {
       description: "Precio por invitado según el paquete, con mínimo de invitados" },
   }, faqLD(FAQ.eventos)],
   presupuesto: () => [negocio, migas("Presupuesto", "presupuesto.html")],
+  pedir: () => [negocio, migas("Hacer un pedido", "pedir.html")],
   privacidad: () => [migas("Política de privacidad", "privacidad.html")],
   cookies: () => [migas("Política de cookies", "cookies.html")],
   terminos: () => [migas("Términos y condiciones", "terminos.html")],
@@ -178,6 +179,12 @@ const BLOQUES = {
   tablaDescuentos: () => `<table class="tabla"><caption>Descuentos por cantidad</caption><thead><tr><th scope="col">Invitados</th><th scope="col">Descuento</th></tr></thead><tbody>
 <tr><td>Hasta ${datos.descuentos.at(-1).desde - 1}</td><td>Precio de lista</td></tr>
 ${[...datos.descuentos].reverse().map((d, i, a) => `<tr><td>${a[i + 1] ? `De ${d.desde} a ${a[i + 1].desde - 1}` : `${d.desde} o más`}</td><td>${d.porcentaje} %</td></tr>`).join("")}</tbody></table>`,
+  tablaTurnos: () => {
+    const DIAS = ["domingo", "lunes", "martes", "miércoles", "jueves", "viernes", "sábado"];
+    const dias = (l) => { const o = [1, 2, 3, 4, 5, 6, 0].filter((d) => l.includes(d)); if (o.length > 2 && o.every((d, i) => i === 0 || d === (o[i - 1] + 1) % 7)) return `${DIAS[o[0]]} a ${DIAS[o.at(-1)]}`; return o.map((d) => DIAS[d]).join(" y "); };
+    return `<table class="tabla"><caption>Turnos de entrega</caption><thead><tr><th scope="col">Turno</th><th scope="col">Días</th><th scope="col">Pedís hasta</th><th scope="col">Te llega</th></tr></thead><tbody>
+${datos.turnos.filter((t) => t.dias.length).map((t) => `<tr><th scope="row">${esc(t.nombre)}</th><td>${esc(dias(t.dias)[0].toUpperCase() + dias(t.dias).slice(1))}</td><td>${esc(t.cierre)} del mismo día</td><td>${esc(t.entrega)}</td></tr>`).join("")}</tbody></table>`;
+  },
   tablaHoras: () => `<table class="tabla"><caption>Hora extra</caption><thead><tr><th scope="col">Invitados</th><th scope="col">Por hora</th></tr></thead><tbody>
 <tr><td>Hasta 150</td><td>${pesos(datos.horaExtra.hasta150)}</td></tr><tr><td>Más de 150</td><td>${pesos(datos.horaExtra.masDe150)}</td></tr></tbody></table>`,
   tablaZonas: () => `<table class="tabla"><caption>Zonas de traslado</caption><thead><tr><th scope="col">Zona</th><th scope="col">Lugares</th><th scope="col">Traslado</th></tr></thead><tbody>
@@ -264,7 +271,7 @@ function paginas(v) {
 function extras(lista) {
   const hoy = datos.sitio.actualizadoISO;
   const indexables = lista.filter((p) => !p.meta.robots?.includes("noindex"));
-  const prioridad = { inicio: "1.0", precios: "0.9", eventos: "0.9", presupuesto: "0.8", achilata: "0.8" };
+  const prioridad = { inicio: "1.0", precios: "0.9", pedir: "0.9", eventos: "0.9", presupuesto: "0.8", achilata: "0.8" };
   writeFileSync(join(SITIO, "sitemap.xml"),
     `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n` +
     indexables.map((p) => `  <url><loc>${D}/${p.ruta}</loc><lastmod>${hoy}</lastmod><priority>${prioridad[p.meta.pagina] || "0.3"}</priority></url>`).join("\n") +
@@ -285,6 +292,7 @@ function extras(lista) {
 - Delivery en ${datos.delivery.join(", ")}. Otras zonas de Salta se consultan.
 - Pago por transferencia o en efectivo.
 - Pedidos por WhatsApp: ${datos.whatsapp.map((w) => tel(w.numero)).join(" y ")}.
+- Pedido mínimo: ${datos.pedidos.minimoPotes} potes. Turnos de entrega: ${datos.turnos.filter((t) => t.dias.length).map((t) => `${t.nombre}, de ${t.entrega}`).join("; ")}.
 
 ## Servicio para eventos
 Carrito de achilata con dos personas atendiendo y achilata libre durante el horario contratado. Precios por invitado, vigentes hasta el ${datos.sitio.vigenciaEventos}:
@@ -296,7 +304,8 @@ ${p.map((x) => x.precioCerrado ? `- ${x.nombre}: ${pesos(x.precioCerrado)} preci
 ## Páginas
 - [Inicio](${D}/)
 - [Qué es la achilata](${D}/achilata.html)
-- [Precios y pedidos](${D}/precios.html)
+- [Precios](${D}/precios.html)
+- [Hacer un pedido con día y turno de entrega](${D}/pedir.html)
 - [Servicio para eventos](${D}/eventos.html)
 - [Presupuesto para eventos](${D}/presupuesto.html)
 - [Instagram](${datos.sitio.instagram})
