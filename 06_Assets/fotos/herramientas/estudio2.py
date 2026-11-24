@@ -100,7 +100,7 @@ class Lienzo:
         # 5 · un solo grano para todo, como si fuera una sola foto
         g=cv2.GaussianBlur(np.random.default_rng(99).normal(0,1,out.shape[:2]).astype(np.float32),(0,0),0.6); g/=g.std()
         return out+g[...,None]*2.2
-    def render(s,atras=None,adelante=None,natural=False):
+    def render(s,atras=None,adelante=None,natural=True):
         base=Image.fromarray(np.clip(s.bg,0,255).astype(np.uint8)).convert('RGBA')
         if atras: atras(ImageDraw.Draw(base),base)
         b=np.asarray(base.convert('RGB')).astype(np.float32)

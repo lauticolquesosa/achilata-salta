@@ -13,3 +13,4 @@
 | 23/11/2026 17.00 | Instagram | Historia H05 2, v2 | Pedidos por WhatsApp con los dos números grandes, foto 07 apoyada con sombra | | Hecha a pedido. Rehecha en estudio rojo con letra crema. Enviado al WhatsApp de Lauti |
 | 23/11/2026 20.00 | Instagram | Carrusel P08 Achilata, sustantivo, 4 placas | Achilata. Helado de agua tucumano. Hay gelata. Se come con calor y en buena compañía. Fotos 10, 07, 14 y 32 | | Pasó de placa única a carrusel. Enviado al WhatsApp de Lauti |
 | 23/11/2026 | Instagram | Carrusel P02 El menú, v2 | Mismos textos con letra crema, fondo liso sin degradé y sombras rehechas | | Reenviado al WhatsApp de Lauti |
+| 23/11/2026 | Instagram | H05 2, P08 y P02 | Mismo diseño con el recorte integrado de H05 1 v3: sin halo, borde suave, light wrap, rebote rojo y grano parejo | | Reenviados al WhatsApp de Lauti |
