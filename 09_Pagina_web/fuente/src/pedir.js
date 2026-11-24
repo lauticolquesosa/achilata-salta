@@ -136,11 +136,11 @@ export function iniciarPedir() {
     const lineas = [
       `Hola, soy ${nombre}. Quiero hacer un pedido.`,
       "",
-      textoPotes(items),
+      `Cantidad: ${textoPotes(items)}`,
       `Total: ${pesos(total)} más envío`,
       "",
       `Dirección: ${zona === "Otra zona" ? dir : `${zona}, ${dir}`}`,
-      `Para ${dia}${franja ? " " + franja : ""}, de ${cuando.t.entrega}`,
+      `Para cuándo: ${dia}${franja ? " " + franja : ""}, de ${cuando.t.entrega}`,
       `Pago: ${efectivo ? (cfg.efectivoCon && con > 0 ? `efectivo, pago con ${pesos(con)}` : "efectivo") : "transferencia"}`,
     ];
     if (zona === "Otra zona") lineas.push("", "Mi zona no está en la lista, ¿llegan?");

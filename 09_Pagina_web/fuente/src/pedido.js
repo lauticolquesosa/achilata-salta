@@ -43,12 +43,12 @@ export function iniciarPedido() {
     const lineas = [
       `Hola, soy ${nombre}. Quiero hacer un pedido.`,
       "",
-      textoPotes(items),
+      `Cantidad: ${textoPotes(items)}`,
       `Total: ${pesos(total)} más envío`,
       "",
     ];
     if (lugar) lineas.push(`Dirección: ${lugar}`);
-    if (cuando) lineas.push(`Para ${cuando.charAt(0).toLowerCase() + cuando.slice(1)}`);
+    if (cuando) lineas.push(`Para cuándo: ${cuando.charAt(0).toLowerCase() + cuando.slice(1)}`);
     lineas.push(`Pago: ${form.pago.value === "efectivo" ? "efectivo" : "transferencia"}`);
     if (zona === "Otra zona") lineas.push("", "Mi zona no está en la lista, ¿llegan?");
     abrirWhatsApp(lineas.join("\n"), Number(form.numero.value) || 0);

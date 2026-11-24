@@ -43,9 +43,9 @@ await p.click('button[type="submit"]');
 const u=await p.evaluate(()=>window.__ab[0]||""); const msg=decodeURIComponent(new URL(u).searchParams.get("text")||"");
 console.log(msg);
 ok((await p.evaluate(()=>window.__ab.length))===1,"Abre WhatsApp una sola vez");
-ok(msg.includes("Para hoy a la noche, de 19:30 a 21:30"),"Mensaje con día y turno");
+ok(msg.includes("Para cuándo: hoy a la noche, de 19:30 a 21:30"),"Mensaje con día y turno");
 ok(msg.includes("Pago: efectivo, pago con $25.000"),"Mensaje con pago en efectivo");
-ok(msg.includes("Dirección: Grand Bourg, Los Ceibos 123")&&msg.includes("1 pote de 1 kg y 1 pote de medio kilo")&&msg.includes("Total: $20.000 más envío"),"Mensaje con barrio, dirección, potes y total");
+ok(msg.includes("Dirección: Grand Bourg, Los Ceibos 123")&&msg.includes("Cantidad: 1 kg y medio kilo")&&msg.includes("Total: $20.000 más envío"),"Mensaje con barrio, dirección, potes y total");
 // celular sin desborde
 p=await abrir("2026-11-26T12:00:00",{width:375,height:800});
 ok((await p.evaluate(()=>document.documentElement.scrollWidth))<=375,"Sin desborde en celular");

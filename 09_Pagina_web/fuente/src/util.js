@@ -45,10 +45,13 @@ export function codigo(prefijo) {
   return `${prefijo}${String(f.getDate()).padStart(2, "0")}${String(f.getMonth() + 1).padStart(2, "0")}${sufijo}`;
 }
 
-/** 1 pote de 1 kg y 2 potes de medio kilo */
+/** La cantidad como se dice: 1 kg, 2 kg, medio kilo, 2 de medio kilo, y juntas con y. */
 export function textoPotes(items) {
-  const corto = { kg1: "1 kg", kg05: "medio kilo" };
-  return items.map(({ p, n }) => `${n} ${n === 1 ? "pote" : "potes"} de ${corto[p.id] ?? p.nombre}`).join(" y ");
+  return items.map(({ p, n }) => {
+    if (p.id === "kg05") return n === 1 ? "medio kilo" : `${n} de medio kilo`;
+    if (p.id === "kg1") return `${n} kg`;
+    return `${n} de ${p.nombre.toLowerCase()}`;
+  }).join(" y ");
 }
 
 export const $ = (s, el = document) => el.querySelector(s);
