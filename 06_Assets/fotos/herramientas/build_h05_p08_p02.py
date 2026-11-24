@@ -117,12 +117,10 @@ def pill(d,x,y,w,h,text,font):
     d.rounded_rectangle((x,y,x+w,y+h),radius=h//2,fill=CREMA)
     d.text((x+w/2,y+h/2+2),text,font=font,fill=ROJ,anchor='mm')
 def atras(d,im):
-    T(d,80,200,'Cómo pedir.',XB(130))
+    T(d,76,290,'Cómo pedir.',fit('Cómo pedir.',920))  # el título a todo el ancho y el bloque bajado, para que no quede hueco sobre el pote
     for i,s in enumerate(['Escribinos por WhatsApp.','Elegí tu pote.','Te la llevamos a casa.']):
-        T(d,82,290+i*56,s,RG(40),stroke=False)
-    pill(d,80,480,450,88,'387 483 4041',XB(44)); pill(d,550,480,450,88,'387 468 4498',XB(44))
-    for i,s in enumerate(['Delivery en Grand Bourg, San Lorenzo Chico,','San Lorenzo, El Tipal y La Almudena.','Transferencia o efectivo.']):
-        T(d,82,650+i*46,s,RG(32),stroke=False)
+        T(d,82,400+i*60,s,RG(44),stroke=False)
+    pill(d,80,590,330,66,'387 483 4041',XB(32)); pill(d,426,590,330,66,'387 468 4498',XB(32))
 def adelante(d,im):
     lg=logo(170); im.alpha_composite(lg,(80,1270-lg.height))
 L.render(atras,adelante).save(f'{O}/P02 4 como pedir.png')

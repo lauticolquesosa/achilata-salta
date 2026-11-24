@@ -15,3 +15,4 @@
 | 23/11/2026 | Instagram | Carrusel P02 El menú, v2 | Mismos textos con letra crema, fondo liso sin degradé y sombras rehechas | | Reenviado al WhatsApp de Lauti |
 | 23/11/2026 | Instagram | H05 2, P08 y P02 | Mismo diseño con el recorte integrado de H05 1 v3: sin halo, borde suave, light wrap, rebote rojo y grano parejo | | Reenviados al WhatsApp de Lauti |
 | 24/11/2026 | Instagram | Historia H05 1, v4 | Bajada cambiada: Grand Bourg, San Lorenzo Chico, San Lorenzo, El Tipal, La Almudena y más | | Hecha a pedido. Resto igual a v3. Enviado al WhatsApp de Lauti |
+| 24/11/2026 | Instagram | P02 4 Cómo pedir, v2 | Sin el texto de zonas y pago, botones de WhatsApp más chicos, título a todo el ancho y bloque redistribuido | | Hecha a pedido. Enviado al WhatsApp de Lauti |
