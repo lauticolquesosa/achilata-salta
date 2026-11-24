@@ -1,6 +1,6 @@
 // Página de pedidos para el enlace de la bio: potes, día y turno de entrega, zona y pago. Arma el mensaje de WhatsApp.
 // Los turnos, el pedido mínimo y los días hacia adelante salen de datos.json.
-import { datos, pesos, limpiar, abrirWhatsApp, codigo, $, $$ } from "./util.js";
+import { datos, pesos, limpiar, abrirWhatsApp, textoPotes, $, $$ } from "./util.js";
 
 const DIAS = ["domingo", "lunes", "martes", "miércoles", "jueves", "viernes", "sábado"];
 const SALTA = -3 * 3600e3; // Salta está en UTC menos 3 todo el año
@@ -28,7 +28,6 @@ function nombreDia(f, i) {
 export function iniciarPedir() {
   const form = $("#form-pedir");
   if (!form) return;
-  const ref = codigo("PD");
   const cfg = datos.pedidos;
   const cantidades = datos.potes.map((p) => ({ p, input: $(`#pd-${p.id}`) }));
   const selDia = $("#pd-dia");
@@ -130,23 +129,23 @@ export function iniciarPedir() {
 
     const total = items.reduce((s, { p, n }) => s + p.precio * n, 0);
     const efectivo = form.pago.value === "efectivo";
-    const con = limpiar($("#pd-con").value, 12).replace(/[^\d.]/g, "");
+    const con = parseInt(limpiar($("#pd-con").value, 12).replace(/\D/g, ""), 10);
+    const zona = limpiar(form.zona.value, 40);
+    const franja = { mediodia: "al mediodía", tarde: "a la tarde", noche: "a la noche" }[cuando.t.id];
+    const dia = cuando.d.i === 0 ? "hoy" : cuando.d.i === 1 ? "mañana" : `el ${nombreDia(cuando.d.f, cuando.d.i).toLowerCase()}`;
     const lineas = [
-      "Hola achilata. Quiero hacer un pedido.",
+      `Hola, soy ${nombre}. Quiero hacer un pedido.`,
       "",
-      `Código: ${ref}`,
-      `Nombre: ${nombre}`,
-      ...items.map(({ p, n }) => `${n} × ${p.nombre}: ${pesos(p.precio * n)}`),
-      `Total sin envío: ${pesos(total)}`,
-      `Entrega: ${nombreDia(cuando.d.f, cuando.d.i)}, turno ${cuando.t.nombre.toLowerCase()} de ${cuando.t.entrega}`,
-      `Zona: ${limpiar(form.zona.value, 40)}`,
-      `Dirección: ${dir}`,
-      `Pago: ${efectivo ? "efectivo" : "transferencia"}`,
+      textoPotes(items),
+      `Total: ${pesos(total)} más envío`,
+      "",
+      `Dirección: ${zona === "Otra zona" ? dir : `${zona}, ${dir}`}`,
+      `Para ${dia}${franja ? " " + franja : ""}, de ${cuando.t.entrega}`,
+      `Pago: ${efectivo ? (cfg.efectivoCon && con > 0 ? `efectivo, pago con ${pesos(con)}` : "efectivo") : "transferencia"}`,
     ];
-    if (efectivo && cfg.efectivoCon && con) lineas.push(`Pago con: $${con}`);
-    if (form.zona.value === "Otra zona") lineas.push("", "Mi zona no está en la lista. ¿Llegan?");
+    if (zona === "Otra zona") lineas.push("", "Mi zona no está en la lista, ¿llegan?");
     abrirWhatsApp(lineas.join("\n"), Number(form.numero.value) || 0);
-    $("#estado-pedir").textContent = `Listo. Abrimos WhatsApp con tu pedido ${ref}.`;
+    $("#estado-pedir").textContent = "Listo. Abrimos WhatsApp con tu pedido.";
   });
 
   armarDias();

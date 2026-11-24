@@ -1,10 +1,9 @@
 // Armador de pedidos de potes. Calcula el total y manda el pedido por WhatsApp.
-import { datos, pesos, limpiar, abrirWhatsApp, codigo, $, $$ } from "./util.js";
+import { datos, pesos, limpiar, abrirWhatsApp, textoPotes, $, $$ } from "./util.js";
 
 export function iniciarPedido() {
   const form = $("#form-pedido");
   if (!form) return;
-  const ref = codigo("AP");
   const estado = $("#estado-pedido");
   const cantidades = datos.potes.map((p) => ({ p, input: $(`#cant-${p.id}`) }));
 
@@ -37,23 +36,23 @@ export function iniciarPedido() {
     if (errores.length) { (nombre.length < 2 ? $("#p-nombre") : cantidades[0].input).focus(); return; }
 
     const total = items.reduce((s, { p, n }) => s + p.precio * n, 0);
-    const lineas = [
-      "Hola achilata. Quiero hacer un pedido.",
-      "",
-      `Código: ${ref}`,
-      `Nombre: ${nombre}`,
-      ...items.map(({ p, n }) => `${n} × ${p.nombre}: ${pesos(p.precio * n)}`),
-      `Total: ${pesos(total)}`,
-      `Zona: ${limpiar(form.zona.value, 40)}`,
-    ];
+    const zona = limpiar(form.zona.value, 40);
     const dir = limpiar($("#p-direccion").value, 100);
-    if (dir) lineas.push(`Dirección o referencia: ${dir}`);
     const cuando = limpiar($("#p-cuando").value, 60);
-    if (cuando) lineas.push(`Para cuándo: ${cuando}`);
+    const lugar = zona === "Otra zona" ? dir : [zona, dir].filter(Boolean).join(", ");
+    const lineas = [
+      `Hola, soy ${nombre}. Quiero hacer un pedido.`,
+      "",
+      textoPotes(items),
+      `Total: ${pesos(total)} más envío`,
+      "",
+    ];
+    if (lugar) lineas.push(`Dirección: ${lugar}`);
+    if (cuando) lineas.push(`Para ${cuando.charAt(0).toLowerCase() + cuando.slice(1)}`);
     lineas.push(`Pago: ${form.pago.value === "efectivo" ? "efectivo" : "transferencia"}`);
-    if (form.zona.value === "Otra zona") lineas.push("", "Mi zona no está en la lista. ¿Llegan?");
+    if (zona === "Otra zona") lineas.push("", "Mi zona no está en la lista, ¿llegan?");
     abrirWhatsApp(lineas.join("\n"), Number(form.numero.value) || 0);
-    estado.textContent = `Listo. Abrimos WhatsApp con tu pedido ${ref}.`;
+    estado.textContent = "Listo. Abrimos WhatsApp con tu pedido.";
   });
   actualizar();
 }

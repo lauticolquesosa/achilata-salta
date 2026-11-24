@@ -45,6 +45,12 @@ export function codigo(prefijo) {
   return `${prefijo}${String(f.getDate()).padStart(2, "0")}${String(f.getMonth() + 1).padStart(2, "0")}${sufijo}`;
 }
 
+/** 1 pote de 1 kg y 2 potes de medio kilo */
+export function textoPotes(items) {
+  const corto = { kg1: "1 kg", kg05: "medio kilo" };
+  return items.map(({ p, n }) => `${n} ${n === 1 ? "pote" : "potes"} de ${corto[p.id] ?? p.nombre}`).join(" y ");
+}
+
 export const $ = (s, el = document) => el.querySelector(s);
 export const $$ = (s, el = document) => Array.from(el.querySelectorAll(s));
 
