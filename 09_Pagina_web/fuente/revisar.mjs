@@ -28,7 +28,7 @@ for (const [nombre, vp] of Object.entries(PANTALLAS)) {
     page.on("response", (r) => { if (r.status() >= 400 && !r.url().includes("no-existe")) avisos.push(`http ${r.status()}: ${r.url()}`); });
     await page.evaluateOnNewDocument(() => {
       document.addEventListener("securitypolicyviolation", (e) => console.error(`CSP ${e.violatedDirective} ${e.blockedURI} ${e.sourceFile}:${e.lineNumber}`));
-      try { sessionStorage.setItem("achilata_visto", "1"); sessionStorage.setItem("achilata_3d", "forzar"); } catch {}
+      try { sessionStorage.setItem("achilata_visto", "1"); } catch {}
       if (!window.__mostrarCookies) try { localStorage.setItem("achilata_privacidad", JSON.stringify({ v: 1, necesarias: true, medicion: false, fecha: Date.now() })); } catch {}
     });
     await page.goto(BASE + pag, { waitUntil: "networkidle0", timeout: 60000 });
@@ -42,7 +42,6 @@ for (const [nombre, vp] of Object.entries(PANTALLAS)) {
       }
       return {
         ancho: document.documentElement.scrollWidth, vista: innerWidth, alto: document.documentElement.scrollHeight,
-        tresD: document.documentElement.classList.contains("con-3d") || Boolean(document.querySelector(".visor.con-3d")),
         prohibidos, titulo: document.title, h1: document.querySelectorAll("h1").length,
         sinAlt: [...document.images].filter((i) => !i.hasAttribute("alt")).length,
       };
@@ -59,7 +58,7 @@ for (const [nombre, vp] of Object.entries(PANTALLAS)) {
       await page.screenshot({ path: join(SALIDA, `${pag.replace(".html", "")}-${nombre}-${i}.jpg`), type: "jpeg", quality: 70 });
     }
     problemas += avisos.length;
-    reporte.push(`${nombre} ${pag} · 3D ${datos.tresD ? "sí" : "no"} · alto ${datos.alto}px\n${avisos.map((a) => "   " + a).join("\n") || "   sin problemas"}`);
+    reporte.push(`${nombre} ${pag} · alto ${datos.alto}px\n${avisos.map((a) => "   " + a).join("\n") || "   sin problemas"}`);
     await page.close();
   }
 }

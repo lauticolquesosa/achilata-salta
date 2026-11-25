@@ -4,7 +4,7 @@
 
 Es una web de varias páginas, hecha desde cero el 19/11/2026:
 - Inicio con una foto real del pote, recortada con el método del estudio rojo. Desde el 24/11/2026 ya no lleva el 3D.
-- Qué es la achilata, con un pote 3D que se gira con el dedo.
+- Qué es la achilata, con la foto del pote. Desde el 25/11/2026 la web no tiene 3D ni three.js.
 - Precios y armador de pedidos.
 - **Hacer un pedido, `pedir.html`, el enlace para la bio de Instagram.** Potes, día y turno de entrega, zona, dirección y pago, desde 1 pote. Los turnos y las reglas se cambian en `datos.json`, en `turnos` y `pedidos`: `dias` va de 0, domingo, a 6, sábado; `cierre` es la hora límite del mismo día en Salta; con `"dias": []` el turno se cierra. Se prueba con `node probar_pedir.mjs carpeta`, con el sitio servido. Sale del plan de turnos del 24/11/2026.
 - Eventos: lo principal del servicio, los paquetes en tarjetas cortas y la calculadora de presupuesto, todo en una página. Desde el 24/11/2026 la vieja `presupuesto.html` redirige a `eventos.html#presupuesto`.
@@ -73,13 +73,6 @@ node build.mjs         # genera sitio/ con los cambios
   - Los formularios no mandan nada a ningún servidor: arman el mensaje de WhatsApp en el celular de quien escribe.
   - Las políticas siguen la Ley 25.326 e incluyen la leyenda obligatoria de la AAIP.
   - Están el botón de arrepentimiento y el enlace a Defensa del Consumidor.
-- **El 3D:**
-  - Es un pote de achilata generado con código en three.js, sin descargar modelos.
-  - Desde el 20/11/2026 es fiel a las fotos: un pote de papel con el logo y la bajada impresos, y tres bochas fucsia con el granulado del hielo raspado. El granulado se calcula por píxel en la placa de video. Sin palito ni gotas.
-  - En el inicio el 3D es lo único: no hay foto encima. Se arma apenas carga la página.
-  - La foto queda solo de respaldo, si el equipo no puede mostrar 3D.
-  - La posición del pote sale de una tabla de poses en `main.js`, POSES, según cuánto se bajó. No usa animaciones encadenadas, así al volver arriba queda siempre igual. En el celular sube pegado al inicio y se desvanece.
-  - Si la persona pidió menos movimiento en su sistema, el pote queda quieto.
 - **Tipografía:**
   - Escala reducida el 20/11/2026, tomando como base sitios como Apple, Stripe, Linear y Vercel.
   - Texto de 16 a 18 px y menú y botones de 16 px.

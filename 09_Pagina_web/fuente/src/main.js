@@ -167,57 +167,6 @@ function flotante() {
   poner();
 }
 
-// ---------- 3D ----------
-/** El 3D solo se carga si el equipo tiene aceleración gráfica real. Si no, queda la foto. */
-function hayWebGL() {
-  try { if (sessionStorage.getItem("achilata_3d") === "forzar") return true; } catch { /* nada */ }
-  try {
-    const c = document.createElement("canvas");
-    const gl = c.getContext("webgl2") || c.getContext("webgl");
-    if (!gl) return false;
-    const info = gl.getExtension("WEBGL_debug_renderer_info");
-    const placa = String(info ? gl.getParameter(info.UNMASKED_RENDERER_WEBGL) : gl.getParameter(gl.RENDERER));
-    gl.getExtension("WEBGL_lose_context")?.loseContext();
-    return !/swiftshader|llvmpipe|softpipe|software|basic render/i.test(placa);
-  } catch { return false; }
-}
-
-/** Espera la primera interacción, o unos segundos después de cargar, para no frenar la primera pantalla. */
-function cuandoInteractue(ms = 3500) {
-  return new Promise((listo) => {
-    const eventos = ["pointermove", "pointerdown", "touchstart", "wheel", "keydown", "scroll"];
-    let hecho = false;
-    const ir = () => {
-      if (hecho) return;
-      hecho = true;
-      eventos.forEach((e) => removeEventListener(e, ir, true));
-      ("requestIdleCallback" in window ? requestIdleCallback : setTimeout)(() => listo(), { timeout: 600 });
-    };
-    eventos.forEach((e) => addEventListener(e, ir, { capture: true, passive: true, once: true }));
-    const despues = () => setTimeout(ir, ms);
-    if (document.readyState === "complete") despues(); else addEventListener("load", despues, { once: true });
-  });
-}
-
-async function cargarPote(contenedor, opciones) {
-  const sinTresD = () => { if (contenedor?.classList.contains("escena")) raiz.classList.add("sin-3d"); return null; };
-  if (!contenedor || !hayWebGL()) return sinTresD();
-  // el pote es lo principal del inicio: se arma apenas termina de cargar la página
-  await cuandoInteractue(contenedor.classList.contains("escena") ? 150 : 3500);
-  try {
-    const { montarPote } = await import("./cup.js");
-    const pote = await montarPote(contenedor, { logo: "assets/img/logo-rojo.svg", ...opciones });
-    if (!pote) return sinTresD();
-    contenedor.classList.add("con-3d");
-    if (contenedor.classList.contains("escena")) raiz.classList.add("con-3d");
-    ScrollTrigger.refresh();
-    return pote;
-  } catch (e) {
-    console.warn("No se pudo cargar el 3D", e);
-    return sinTresD();
-  }
-}
-
 async function inicio() {
   const cargador = $(".cargador");
   let visto = false;
@@ -241,7 +190,6 @@ async function inicio() {
 
   // el título se abre a los costados al bajar del héroe
   if (!quieto) gsap.to(lineas, { xPercent: (i) => (i % 2 ? 30 : -30), ease: "none", scrollTrigger: { trigger: ".heroe", start: "top top", end: "bottom top", scrub: 1 } });
-  // el héroe usa una foto real del pote: el 3D queda solo en la página de la achilata
 
   // la banda de eventos: la foto se abre hasta ocupar toda la pantalla
   const marco = $(".apertura__marco");
@@ -256,11 +204,6 @@ async function inicio() {
 }
 
 function laAchilata() {
-  cargarPote($(".visor"), { arrastrable: true }).then((pote) => {
-    if (pote) Object.assign(pote.estado, { y: 0.45, escala: 1.25 });
-    if (pote && quieto) { pote.estado.giroAuto = 0; pote.renderizar(); }
-    if (pote && !quieto) gsap.from(pote.estado, { escala: 0.4, giroY: -3, duration: 1.8, ease: "expo.out" });
-  });
   // galería horizontal: la pista se desplaza mientras la sección queda fija
   const hor = $(".horizontal"), pista = $(".horizontal__pista");
   if (hor && pista && !quieto) {
