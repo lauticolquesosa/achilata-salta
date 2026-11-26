@@ -2,12 +2,10 @@
 
 **Tema:** Viernes de pedidos. Facilitar el pedido y mostrar que detrás hay dos personas reales.
 
-1. **11.00 hs.** Tomamos pedidos para hoy y mañana.
-2. **13.05 hs.** Se comparte Cómo pedir.
-3. **16.00 hs.** Preparando pedidos, en vivo.
-4. **19.00 hs.** Encuesta: ¿Copa o directo del pote?
-5. **20.05 hs.** Se comparte Así sale tu pedido.
-6. **22.00 hs.** Reposts de clientes.
+1. **11.00 hs.** Próximas historias 2: ¿Ya probaste achilata?, con quiz o encuesta.
+2. **13.05 hs.** Se comparte Hace 32 grados.
+3. **16.00 hs.** Próximas historias 3: Hace calor en Salta, con caja de preguntas.
+4. **20.05 hs.** Se comparte Cómo pedir.
 
 Medida 1080 × 1920 px, con 250 px libres arriba y abajo.
 

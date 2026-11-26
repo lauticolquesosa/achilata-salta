@@ -1,10 +1,8 @@
 # Historias del día 12 · Lunes 30 de noviembre
 
-**Tema:** Lo que nos escriben. Mostrar que a la gente le gustó, con mensajes reales.
+**Tema:** La achilata anotada. Explicar todo lo que tiene una achilata en una sola foto, para guardar.
 
-1. **12.00 hs.** Resumen del finde.
-2. **20.05 hs.** Se comparte Lo que nos escriben.
-3. **21.00 hs.** Encuesta: ¿Más pedidos el finde o también en la semana?
+1. **20.05 hs.** Se comparte La achilata anotada.
 
 Medida 1080 × 1920 px, con 250 px libres arriba y abajo.
 

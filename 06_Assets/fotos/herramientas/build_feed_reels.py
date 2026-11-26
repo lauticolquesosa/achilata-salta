@@ -71,7 +71,7 @@ codificar(escenas,f'{d}\\R03 la textura.mp4')
 fc=fit('Mirá esta',900,mx=260); texto(M[1].copy(),[(-1,80,1010,'Mirá esta',fc,'ls',True,'t'),(-1,80,1010+round(fc.size*0.92),'textura.',fc,'ls',True,'t')],1).save(f'{d}\R03 portada.png')
 
 # ================= R01 · Una cucharada =================
-d=carpeta('R01 El ritual')
+d=carpeta('R01 Una cucharada')
 cortes=[('16',0.78,1080,1460,'rb','piso',311),('14',0.78,0,1920+20,'lb','',312),('02',0.80,1080,1920,'rb','',313),
         ('07',0.85,0,1560,'lb','piso',314),('13',0.80,1080,1920,'rb','',315),('10',0.85,540,1920+40,'cb','',316)]
 E=[estudio(*c) for c in cortes]

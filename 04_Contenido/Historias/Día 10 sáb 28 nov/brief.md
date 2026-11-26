@@ -2,13 +2,9 @@
 
 **Tema:** Segundo sábado. El día de más venta de las dos semanas.
 
-1. **10.30 hs.** Buen día, hoy hay achilata.
-2. **12.00 hs.** Tomamos pedidos para hoy.
-3. **13.05 hs.** Se comparte No deslices.
-4. **16.00 hs.** Deslizador: ¿Cuánto calor hace hoy?
-5. **18.00 hs.** Entregas en vivo.
-6. **20.05 hs.** Se comparte Primera vez.
-7. **22.00 hs.** Gracias por hoy.
+1. **10.00 hs.** Próximas historias 4: Pedidos abiertos, con el enlace a WhatsApp.
+2. **13.05 hs.** Se comparte Una cucharada.
+3. **20.05 hs.** Se comparte Etiquetá a quien le debés.
 
 Medida 1080 × 1920 px, con 250 px libres arriba y abajo.
 

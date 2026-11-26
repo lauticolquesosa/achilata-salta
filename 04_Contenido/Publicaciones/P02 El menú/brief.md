@@ -5,9 +5,9 @@
 - **Medida:** 1080 × 1350 px por placa
 
 ## La idea
-Hecho el 20/11 en el estudio rojo, fotos 28, 11, 02 y 16. Placa 1: El menú, con la nota corto, como tiene que ser. Placa 2: las tres bochas, con 1 kg y $12.000. Placa 3: la bocha que cae al vaso, con Medio kilo y $8.000. Placa 4: cómo pedir, los dos WhatsApp, las zonas y el pago.
+Publicada el 20/11. Estudio rojo, fotos 28, 11, 02 y 16. Placa 1: El menú, con la nota corto, como tiene que ser. Placa 2: 1 kg, $12.000. Placa 3: Medio kilo, $8.000. Placa 4: Cómo pedir, con los dos WhatsApp.
 
-La idea es una propuesta. Las fotos se eligen recién cuando se pide la pieza, mirando toda la galería.
+**Hecha.** Los archivos finales están en `final/`, en orden: P02 1 el menu.png, P02 2 un kilo.png, P02 3 medio kilo.png, P02 4 como pedir.png.
 
 ## Texto de la publicación
 Dos tamaños y un solo sabor, el de siempre. Guardalo para cuando apriete el calor ☀️
@@ -18,4 +18,4 @@ Dos tamaños y un solo sabor, el de siempre. Guardalo para cuando apriete el cal
 - [x] Diseño siguiendo el manual
 - [x] Revisado con `04_Contenido/reglas_de_contenido.md`
 - [x] Enviado al WhatsApp de Lauti, imágenes y texto
-- [ ] Publicado y anotado en `registro_publicaciones.md`
+- [x] Publicado y anotado en `registro_publicaciones.md`

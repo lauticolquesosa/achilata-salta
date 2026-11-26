@@ -1,10 +1,9 @@
 # Historias del día 14 · Miércoles 2 de diciembre
 
-**Tema:** Nosotros. Ponerle cara a la marca antes del tercer finde.
+**Tema:** Achilata en tu fiesta. Presentar el servicio de carrito para eventos antes de las fiestas de fin de año.
 
-1. **13.00 hs.** Pregunta: Preguntanos lo que quieras.
-2. **20.05 hs.** Se comparte Nosotros.
-3. **21.30 hs.** Mañana abrimos pedidos para el finde.
+1. **20.05 hs.** Se comparte Achilata en tu fiesta.
+2. **21.00 hs.** Las historias reales del día: el pote, una entrega o la calle con sol.
 
 Medida 1080 × 1920 px, con 250 px libres arriba y abajo.
 

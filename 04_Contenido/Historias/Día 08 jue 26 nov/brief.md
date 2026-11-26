@@ -2,11 +2,9 @@
 
 **Tema:** Abrimos pedidos. Arrancar el segundo finde con pedidos anotados desde el jueves.
 
-1. **11.00 hs.** Abrimos pedidos para el finde.
-2. **13.05 hs.** Se comparte La achilata anotada.
-3. **18.00 hs.** Pregunta: ¿Para qué día querés tu pote?
-4. **20.05 hs.** Se comparte Este finde hay achilata.
-5. **21.30 hs.** Recordatorio de precios.
+1. **13.05 hs.** Se comparte Achilata, sustantivo.
+2. **18.00 hs.** Próximas historias 1: encuesta 1 kg o medio kilo.
+3. **20.05 hs.** Se comparte La textura.
 
 Medida 1080 × 1920 px, con 250 px libres arriba y abajo.
 

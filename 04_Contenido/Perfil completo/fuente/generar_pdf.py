@@ -45,7 +45,7 @@ PUBS=[
   'Hace 32 grados en Salta y vos todavía sin achilata. Lo arreglamos rápido: escribinos y te la llevamos bien fría.\n\n1 kg a $12.000\nMedio kilo a $8.000\n387 483 4041 o 387 468 4498'),
  ('4','vie 27/11 20.00','Carrusel de 6','P09 Cómo pedir',PU+r'\P09 Cómo pedir\final','P09 1 portada.png',
   'Guardalo para el finde. Cómo pedir tu achilata en cuatro pasos:\n\n1. Escribinos por WhatsApp.\n2. Elegí tu pote, 1 kg o medio kilo.\n3. Pasanos tu zona.\n4. Pagá con transferencia o efectivo.\n\nY te la llevamos fría. Envíos a Grand Bourg, San Lorenzo Chico, San Lorenzo, El Tipal y La Almudena. Si estás en otra zona, consultanos.'),
- ('5','sáb 28/11 13.00','Reel de 8 s','R01 Una cucharada',RE+r'\R01 El ritual\final','R01 portada.png',
+ ('5','sáb 28/11 13.00','Reel de 8 s','R01 Una cucharada',RE+r'\R01 Una cucharada\final','R01 portada.png',
   'Una cucharada y estás en Tucumán. Para los tucumanos que la extrañan y para los salteños que todavía no la probaron.\n\nPedí la tuya al 387 483 4041 o al 387 468 4498.'),
  ('6','sáb 28/11 20.00','Placa única','P11 Etiquetá a quien le debés',PU+r'\P11 Etiquetá a quien le debés\final','P11 1 etiqueta.png',
   'Etiquetá a quien le debés una achilata. Y que pague esta vez.\n\nPotes de 1 kg y medio kilo con envío. Pedidos por WhatsApp, link en la bio.'),

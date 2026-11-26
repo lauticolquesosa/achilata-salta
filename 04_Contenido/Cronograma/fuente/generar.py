@@ -3,6 +3,7 @@
 import datetime as dt, os, sys, html, asyncio, pathlib, shutil
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from datos import INICIO, N_DIAS, PIEZAS, DIAS, COMO_FUNCIONA
+PUBLICADAS = {"P01", "P02"}   # ya subidas a Instagram
 
 BASE = pathlib.Path(__file__).resolve().parents[2]          # 04_Contenido
 PROY = BASE.parent
@@ -25,7 +26,9 @@ ARCH = BASE / "_archivo cronograma 30 días"
 validas = {carpeta_pieza(c).name for c in PIEZAS} | {carpeta_dia(i).name for i in DIAS}
 for sub in ["Publicaciones", "Reels", "Historias"]:
     for p in (BASE / sub).iterdir():
-        if p.is_dir() and p.name not in validas:
+        # solo se archivan piezas y días del cronograma, nunca otras carpetas como Próximas historias
+        es_pieza = p.name[:1] in "PR" and p.name[1:3].isdigit() or p.name.startswith("Día ")
+        if p.is_dir() and es_pieza and p.name not in validas and not (p / "final").exists():
             dest = ARCH / sub / p.name
             dest.parent.mkdir(parents=True, exist_ok=True)
             if not dest.exists(): shutil.move(str(p), str(dest))
@@ -59,9 +62,18 @@ for c, (t, tipo, formato, desc, texto) in PIEZAS.items():
     s = [f"# {c} · {t}", "", f"- **Tipo:** {tipo}, {formato.lower()}",
          f"- **Cuándo:** día {i}, {larga(d).lower()}, a las {hora_de[c]} hs",
          f"- **Medida:** {'1080 × 1920 px' if tipo == 'Reel' else '1080 × 1350 px por placa'}", "",
-         "## La idea", desc, "", "La idea es una propuesta. Las fotos se eligen recién cuando se pide la pieza, mirando toda la galería.", "",
-         "## Texto de la publicación", texto, ""] + ESTADO
-    escribir_brief(car / "brief.md", s)
+         "## La idea", desc, ""]
+    hecha = (car / "final").exists() and any((car / "final").iterdir())
+    if hecha:
+        archivos = sorted(f.name for f in (car / "final").iterdir() if f.is_file())
+        s += ["**Hecha.** Los archivos finales están en `final/`, en orden: " + ", ".join(archivos) + ".", ""]
+    else:
+        s += ["La idea es una propuesta. Las fotos se eligen recién cuando se pide la pieza, mirando toda la galería.", ""]
+    s += ["## Texto de la publicación", texto, ""]
+    est = list(ESTADO)
+    if hecha: est = [l.replace("- [ ] ", "- [x] ") if l.startswith("- [ ] ") and "Publicado" not in l else l for l in est]
+    if c in PUBLICADAS: est = [l.replace("- [ ] ", "- [x] ") for l in est]
+    escribir_brief(car / "brief.md", s + est)
 for i, (tema, obj, feed, hist, nota) in DIAS.items():
     car = carpeta_dia(i); car.mkdir(parents=True, exist_ok=True)
     s = [f"# Historias del día {i} · {larga(F[i])}", "", f"**Tema:** {tema}. {obj}", ""]

@@ -102,7 +102,7 @@ G=fit('Te la llevamos',930,mx=260)
 frame(B09,[(-1,72,560,'Te la llevamos',G,'ls','t'),(-1,1000,560+110,'antes de que se derrita.',INK(54),'rs','ink')],1).save(f'{dR}\\R07 portada.png')
 
 # ================= R01 · Una cucharada · la cuchara de madera contra el cielo =================
-dR=f'{C}\\Reels\\R01 El ritual\\final'; os.makedirs(dR,exist_ok=True)
+dR=f'{C}\\Reels\\R01 Una cucharada\\final'; os.makedirs(dR,exist_ok=True)
 B21=cielo('21')
 f=fit('Una cucharada',920,mx=170); g=round(f.size*0.95)
 L1=(0.2,80,470,'Una cucharada',f,'ls','t'); L2=(0.0,80,470+g,'y estás en',f,'ls','t'); L3=(0.0,80,470+2*g,'Tucumán.',f,'ls','t')

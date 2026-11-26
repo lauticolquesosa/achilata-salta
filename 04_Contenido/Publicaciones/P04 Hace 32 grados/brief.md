@@ -1,21 +1,25 @@
 # P04 · Hace 32 grados
 
 - **Tipo:** Publicación, placa única
-- **Cuándo:** día 3, sábado 21 de noviembre, a las 20.00 hs
+- **Cuándo:** día 9, viernes 27 de noviembre, a las 13.00 hs
 - **Medida:** 1080 × 1350 px por placa
 
 ## La idea
-Solo tipografía, con mucho aire. Crema, y en ExtraBold bordó alineado a la izquierda: Hace 32 grados en Salta y vos todavía no probaste achilata. El logo reducido chico en una esquina. Si ese día hace otra temperatura, se cambia el número por el real.
+Hecha el 26/11 en el estudio rojo. Arriba Salta, cuatro de la tarde, y la nota y vos sin achilata. El 32° gigante en crema, pisado por el pote de la foto 28 con su sombra. Logo crema abajo.
 
-La idea es una propuesta. Las fotos se eligen recién cuando se pide la pieza, mirando toda la galería.
+**Hecha.** Los archivos finales están en `final/`, en orden: P04 1 hace 32.png.
 
 ## Texto de la publicación
-Lo arreglamos hoy mismo. Pedí tu pote por WhatsApp ☀️
+Hace 32 grados en Salta y vos todavía sin achilata. Lo arreglamos rápido: escribinos y te la llevamos bien fría.
+
+1 kg a $12.000
+Medio kilo a $8.000
+387 483 4041 o 387 468 4498
 
 ## Estado
-- [ ] Fotos elegidas de toda la galería, en el momento de hacerla
-- [ ] Fotos estudiadas, editadas y adaptadas al formato
-- [ ] Diseño siguiendo el manual
-- [ ] Revisado con `04_Contenido/reglas_de_contenido.md`
-- [ ] Enviado al WhatsApp de Lauti, imágenes y texto
+- [x] Fotos elegidas de toda la galería, en el momento de hacerla
+- [x] Fotos estudiadas, editadas y adaptadas al formato
+- [x] Diseño siguiendo el manual
+- [x] Revisado con `04_Contenido/reglas_de_contenido.md`
+- [x] Enviado al WhatsApp de Lauti, imágenes y texto
 - [ ] Publicado y anotado en `registro_publicaciones.md`

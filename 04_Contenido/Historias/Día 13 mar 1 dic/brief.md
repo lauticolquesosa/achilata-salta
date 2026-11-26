@@ -2,9 +2,7 @@
 
 **Tema:** Arranca diciembre. Instalar que diciembre en Salta es achilata.
 
-1. **11.00 hs.** Diciembre arranca.
-2. **20.05 hs.** Se comparte Salta en diciembre.
-3. **21.00 hs.** Quiz sobre la achilata.
+1. **20.05 hs.** Se comparte Te la llevamos.
 
 Medida 1080 × 1920 px, con 250 px libres arriba y abajo.
 

@@ -1,12 +1,9 @@
 # Historias del día 11 · Domingo 29 de noviembre
 
-**Tema:** Domingo para compartir. Que nos etiqueten y la cuenta llegue a gente nueva.
+**Tema:** Domingo de antojo. Tentar con humor y cerrar el segundo finde con pedidos.
 
-1. **11.00 hs.** Domingo de siesta.
-2. **13.05 hs.** Se comparte Etiquetá a quien le debés.
-3. **15.00 hs.** Pregunta: ¿Con quién la compartís?
-4. **18.00 hs.** Reposts de clientes.
-5. **21.30 hs.** Cierre del segundo finde.
+1. **12.00 hs.** Próximas historias 5: Preguntanos lo que quieras.
+2. **20.05 hs.** Se comparte No deslices.
 
 Medida 1080 × 1920 px, con 250 px libres arriba y abajo.
 
