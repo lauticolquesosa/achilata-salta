@@ -99,7 +99,7 @@ S+=[P('El modelo: Rocambolesc.',H1),
     '<b>Fondo:</b> rojo achilata #E7364A liso con grano fino en la mayoría, sin degradés.',
     '<b>Títulos:</b> Bricolage ExtraBold en crema #FFF3E2, con borde del mismo color para engordarlos. Nunca blanco puro.',
     '<b>Palabra gigante pisada por el producto:</b> 32°, Cómo pedir, No deslices.',
-    '<b>Para que no sature el rojo,</b> cuatro piezas cortan la grilla en diagonal. Dos con fondo realista de la foto, con su cielo: los reels Te la llevamos y Una cucharada. Dos en blanco puro con la letra en rojo achilata, jugando con la tipografía alrededor del producto: Etiquetá y el reel La textura.',
+    '<b>Para que no sature el rojo,</b> cuatro piezas cortan la grilla en diagonal con fondo realista de la propia foto: Etiquetá con el pote derritiéndose frente al Cabildo, La textura con el pote en el cerro y frente a la iglesia, y Te la llevamos y Una cucharada contra el cielo salteño. El título sigue en crema.',
     '<b>Series con plantilla fija:</b> los pasos de Cómo pedir con el número gigante, y el humor de No deslices.',
     '<b>Ink Free</b> solo para la nota chica, como en las piezas aprobadas.',
     '<b>Destacadas:</b> un ícono de línea crema sobre rojo, todas iguales.'])+[
