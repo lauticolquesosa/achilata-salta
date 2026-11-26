@@ -35,7 +35,7 @@ class Lienzo:
         s.sh=np.zeros((H,W),np.float32)
         s.F=np.zeros((H,W,3),np.float32); s.A=np.zeros((H,W),np.float32)
         s.front=[]; s.back=[]
-        s.suave=1.0   # bordes del recorte: 1 es el método de H05; 1.8 o más los difumina para que no se vea mal cortado
+        s.suave=1.8   # bordes del recorte difuminados, pedido de Lauti del 26/11: que no se vea mal cortado. 1 era el método de H05
     def poner(s,F,a,scale,x,y):
         """pega el recorte escalado con su esquina arriba izquierda en x,y; devuelve la máscara en el lienzo"""
         h,w=a.shape; nw,nh=round(w*scale),round(h*scale)

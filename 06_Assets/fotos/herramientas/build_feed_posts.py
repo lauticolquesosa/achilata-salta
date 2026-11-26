@@ -58,7 +58,7 @@ def paso(num,titulo,lineas,n,sc,px,py,ref,sombra,seed,extra=None):
         if extra: extra(d,im)
         d.text((1000,110),f'paso {num} de 4',font=INK(40),fill=CREMA,anchor='rs')
     return L.render(atras,adelante)
-guardar(paso('1','Escribinos.',['Por WhatsApp, a cualquiera de los dos.'],'01',0.56,780,880,'cb','piso',902,
+guardar(paso('1','Escribinos.',['Por WhatsApp, a cualquiera de los dos.'],'08',0.56,780,880,'cb','piso',902,
               extra=lambda d,im:numeros(d,80,1150)),K,'P06 2 escribinos')
 guardar(paso('2','Elegí tu pote.',['1 kg a $12.000.','Medio kilo a $8.000.'],'28',0.62,800,900,'cb','piso',903),K,'P06 3 elegi tu pote')
 guardar(paso('3','Pasanos tu zona.',['Grand Bourg, San Lorenzo Chico, San Lorenzo,','El Tipal y La Almudena. Otras, consultanos.'],'05',0.66,1080,860,'rb','aire',904),K,'P06 4 tu zona')
@@ -159,7 +159,7 @@ def adelante(d,im): poner_logo(im,1000-150,1275,150)
 guardar(L.render(atras,adelante),K,'P12 1 en tu fiesta')
 
 L=Lienzo(*P,seed=1302)
-A=colocar(L,'01',0.80,600,1240,'cb'); L.sombra_piso(A,1240)
+A=colocar(L,'28',0.80,600,1240,'cb'); L.sombra_piso(A,1240)
 f=fit('no hay fiesta sin',920,mx=130)
 def atras(d,im):
     for i,s in enumerate(['En Tucumán','no hay fiesta sin','achilata.']): T(d,78,220+i*round(f.size*0.94),s,f)

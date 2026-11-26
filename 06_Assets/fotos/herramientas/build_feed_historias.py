@@ -83,7 +83,7 @@ historia(f'{PROX}\\H14 achilata en tu fiesta.png',['Achilata en','tu fiesta.'],'
 historia(f'{PROX}\\H15 presupuesto eventos.png',['Pedí tu','presupuesto.'],'con la fecha y los invitados.','05',0.95,1080,1400,'rb','aire',
          ['Escribinos y te lo armamos.'],614,pills=True)
 # destacada Achilata
-historia(f'{PROX}\\H16 que es la achilata.png',['Achilata.'],'sustantivo femenino.','01',0.90,540,1470,'cb','piso',
+historia(f'{PROX}\\H16 que es la achilata.png',['Achilata.'],'sustantivo femenino.','08',0.90,540,1470,'cb','piso',
          ['Helado de agua tucumano.','Fucsia, frío y de cuchara.'],615)
 historia(f'{PROX}\\H17 hay gelata.png',['hay gelata.'],'gracias, nonos italianos.','28',0.85,540,1420,'cb','piso',
          ['Dicen que el nombre viene de ahí:','los heladeros italianos gritaban hay gelata','y de tanto escucharlo quedó achilata.'],616)
@@ -94,7 +94,7 @@ historia(f'{PROX}\\H11 el menu.png',['El menú.'],'corto, como tiene que ser.','
          ['1 kg a $12.000.','Medio kilo a $8.000.','Sabor clásico, el de siempre.'],617)
 
 # ================= próximas historias =================
-historia(f'{PROX}\\H18 encuesta 1 kg o medio kilo.png',['¿1 kg o','medio kilo?'],'votá acá abajo.','01',0.70,540,1620,'cb','piso',[],621)
+historia(f'{PROX}\\H18 encuesta 1 kg o medio kilo.png',['¿1 kg o','medio kilo?'],'votá acá abajo.','28',0.70,540,1620,'cb','piso',[],621)
 historia(f'{PROX}\\H19 ya probaste.png',['¿Ya probaste','achilata?'],'contanos con el emoji.','13',0.80,1080,1920,'rb','',[],622)
 historia(f'{PROX}\\H20 hace calor.png',['Hace calor','en Salta.'],'y se derrite todo.','08',0.80,540,1450,'cb','piso',
          ['¿Cuántos grados hay donde estás?'],623)

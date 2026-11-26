@@ -5,7 +5,10 @@ from feed_comun import *
 import subprocess
 FPS=30; W,H=S
 NUEVAS=RAIZ+r'\06_Assets\fotos\originales 26-11'
-def cargar(n): return np.asarray(Image.open(glob.glob(NUEVAS+f'/{n} *')[0]).convert('RGB')).astype(np.float32)
+def cargar(n):
+    fx=os.path.join(RAIZ,'06_Assets','fotos','editadas','fucsia',f'{n}.png')   # versión con el fucsia unificado, si existe
+    src=fx if os.path.exists(fx) else glob.glob(NUEVAS+f'/{n} *')[0]
+    return np.asarray(Image.open(src).convert('RGB')).astype(np.float32)
 def foto(I,Wo,Ho,cx=0.5,cy=0.5,zoom=1.0,seed=7):
     """la foto llena el cuadro sin bandas: se recorta a la proporción, con zoom y centro; una corrección pareja y grano"""
     h,w=I.shape[:2]

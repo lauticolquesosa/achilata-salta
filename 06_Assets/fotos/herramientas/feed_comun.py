@@ -26,6 +26,8 @@ def poner_logo(im,x,y_base,w=160,col='crema'):
     lg=logo(w,col); im.alpha_composite(lg,(x,y_base-lg.height))
 
 def orig(n):
+    fx=os.path.join(RAIZ,'06_Assets','fotos','editadas','fucsia',f'{n}.png')   # versión con el fucsia unificado, si existe
+    if os.path.exists(fx): return np.asarray(Image.open(fx).convert('RGB')).astype(np.float32)
     f=glob.glob(ORIG+f'/{n} *.png')[0]
     return np.asarray(Image.open(f).convert('RGB')).astype(np.float32)
 

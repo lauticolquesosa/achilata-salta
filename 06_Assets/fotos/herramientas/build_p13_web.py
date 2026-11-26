@@ -56,7 +56,7 @@ guardar(L.render(at,ad),f'{OP}\\P13 1 pedi desde la web.png')
 L=lienzo(*P,1302)
 G=fit('Elegí tus potes.',930,mx=150)
 tb=150+round(G.size*0.72); PISO=990
-A=producto(L,'01',PISO-round(900*0.50),0.50,300,'c',sombra='piso',piso=PISO)
+A=producto(L,'28',PISO-round(906*0.50),0.50,300,'c',sombra='piso',piso=PISO)   # los dos potes de la misma foto: mismo estilo; la 01 no se usa, su base se ve mal recortada
 A=producto(L,'28',PISO-round(906*0.40),0.40,790,'c',sombra='piso',piso=PISO)
 def at(d,im):
     T(d,72,tb,'Elegí tus potes.',G)
