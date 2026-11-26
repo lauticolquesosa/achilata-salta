@@ -96,10 +96,10 @@ S+=[P('El modelo: Rocambolesc.',H1),
     '<b>Destacadas iguales entre sí,</b> con un signo simple sobre un círculo de color.',
     'Van Leeuwen, Salt and Straw y OddFellows hacen cosas parecidas pero cambian de color en cada post. Kuono es la más cercana en espíritu, pero su paleta es verde y crema. Para nosotros, Rocambolesc es la que se copia.'])+[
     P('Qué copiamos, con nuestro manual',H2)]+bul([
-    '<b>Fondo:</b> rojo achilata #E7364A liso con grano fino. Sin degradés.',
+    '<b>Fondo:</b> rojo achilata #E7364A liso con grano fino en la mayoría, sin degradés.',
     '<b>Títulos:</b> Bricolage ExtraBold en crema #FFF3E2, con borde del mismo color para engordarlos. Nunca blanco puro.',
     '<b>Palabra gigante pisada por el producto:</b> 32°, Cómo pedir, No deslices.',
-    '<b>Macros a sangre</b> de la textura del helado con la frase encima: Etiquetá y el reel La textura.',
+    '<b>Para que no sature el rojo,</b> cuatro piezas cortan la grilla en diagonal. Dos con fondo realista de la foto, con su cielo: los reels Te la llevamos y Una cucharada. Dos en blanco puro con la letra en rojo achilata, jugando con la tipografía alrededor del producto: Etiquetá y el reel La textura.',
     '<b>Series con plantilla fija:</b> los pasos de Cómo pedir con el número gigante, y el humor de No deslices.',
     '<b>Ink Free</b> solo para la nota chica, como en las piezas aprobadas.',
     '<b>Destacadas:</b> un ícono de línea crema sobre rojo, todas iguales.'])+[
