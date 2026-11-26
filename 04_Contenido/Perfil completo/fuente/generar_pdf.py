@@ -37,25 +37,25 @@ PU=C+r'\Publicaciones'; RE=C+r'\Reels'; DE=C+r'\Destacadas'; PX=C+r'\Historias\P
 
 # ---------- las 10 publicaciones nuevas, en orden ----------
 PUBS=[
- ('1','jue 26/11 13.00','Carrusel de 4','P08 Achilata, sustantivo',PU+r'\P08 Achilata, sustantivo\final','P08 1 achilata.png',
+ ('3','jue 26/11 13.00','Carrusel de 4','P03 Achilata, sustantivo',PU+r'\P03 Achilata, sustantivo\final','P03 1 achilata.png',
   'Achilata. Sustantivo femenino. Helado de agua tucumano, fucsia, frío y de cuchara.\n\nDicen que el nombre viene de los heladeros italianos que gritaban hay gelata. Nosotros la trajimos a Salta para que no tengas que viajar a Tucumán.\n\nPedí por WhatsApp al 387 483 4041 o al 387 468 4498.'),
- ('2','jue 26/11 20.00','Reel de 12 s','R03 La textura',RE+r'\R03 La textura\final','R03 portada.png',
+ ('4','jue 26/11 20.00','Reel de 12 s','P04 La textura',PU+r'\P04 La textura\final','P04 portada.png',
   'Mirá esta textura. Hielo raspado, color fucsia y receta tucumana.\n\nAsí llega a tu casa, en pote de 1 kg o de medio kilo. Pedidos por WhatsApp, link en la bio.'),
- ('3','vie 27/11 13.00','Placa única','P04 Hace 32 grados',PU+r'\P04 Hace 32 grados\final','P04 1 hace 32.png',
+ ('5','vie 27/11 13.00','Placa única','P05 Hace 32 grados',PU+r'\P05 Hace 32 grados\final','P05 1 hace 32.png',
   'Hace 32 grados en Salta y vos todavía sin achilata. Lo arreglamos rápido: escribinos y te la llevamos bien fría.\n\n1 kg a $12.000\nMedio kilo a $8.000\n387 483 4041 o 387 468 4498'),
- ('4','vie 27/11 20.00','Carrusel de 6','P09 Cómo pedir',PU+r'\P09 Cómo pedir\final','P09 1 portada.png',
+ ('6','vie 27/11 20.00','Carrusel de 6','P06 Cómo pedir',PU+r'\P06 Cómo pedir\final','P06 1 portada.png',
   'Guardalo para el finde. Cómo pedir tu achilata en cuatro pasos:\n\n1. Escribinos por WhatsApp.\n2. Elegí tu pote, 1 kg o medio kilo.\n3. Pasanos tu zona.\n4. Pagá con transferencia o efectivo.\n\nY te la llevamos fría. Envíos a Grand Bourg, San Lorenzo Chico, San Lorenzo, El Tipal y La Almudena. Si estás en otra zona, consultanos.'),
- ('5','sáb 28/11 13.00','Reel de 8 s','R01 Una cucharada',RE+r'\R01 Una cucharada\final','R01 portada.png',
+ ('7','sáb 28/11 13.00','Reel de 8 s','P07 Una cucharada',PU+r'\P07 Una cucharada\final','P07 portada.png',
   'Una cucharada y estás en Tucumán. Para los tucumanos que la extrañan y para los salteños que todavía no la probaron.\n\nPedí la tuya al 387 483 4041 o al 387 468 4498.'),
- ('6','sáb 28/11 20.00','Placa única','P11 Etiquetá a quien le debés',PU+r'\P11 Etiquetá a quien le debés\final','P11 1 etiqueta.png',
+ ('8','sáb 28/11 20.00','Placa única','P08 Etiquetá a quien le debés',PU+r'\P08 Etiquetá a quien le debés\final','P08 1 etiqueta.png',
   'Etiquetá a quien le debés una achilata. Y que pague esta vez.\n\nPotes de 1 kg y medio kilo con envío. Pedidos por WhatsApp, link en la bio.'),
- ('7','dom 29/11 20.00','Carrusel de 5','P05 No deslices',PU+r'\P05 No deslices\final','P05 1 no deslices.png',
+ ('9','dom 29/11 20.00','Carrusel de 5','P09 No deslices',PU+r'\P09 No deslices\final','P09 1 no deslices.png',
   'Te dijimos que no deslices. Bueno, vos te lo buscaste.\n\nAhora pedí la tuya por WhatsApp al 387 483 4041 o al 387 468 4498. 1 kg a $12.000 y medio kilo a $8.000.'),
- ('8','lun 30/11 20.00','Placa única','P10 La achilata anotada',PU+r'\P10 La achilata anotada\final','P10 1 anotada.png',
+ ('10','lun 30/11 20.00','Placa única','P10 La achilata anotada',PU+r'\P10 La achilata anotada\final','P10 1 anotada.png',
   'La achilata, anotada. Hielo raspado, receta tucumana, sabor clásico y un pote de 1 kg que llega frío a tu casa.\n\nContanos en los comentarios qué le agregarías a la lista.'),
- ('9','mar 1/12 20.00','Reel de 11 s','R07 Te la llevamos',RE+r'\R07 Te la llevamos\final','R07 portada.png',
+ ('11','mar 1/12 20.00','Reel de 11 s','P11 Te la llevamos',PU+r'\P11 Te la llevamos\final','P11 portada.png',
   'Te la llevamos a Grand Bourg, San Lorenzo, San Lorenzo Chico, El Tipal y La Almudena. Si estás en otra zona, escribinos y lo vemos.\n\nPedidos al 387 483 4041 o al 387 468 4498.'),
- ('10','mié 2/12 20.00','Carrusel de 4','P13 Achilata en tu fiesta',PU+r'\P13 Achilata en tu fiesta\final','P13 1 en tu fiesta.png',
+ ('12','mié 2/12 20.00','Carrusel de 4','P12 Achilata en tu fiesta',PU+r'\P12 Achilata en tu fiesta\final','P12 1 en tu fiesta.png',
   'Achilata en tu fiesta. En Tucumán no hay fiesta sin achilata, y ahora en Salta tampoco.\n\nVamos con el carrito, los vasitos, las cucharitas y quien sirve. Casamientos, 15, cumples, empresas y clubes.\n\nPedí tu presupuesto con la fecha y la cantidad de invitados al 387 483 4041 o al 387 468 4498.'),
 ]
 BIO='Helado tucumano en Salta 🍧\nPotes y carrito para eventos\nEnvíos a San Lorenzo, El Tipal, Grand Bourg y más\nPedí al 387 483 4041 o 387 468 4498'
@@ -83,7 +83,7 @@ S+=[Spacer(1,60*mm),P('Perfil completo',ParagraphStyle('t',parent=H1,fontSize=52
     P('@achilatasalta',ParagraphStyle('t2',parent=H1,fontSize=30,leading=34,textColor=BOR)),
     P('qué subir, en qué orden y qué cambiar.',ParagraphStyle('n',parent=NO,fontSize=20,leading=24)),Spacer(1,20*mm),
     P('Jueves 26 de noviembre de 2026. Todo lo que dice este PDF ya está hecho y guardado en la carpeta del proyecto: 10 publicaciones nuevas, 3 reels, 5 portadas de destacadas con sus historias y 6 historias para los próximos días.'),
-    P('Carpeta: <b>04_Contenido</b>, en Publicaciones, Reels, Destacadas, Historias/Próximas historias y Perfil completo.'),PageBreak()]
+    P('Carpeta: <b>04_Contenido</b>, en Publicaciones, Destacadas, Historias/Próximas historias y Perfil completo.'),PageBreak()]
 
 # ---------- el modelo ----------
 S+=[P('El modelo: Rocambolesc.',H1),
@@ -138,12 +138,12 @@ S+=[P('2. Las destacadas.',H1),
     'Cuando lleguen los primeros mensajes de clientes, sumamos una sexta destacada, Clientes, con capturas reales y su permiso.'])+[PageBreak()]
 
 # ---------- publicaciones ----------
-S+=[P('3. Las 10 publicaciones, en orden.',H1),
+S+=[P('3. Las publicaciones 3 a 12, en orden.',H1),
     P('Una o dos por día, con más fuerza de jueves a domingo. El horario es una base: si un día no se puede, se corre todo un lugar. El orden sí importa, porque arma la grilla de la maqueta.'),
     P('el texto de cada una va listo para copiar y pegar.',NO)]
 for num,cuando,fmt,nombre,car,port,cap in PUBS:
     fotos=sorted(f for f in os.listdir(car) if f.endswith(('.png','.mp4')) and 'portada' not in f) if 'R' not in nombre[:1] else sorted(f for f in os.listdir(car) if f.endswith('.mp4'))
-    info=[P(f'<b>{num}. {nombre[4:]}</b>',ParagraphStyle('x',parent=H2,spaceBefore=0)),P(f'{cuando} · {fmt}',CH),
+    info=[P(f'<b>{num} de 12. {nombre[4:]}</b>',ParagraphStyle('x',parent=H2,spaceBefore=0)),P(f'{cuando} · {fmt}',CH),
           P('Archivos, en orden: '+', '.join(fotos),CH),P(br(cap),CP)]
     tb=Table([[img(car+'\\'+port,32*mm),info]],colWidths=[38*mm,127*mm])
     tb.setStyle(TableStyle([('VALIGN',(0,0),(-1,-1),'TOP')]))

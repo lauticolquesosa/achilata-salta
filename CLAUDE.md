@@ -38,9 +38,7 @@ Es un emprendimiento de Lauti y un amigo que vende **achilata**, el helado de ag
 - **Perfil completo, 26/11/2026:** el plan de feed de 12, las destacadas y las próximas historias, con Rocambolesc como modelo, está en `04_Contenido/Perfil completo/`. Manda sobre el cronograma, que queda en pausa. Títulos en crema, nunca blanco puro, sobre el rojo achilata.
 - **La presentación del perfil** está en `03_Estrategia/perfil_instagram.md`.
 - **Cada pieza tiene su carpeta con un `brief.md`:**
-  - `04_Contenido/Publicaciones`: las 9 publicaciones del perfil completo, P01, P02, P04, P05, P08, P09, P10, P11 y P13
-  - `Reels`: R01 Una cucharada, R03 La textura y R07 Te la llevamos
-  - las ideas que no entraron, en `04_Contenido/_ideas para la próxima tanda`
+  - `04_Contenido/Publicaciones/P01` a `P12`: las 12 del feed, reels incluidos, numeradas en el orden en que se suben. **El número es el lugar en la grilla.** Lo que no va a estar en Instagram se borra, no se guarda.
   - `Historias/Día 01…30`
 - **Lo terminado** de cada pieza se guarda en su carpeta, con su PNG o MP4 final.
 - **La publicación vieja ya está archivada.** P01 es la primera desde la vuelta. La cuenta tenía 542 seguidores.

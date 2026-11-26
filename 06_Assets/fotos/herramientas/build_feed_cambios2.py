@@ -1,4 +1,4 @@
-# Cambios 2 del 26/11/2026 · Lauti no quiso el fondo blanco: P11 y R03 pasan a fondo realista de la propia foto.
+# Cambios 2 del 26/11/2026 · Lauti no quiso el fondo blanco: P08 y P04 pasan a fondo realista de la propia foto.
 # Fotos nuevas de Lauti en 06_Assets/fotos/originales 26-11: 33 Cabildo, 34 cerro, 35 iglesia.
 # Uso: python build_feed_cambios2.py [solo_p11]
 from feed_comun import *
@@ -18,17 +18,17 @@ def foto(I,Wo,Ho,cx=0.5,cy=0.5,zoom=1.0,seed=7):
     g=cv2.GaussianBlur(np.random.default_rng(seed).normal(0,1,(Ho,Wo)).astype(np.float32),(0,0),0.65); g/=g.std()
     return Image.fromarray(np.clip(out+g[...,None]*2.2,0,255).astype(np.uint8))
 
-# ================= P11 · Etiquetá · el pote derritiéndose frente al Cabildo =================
+# ================= P08 · Etiquetá · el pote derritiéndose frente al Cabildo =================
 I33=cargar('33')
 im=foto(I33,1080,1350,0.5,0.0,1.0,1101).convert('RGBA'); d=ImageDraw.Draw(im)
 f=fit('le debés una achilata.',940,mx=120)
 T(d,70,150,'Etiquetá a quien',f); T(d,70,150+round(f.size*0.98),'le debés una achilata.',f)
 d.text((1010,1300),'y que pague esta vez.',font=INK(50),fill=CREMA,anchor='rs')
-d0=f'{C}\\Publicaciones\\P11 Etiquetá a quien le debés\\final'; os.makedirs(d0,exist_ok=True)
-im.convert('RGB').save(f'{d0}\\P11 1 etiqueta.png')
+d0=f'{C}\\Publicaciones\\P08 Etiquetá a quien le debés\\final'; os.makedirs(d0,exist_ok=True)
+im.convert('RGB').save(f'{d0}\\P08 1 etiqueta.png')
 if len(sys.argv)>1 and sys.argv[1]=='solo_p11': sys.exit()
 
-# ================= R03 · La textura · el pote en el cerro y frente a la iglesia =================
+# ================= P04 · La textura · el pote en el cerro y frente a la iglesia =================
 ease=lambda t:1-(1-min(max(t,0),1))**3
 def capa(fr,items,t):
     for t0,x,y,s,f_,an,kind in items:
@@ -59,11 +59,11 @@ esc=[toma(I34,0.5,0.40,1.00,1.05,s1,2.6),
      toma(I35,0.49,0.36,2.0,2.15,s3,2.2),
      toma(I35,0.49,0.55,1.05,1.10,s4,2.4),
      toma(I34,0.5,0.40,1.05,1.07,fin,3.0)]
-dR=f'{C}\\Reels\\R03 La textura\\final'; os.makedirs(dR,exist_ok=True)
+dR=f'{C}\\Publicaciones\\P04 La textura\\final'; os.makedirs(dR,exist_ok=True)
 p=subprocess.Popen(['ffmpeg','-y','-loglevel','error','-f','rawvideo','-pix_fmt','rgb24','-s',f'{W}x{H}','-r',str(FPS),'-i','-',
-    '-c:v','libx264','-preset','slow','-crf','16','-pix_fmt','yuv420p','-movflags','+faststart',f'{dR}\\R03 la textura.mp4'],stdin=subprocess.PIPE)
+    '-c:v','libx264','-preset','slow','-crf','16','-pix_fmt','yuv420p','-movflags','+faststart',f'{dR}\\P04 la textura.mp4'],stdin=subprocess.PIPE)
 for dur,fn in esc:
     for i in range(round(dur*FPS)): p.stdin.write(np.asarray(fn(i/FPS)).tobytes())
 p.stdin.close(); p.wait()
-capa(foto(I34,W,H,0.5,0.40,1.0,1).convert('RGB'),[fx(l) for l in s1],1).save(f'{dR}\\R03 portada.png')
+capa(foto(I34,W,H,0.5,0.40,1.0,1).convert('RGB'),[fx(l) for l in s1],1).save(f'{dR}\\P04 portada.png')
 print('ok')

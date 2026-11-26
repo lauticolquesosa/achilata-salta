@@ -1,6 +1,6 @@
 # Cambios del 26/11/2026 · Lauti marcó 4 piezas porque la grilla saturaba de rojo.
-# Dos con fondo realista de la foto: R07 Te la llevamos y R01 Una cucharada, sobre cielo.
-# Dos en blanco puro con la letra en rojo achilata, jugando tipografía y producto: P11 Etiquetá y R03 La textura.
+# Dos con fondo realista de la foto: P11 Te la llevamos y P07 Una cucharada, sobre cielo.
+# Dos en blanco puro con la letra en rojo achilata, jugando tipografía y producto: P08 Etiquetá y P04 La textura.
 # Uso: python build_feed_cambios.py <carpeta de recortes V>
 from feed_comun import *
 import estudio2 as E
@@ -26,8 +26,8 @@ def colocar(L,n,sc,px,py,ref='cb'):
     return L.poner(F,a,sc,round(px-rx*sc),round(py-ry*sc))
 def TR(d,x,y,t,f,anchor='ls'): T(d,x,y,t,f,anchor=anchor,fill=ROJ)
 
-# ================= P11 · Etiquetá · blanco puro =================
-K='P11 Etiquetá a quien le debés'
+# ================= P08 · Etiquetá · blanco puro =================
+K='P08 Etiquetá a quien le debés'
 L=LienzoB(*P,seed=1111)
 A=colocar(L,'22',0.84,540,1250,'cb'); L.sombra_aire(A,dx=26,dy=30,blur=38,fuerza=0.22)
 G1=fit('le debés',950); G2=fit('una achilata.',950)
@@ -38,7 +38,7 @@ def adelante(d,im):
     TR(d,58,1272,'una achilata.',G2)
     d.text((1000,268),'y que pague esta vez.',font=INK(46),fill=ROJ,anchor='rs')
 d0=f'{C}\\Publicaciones\\{K}\\final'; os.makedirs(d0,exist_ok=True)
-L.render(atras,adelante).save(f'{d0}\\P11 1 etiqueta.png')
+L.render(atras,adelante).save(f'{d0}\\P08 1 etiqueta.png')
 
 # ---------- video ----------
 ease=lambda t:1-(1-min(max(t,0),1))**3
@@ -86,8 +86,8 @@ def cielo(n,grain=2.0):
     out=(out-128)*1.04+128
     return Image.fromarray(np.clip(out,0,255).astype(np.uint8))
 
-# ================= R07 · Te la llevamos · el helado sobre el edificio, cielo salteño =================
-dR=f'{C}\\Reels\\R07 Te la llevamos\\final'; os.makedirs(dR,exist_ok=True)
+# ================= P11 · Te la llevamos · el helado sobre el edificio, cielo salteño =================
+dR=f'{C}\\Publicaciones\\P11 Te la llevamos\\final'; os.makedirs(dR,exist_ok=True)
 B09=cielo('09')
 zonas=[['Grand Bourg.'],['San Lorenzo.'],['San Lorenzo','Chico.'],['El Tipal.'],['La Almudena.']]
 FZ=fit('San Lorenzo.',920,mx=230)
@@ -97,12 +97,12 @@ def zona(i):
 def otra(t): return frame(zoom(B09,1.06,0.5,0.9),[(-1,82,380,'Y si estás en otra zona,',RG(52),'ls','t')]+lineas(['consultanos.'],0.0),t)
 def fin07(t): return frame(zoom(B09,1.07,0.5,0.9),[(0,78,560,'Pedí la tuya.',FZ,'ls','t'),(0.25,82,650,'1 kg a $12.000 y medio kilo a $8.000.',RG(42),'ls','t'),
                                                    (0.5,80,710,None,None,None,'pills'),(0.8,1000,880,'antes de que se derrita.',INK(54),'rs','ink')],t)
-codificar([(1.6,zona(0))]+[(1.3,zona(i)) for i in range(1,5)]+[(1.8,otra),(3.0,fin07)],f'{dR}\\R07 te la llevamos.mp4')
+codificar([(1.6,zona(0))]+[(1.3,zona(i)) for i in range(1,5)]+[(1.8,otra),(3.0,fin07)],f'{dR}\\P11 te la llevamos.mp4')
 G=fit('Te la llevamos',930,mx=260)
-frame(B09,[(-1,72,560,'Te la llevamos',G,'ls','t'),(-1,1000,560+110,'antes de que se derrita.',INK(54),'rs','ink')],1).save(f'{dR}\\R07 portada.png')
+frame(B09,[(-1,72,560,'Te la llevamos',G,'ls','t'),(-1,1000,560+110,'antes de que se derrita.',INK(54),'rs','ink')],1).save(f'{dR}\\P11 portada.png')
 
-# ================= R01 · Una cucharada · la cuchara de madera contra el cielo =================
-dR=f'{C}\\Reels\\R01 Una cucharada\\final'; os.makedirs(dR,exist_ok=True)
+# ================= P07 · Una cucharada · la cuchara de madera contra el cielo =================
+dR=f'{C}\\Publicaciones\\P07 Una cucharada\\final'; os.makedirs(dR,exist_ok=True)
 B21=cielo('21')
 f=fit('Una cucharada',920,mx=170); g=round(f.size*0.95)
 L1=(0.2,80,470,'Una cucharada',f,'ls','t'); L2=(0.0,80,470+g,'y estás en',f,'ls','t'); L3=(0.0,80,470+2*g,'Tucumán.',f,'ls','t')
@@ -110,11 +110,11 @@ fx=lambda l:(-1,)+l[1:]
 esc=[(3.4,lambda t:frame(zoom(B21,1.0+0.02*t),[L1,(1.6,)+L2[1:]],t)),
      (2.2,lambda t:frame(zoom(B09,1.0+0.02*t,0.5,0.9),[fx(L1),fx(L2),L3],t)),
      (3.0,lambda t:frame(zoom(B21,1.04),[(0.0,80,470,'Pedí la tuya.',f,'ls','t'),(0.25,82,560,'1 kg a $12.000 y medio kilo a $8.000.',RG(42),'ls','t'),(0.5,80,620,None,None,None,'pills')],t))]
-codificar(esc,f'{dR}\\R01 una cucharada.mp4')
-frame(B21,[fx(L1),fx(L2),fx(L3)],1).save(f'{dR}\\R01 portada.png')
+codificar(esc,f'{dR}\\P07 una cucharada.mp4')
+frame(B21,[fx(L1),fx(L2),fx(L3)],1).save(f'{dR}\\P07 portada.png')
 
-# ================= R03 · La textura · blanco puro, letra roja =================
-dR=f'{C}\\Reels\\R03 La textura\\final'; os.makedirs(dR,exist_ok=True)
+# ================= P04 · La textura · blanco puro, letra roja =================
+dR=f'{C}\\Publicaciones\\P04 La textura\\final'; os.makedirs(dR,exist_ok=True)
 def escena_b(n,sc,px,py,ref,seed,sombra='aire'):
     L=LienzoB(W,H,seed=seed); A=colocar(L,n,sc,px,py,ref)
     if sombra=='aire': L.sombra_aire(A,dx=26,dy=34,blur=40,fuerza=0.22)
@@ -143,6 +143,6 @@ s3=([(0.15,80,640,'Color',XB(170),'ls','t'),(0.45,62,960,'fucsia.',F3,'ls','t')]
 s4=([(0.15,80,640,'Receta',XB(170),'ls','t'),(0.45,62,960,'tucumana.',F4,'ls','t')],[])
 blanco=LienzoB(W,H,seed=335).render(None,None).convert('RGB')
 def fin03(t): return frame(blanco,[(0.0,540,840,None,560,None,'logo'),(0.3,540,940,'Helado tucumano en Salta.',RG(46),'ms','t'),(0.6,202,1040,None,None,None,'pills')],t,ROJ)
-codificar([(2.4,esc_b(E1,*s1,2.4)),(2.4,esc_b(E2,*s2,2.4)),(2.4,esc_b(E3,*s3,2.4)),(2.4,esc_b(E4,*s4,2.4)),(2.6,fin03)],f'{dR}\\R03 la textura.mp4')
-esc_b(E1,[(-1,)+i[1:] for i in s1[0]],[],2.4)(0).save(f'{dR}\\R03 portada.png')
+codificar([(2.4,esc_b(E1,*s1,2.4)),(2.4,esc_b(E2,*s2,2.4)),(2.4,esc_b(E3,*s3,2.4)),(2.4,esc_b(E4,*s4,2.4)),(2.6,fin03)],f'{dR}\\P04 la textura.mp4')
+esc_b(E1,[(-1,)+i[1:] for i in s1[0]],[],2.4)(0).save(f'{dR}\\P04 portada.png')
 print('ok')

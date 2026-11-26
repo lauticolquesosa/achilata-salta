@@ -10,10 +10,10 @@ fp=Image.new('RGBA',(1080,1080),'white'); fp.alpha_composite(lg,((1080-lg.width)
 fp.convert('RGB').save(OUT+r'\foto de perfil 1080.png')
 
 # la grilla, de la más nueva arriba a la izquierda
-G=[[(PU,'P13 Achilata en tu fiesta','P13 1 en tu fiesta.png'),(RE,'R07 Te la llevamos','R07 portada.png'),(PU,'P10 La achilata anotada','P10 1 anotada.png')],
-   [(PU,'P05 No deslices','P05 1 no deslices.png'),(PU,'P11 Etiquetá a quien le debés','P11 1 etiqueta.png'),(RE,'R01 Una cucharada','R01 portada.png')],
-   [(PU,'P09 Cómo pedir','P09 1 portada.png'),(PU,'P04 Hace 32 grados','P04 1 hace 32.png'),(RE,'R03 La textura','R03 portada.png')],
-   [(PU,'P08 Achilata, sustantivo','P08 1 achilata.png'),(PU,'P02 El menú','P02 1 el menu.png'),(PU,'P01 Hay achilata en Salta','P01 1 portada.png')]]
+G=[[(PU,'P12 Achilata en tu fiesta','P12 1 en tu fiesta.png'),(PU,'P11 Te la llevamos','P11 portada.png'),(PU,'P10 La achilata anotada','P10 1 anotada.png')],
+   [(PU,'P09 No deslices','P09 1 no deslices.png'),(PU,'P08 Etiquetá a quien le debés','P08 1 etiqueta.png'),(PU,'P07 Una cucharada','P07 portada.png')],
+   [(PU,'P06 Cómo pedir','P06 1 portada.png'),(PU,'P05 Hace 32 grados','P05 1 hace 32.png'),(PU,'P04 La textura','P04 portada.png')],
+   [(PU,'P03 Achilata, sustantivo','P03 1 achilata.png'),(PU,'P02 El menú','P02 1 el menu.png'),(PU,'P01 Hay achilata en Salta','P01 1 portada.png')]]
 cw=360; ch=480; gap=4
 W=3*cw+2*gap; top=800
 M=Image.new('RGB',(W,top+4*(ch+gap)),'#0C1014'); d=ImageDraw.Draw(M)

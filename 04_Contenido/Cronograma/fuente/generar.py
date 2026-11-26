@@ -18,13 +18,13 @@ hora_de = {c: h for i, v in DIAS.items() for h, c in v[2]}
 
 def larga(d): return f"{DL[d.weekday()]} {d.day} de {MES[d.month]}"
 def corta(d): return f"{DC[d.weekday()]} {d.day} {MES[d.month][:3]}"
-def carpeta_pieza(c): return BASE / ("Reels" if PIEZAS[c][1] == "Reel" else "Publicaciones") / f"{c} {PIEZAS[c][0]}"
+def carpeta_pieza(c): return BASE / "Publicaciones" / f"{c} {PIEZAS[c][0]}"   # reels incluidos: el número es el lugar en la grilla
 def carpeta_dia(i): return BASE / "Historias" / f"Día {i:02d} {corta(F[i])}"
 
 # ---------- archivo de lo que quedó fuera de las dos semanas ----------
 ARCH = BASE / "_archivo cronograma 30 días"
 validas = {carpeta_pieza(c).name for c in PIEZAS} | {carpeta_dia(i).name for i in DIAS}
-for sub in ["Publicaciones", "Reels", "Historias"]:
+for sub in ["Historias"]:
     for p in (BASE / sub).iterdir():
         # solo se archivan piezas y días del cronograma, nunca otras carpetas como Próximas historias
         es_pieza = p.name[:1] in "PR" and p.name[1:3].isdigit() or p.name.startswith("Día ")
@@ -82,13 +82,13 @@ for i, (tema, obj, feed, hist, nota) in DIAS.items():
     escribir_brief(car / "brief.md", s)
 
 def indice(nombre, codes):
-    s = [f"# {nombre}", "", "| Código | Día | Hora | Pieza | Formato |", "|---|---|---|---|---|"]
+    s = [f"# {nombre}", "", "Las 12 del feed, numeradas en el orden en que se suben. P01 y P02 ya están publicadas.", "",
+         "| Código | Día | Hora | Pieza | Tipo | Formato |", "|---|---|---|---|---|---|"]
     for c in codes:
-        s.append(f"| {c} | {corta(F[dia_de[c]])} | {hora_de[c]} | {PIEZAS[c][0]} | {PIEZAS[c][2]} |")
+        s.append(f"| {c} | {corta(F[dia_de[c]])} | {hora_de[c]} | {PIEZAS[c][0]} | {PIEZAS[c][1]} | {PIEZAS[c][2]} |")
     return "\n".join(s) + "\n"
 orden = sorted(PIEZAS, key=lambda c: (dia_de[c], hora_de[c]))
-(BASE / "Publicaciones" / "_indice.md").write_text(indice("Publicaciones", [c for c in orden if PIEZAS[c][1] != "Reel"]), encoding="utf-8")
-(BASE / "Reels" / "_indice.md").write_text(indice("Reels", [c for c in orden if PIEZAS[c][1] == "Reel"]), encoding="utf-8")
+(BASE / "Publicaciones" / "_indice.md").write_text(indice("Publicaciones", orden), encoding="utf-8")
 total_h = sum(len(v[3]) for v in DIAS.values())
 (BASE / "Historias" / "_indice.md").write_text(f"# Historias\n\nUna carpeta por día con su brief. Son {total_h} historias en {N_DIAS} días.\n", encoding="utf-8")
 

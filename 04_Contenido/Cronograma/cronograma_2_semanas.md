@@ -120,7 +120,7 @@ Que cada uno sepa si llegamos a su zona antes de abrir los pedidos.
 
 Arrancar el segundo finde con pedidos anotados desde el jueves.
 
-**13.00 hs · Publicación P08 · Achilata, sustantivo** · Carrusel de 4 placas
+**13.00 hs · Publicación P03 · Achilata, sustantivo** · Carrusel de 4 placas
 
 Hecha el 23/11 en el estudio rojo con letra crema, fotos 10, 07, 14 y 32. Placa 1: Achilata., sustantivo femenino, con la bocha en la espátula. Placa 2: Helado de agua tucumano. Placa 3: Dicen que el nombre viene de hay gelata, gracias, nonos italianos. Placa 4: Se come con calor y en buena compañía.
 
@@ -130,9 +130,9 @@ Dicen que el nombre viene de los heladeros italianos que gritaban hay gelata. No
 
 Pedí por WhatsApp al 387 483 4041 o al 387 468 4498.
 
-**20.00 hs · Reel R03 · La textura** · Video vertical de 12 segundos
+**20.00 hs · Reel P04 · La textura** · Video vertical de 12 segundos
 
-Hecho el 26/11 con fondo realista de la propia foto, fotos 34 cerro y 35 iglesia de originales 26-11. Toma 1: el pote en el cerro con la vista de Salta, Mirá esta textura. Toma 2: la bocha de cerca, Hielo raspado. Toma 3: la bocha frente a la iglesia, Color fucsia. Toma 4: el pote entero, Receta tucumana. Cierre en el cerro: Hay achilata en Salta y los dos números. Va sin audio: se elige uno en tendencia en Instagram. Portada R03 portada.png.
+Hecho el 26/11 con fondo realista de la propia foto, fotos 34 cerro y 35 iglesia de originales 26-11. Toma 1: el pote en el cerro con la vista de Salta, Mirá esta textura. Toma 2: la bocha de cerca, Hielo raspado. Toma 3: la bocha frente a la iglesia, Color fucsia. Toma 4: el pote entero, Receta tucumana. Cierre en el cerro: Hay achilata en Salta y los dos números. Va sin audio: se elige uno en tendencia en Instagram. Portada P04 portada.png.
 
 *Texto:* Mirá esta textura. Hielo raspado, color fucsia y receta tucumana.
 
@@ -148,7 +148,7 @@ Así llega a tu casa, en pote de 1 kg o de medio kilo. Pedidos por WhatsApp, lin
 
 Facilitar el pedido y mostrar que detrás hay dos personas reales.
 
-**13.00 hs · Publicación P04 · Hace 32 grados** · Placa única
+**13.00 hs · Publicación P05 · Hace 32 grados** · Placa única
 
 Hecha el 26/11 en el estudio rojo. Arriba Salta, cuatro de la tarde, y la nota y vos sin achilata. El 32° gigante en crema, pisado por el pote de la foto 28 con su sombra. Logo crema abajo.
 
@@ -158,7 +158,7 @@ Hecha el 26/11 en el estudio rojo. Arriba Salta, cuatro de la tarde, y la nota y
 Medio kilo a $8.000
 387 483 4041 o 387 468 4498
 
-**20.00 hs · Publicación P09 · Cómo pedir** · Carrusel de 6 placas
+**20.00 hs · Publicación P06 · Cómo pedir** · Carrusel de 6 placas
 
 Hecha el 26/11 en el estudio rojo, para guardar. Placa 1: Cómo pedir gigante con la mano que alcanza el pote, foto 05. Placas 2 a 5, con el número gigante y la nota paso 1 de 4: Escribinos, con los dos WhatsApp; Elegí tu pote, 1 kg a $12.000 y medio kilo a $8.000; Pasanos tu zona, con las cinco zonas; Pagá como quieras, transferencia o efectivo. Placa 6: Y te la llevamos fría, con los números y el logo.
 
@@ -182,15 +182,15 @@ Y te la llevamos fría. Envíos a Grand Bourg, San Lorenzo Chico, San Lorenzo, E
 
 El día de más venta de las dos semanas.
 
-**13.00 hs · Reel R01 · Una cucharada** · Video vertical de 8 segundos
+**13.00 hs · Reel P07 · Una cucharada** · Video vertical de 8 segundos
 
-Hecho el 26/11 con fondo realista de la propia foto: la cuchara de madera contra el cielo, foto 21, y el helado sobre el edificio, foto 09, con el cielo extendido. El texto crema se arma de a una línea: Una cucharada, y estás en, Tucumán. Cierre: Pedí la tuya, precios y los dos números. Va sin audio. Portada R01 portada.png.
+Hecho el 26/11 con fondo realista de la propia foto: la cuchara de madera contra el cielo, foto 21, y el helado sobre el edificio, foto 09, con el cielo extendido. El texto crema se arma de a una línea: Una cucharada, y estás en, Tucumán. Cierre: Pedí la tuya, precios y los dos números. Va sin audio. Portada P07 portada.png.
 
 *Texto:* Una cucharada y estás en Tucumán. Para los tucumanos que la extrañan y para los salteños que todavía no la probaron.
 
 Pedí la tuya al 387 483 4041 o al 387 468 4498.
 
-**20.00 hs · Publicación P11 · Etiquetá a quien le debés** · Placa única
+**20.00 hs · Publicación P08 · Etiquetá a quien le debés** · Placa única
 
 Hecha el 26/11 con fondo realista de la propia foto: el pote derritiéndose frente al Cabildo, foto 33 de originales 26-11. Arriba, en crema sobre el cielo: Etiquetá a quien le debés una achilata. Abajo a la derecha, en Ink Free: y que pague esta vez.
 
@@ -208,7 +208,7 @@ Potes de 1 kg y medio kilo con envío. Pedidos por WhatsApp, link en la bio.
 
 Tentar con humor y cerrar el segundo finde con pedidos.
 
-**20.00 hs · Publicación P05 · No deslices** · Carrusel de 5 placas
+**20.00 hs · Publicación P09 · No deslices** · Carrusel de 5 placas
 
 Hecha el 26/11 en el estudio rojo. Placa 1: No deslices, con las bochas asomando desde abajo, foto 22. Placa 2: En serio, te va a dar antojo, foto 16. Placa 3: Último aviso, con el pote que sube, foto 08. Placa 4: Bueno, vos te lo buscaste, con el pote grande, foto 11. Placa 5: Pedí la tuya, precios, los dos números y la mano con el pote, foto 05.
 
@@ -243,9 +243,9 @@ Contanos en los comentarios qué le agregarías a la lista.
 
 Instalar que diciembre en Salta es achilata.
 
-**20.00 hs · Reel R07 · Te la llevamos** · Video vertical de 11 segundos
+**20.00 hs · Reel P11 · Te la llevamos** · Video vertical de 11 segundos
 
-Hecho el 26/11 con fondo realista de la propia foto: el helado derritiéndose sobre el edificio, foto 09, con el cielo extendido hacia arriba. Arriba, Te la llevamos a, y las zonas de a una en crema: Grand Bourg, San Lorenzo, San Lorenzo Chico, El Tipal, La Almudena y Si estás en otra zona, consultanos. Cierre: Pedí la tuya, precios, números y antes de que se derrita. Va sin audio. Portada R07 portada.png.
+Hecho el 26/11 con fondo realista de la propia foto: el helado derritiéndose sobre el edificio, foto 09, con el cielo extendido hacia arriba. Arriba, Te la llevamos a, y las zonas de a una en crema: Grand Bourg, San Lorenzo, San Lorenzo Chico, El Tipal, La Almudena y Si estás en otra zona, consultanos. Cierre: Pedí la tuya, precios, números y antes de que se derrita. Va sin audio. Portada P11 portada.png.
 
 *Texto:* Te la llevamos a Grand Bourg, San Lorenzo, San Lorenzo Chico, El Tipal y La Almudena. Si estás en otra zona, escribinos y lo vemos.
 
@@ -259,7 +259,7 @@ Pedidos al 387 483 4041 o al 387 468 4498.
 
 Presentar el servicio de carrito para eventos antes de las fiestas de fin de año.
 
-**20.00 hs · Publicación P13 · Achilata en tu fiesta** · Carrusel de 4 placas
+**20.00 hs · Publicación P12 · Achilata en tu fiesta** · Carrusel de 4 placas
 
 Hecha el 26/11 en el estudio rojo, para el servicio de eventos. Placa 1: Achilata en tu fiesta, nuevo para eventos en Salta, con los tres potes, foto 32. Placa 2: En Tucumán no hay fiesta sin achilata, ahora tampoco en Salta, foto 01. Placa 3: Vamos con el carrito, vasitos, cucharitas y quien sirve, foto 10. Placa 4: Pedí tu presupuesto, con la fecha y los invitados, y los dos números, foto 13. Sin precios hasta confirmar el costo del kilo.
 

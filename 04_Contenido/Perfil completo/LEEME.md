@@ -8,10 +8,10 @@ Pedido de Lauti: llenar el feed, armar las destacadas y las próximas historias,
 - `foto de perfil 1080.png`: el logo rojo sobre blanco, más grande.
 
 ## Orden de publicación
-1. P08 Achilata, sustantivo · 2. R03 La textura · 3. P04 Hace 32 grados · 4. P09 Cómo pedir · 5. R01 Una cucharada · 6. P11 Etiquetá · 7. P05 No deslices · 8. P10 La achilata anotada · 9. R07 Te la llevamos · 10. P13 Achilata en tu fiesta.
+1. P03 Achilata, sustantivo · 2. P04 La textura · 3. P05 Hace 32 grados · 4. P06 Cómo pedir · 5. P07 Una cucharada · 6. P08 Etiquetá · 7. P09 No deslices · 8. P10 La achilata anotada · 9. P11 Te la llevamos · 10. P12 Achilata en tu fiesta.
 
 ## Dónde está cada cosa
-- Publicaciones y reels: su carpeta en `04_Contenido/Publicaciones` y `Reels`, en `final/`.
+- Las 12 del feed, reels incluidos: `04_Contenido/Publicaciones/P01` a `P12`, numeradas en el orden en que se suben, cada una con su `final/`.
 - Destacadas: `04_Contenido/Destacadas`, portadas y historias.
 - Próximas historias: `04_Contenido/Historias/Próximas historias`.
 - Scripts: `06_Assets/fotos/herramientas/feed_comun.py`, `build_feed_posts.py`, `build_feed_reels.py`, `build_feed_historias.py` y `build_perfil_maqueta.py`. Necesitan la carpeta de recortes `a??.npy` y `f??.npy` como primer argumento.

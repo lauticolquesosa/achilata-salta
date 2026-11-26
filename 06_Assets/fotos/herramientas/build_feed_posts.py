@@ -1,4 +1,4 @@
-# Feed completo 26/11/2026 · publicaciones P04, P09, P11, P05, P10 y P13.
+# Feed completo 26/11/2026 · publicaciones P05, P06, P08, P09, P10 y P12.
 # Uso: python build_feed_posts.py <carpeta de recortes V>
 from feed_comun import *
 V=sys.argv[1]
@@ -19,8 +19,8 @@ hechos={}
 def guardar(img,carp,nombre):
     p=out(carp,nombre); img.save(p); hechos.setdefault(carp,[]).append(p)
 
-# =============== P04 · Hace 32 grados · placa única ===============
-K='P04 Hace 32 grados'
+# =============== P05 · Hace 32 grados · placa única ===============
+K='P05 Hace 32 grados'
 L=Lienzo(*P,seed=401)
 A=colocar(L,'28',0.64,560,1225); L.sombra_piso(A,1225)
 G=XB(580)
@@ -30,10 +30,10 @@ def atras(d,im):
 def adelante(d,im):
     d.text((1000,236),'y vos sin achilata.',font=INK(46),fill=CREMA,anchor='rs')
     poner_logo(im,80,1275,150)
-guardar(L.render(atras,adelante),K,'P04 1 hace 32')
+guardar(L.render(atras,adelante),K,'P05 1 hace 32')
 
-# =============== P09 · Cómo pedir · carrusel de 6 ===============
-K='P09 Cómo pedir'
+# =============== P06 · Cómo pedir · carrusel de 6 ===============
+K='P06 Cómo pedir'
 L=Lienzo(*P,seed=901)
 A=colocar(L,'05',0.80,1080,280,'rt'); L.sombra_aire(A,dx=30,dy=44,blur=34,fuerza=0.30)
 G=fit('pedir.',930)
@@ -42,7 +42,7 @@ def atras(d,im):
     T(d,70,1010,'Cómo',G); T(d,70,1010+round(G.size*0.86),'pedir.',G)
 def adelante(d,im):
     d.text((1000,236),'en cuatro pasos.',font=INK(46),fill=CREMA,anchor='rs')
-guardar(L.render(atras,adelante),K,'P09 1 portada')
+guardar(L.render(atras,adelante),K,'P06 1 portada')
 
 def paso(num,titulo,lineas,n,sc,px,py,ref,sombra,seed,extra=None):
     L=Lienzo(*P,seed=seed)
@@ -59,10 +59,10 @@ def paso(num,titulo,lineas,n,sc,px,py,ref,sombra,seed,extra=None):
         d.text((1000,110),f'paso {num} de 4',font=INK(40),fill=CREMA,anchor='rs')
     return L.render(atras,adelante)
 guardar(paso('1','Escribinos.',['Por WhatsApp, a cualquiera de los dos.'],'01',0.56,780,880,'cb','piso',902,
-              extra=lambda d,im:numeros(d,80,1150)),K,'P09 2 escribinos')
-guardar(paso('2','Elegí tu pote.',['1 kg a $12.000.','Medio kilo a $8.000.'],'28',0.62,800,900,'cb','piso',903),K,'P09 3 elegi tu pote')
-guardar(paso('3','Pasanos tu zona.',['Grand Bourg, San Lorenzo Chico, San Lorenzo,','El Tipal y La Almudena. Otras, consultanos.'],'05',0.66,1080,860,'rb','aire',904),K,'P09 4 tu zona')
-guardar(paso('4','Pagá como quieras.',['Transferencia o efectivo.'],'16',0.58,1080,860,'rb','piso',905),K,'P09 5 paga')
+              extra=lambda d,im:numeros(d,80,1150)),K,'P06 2 escribinos')
+guardar(paso('2','Elegí tu pote.',['1 kg a $12.000.','Medio kilo a $8.000.'],'28',0.62,800,900,'cb','piso',903),K,'P06 3 elegi tu pote')
+guardar(paso('3','Pasanos tu zona.',['Grand Bourg, San Lorenzo Chico, San Lorenzo,','El Tipal y La Almudena. Otras, consultanos.'],'05',0.66,1080,860,'rb','aire',904),K,'P06 4 tu zona')
+guardar(paso('4','Pagá como quieras.',['Transferencia o efectivo.'],'16',0.58,1080,860,'rb','piso',905),K,'P06 5 paga')
 
 L=Lienzo(*P,seed=906)
 A=colocar(L,'28',0.60,700,1150,'cb'); L.sombra_piso(A,1150)
@@ -73,46 +73,46 @@ def atras(d,im):
 def adelante(d,im):
     numeros(d,80,1196,h=62,w=300)
     poner_logo(im,1000-150,1258,150)
-guardar(L.render(atras,adelante),K,'P09 6 te la llevamos')
+guardar(L.render(atras,adelante),K,'P06 6 te la llevamos')
 
-# =============== P11 · Etiquetá · placa única sobre la textura ===============
-K='P11 Etiquetá a quien le debés'
+# =============== P08 · Etiquetá · placa única sobre la textura ===============
+K='P08 Etiquetá a quien le debés'
 im=macro('04',1080,1350,0.5,0.0,1.0,oscurecer=0.08,seed=1101)
 d=ImageDraw.Draw(im)
 f=fit('le debés una',860,mx=128)
 for i,s in enumerate(['Etiquetá','a quien','le debés una','achilata.']): T(d,80,850+i*round(f.size*0.90),s,f)
 d.text((1000,1270),'y que pague esta vez.',font=INK(46),fill=CREMA,anchor='rs')
-guardar(im.convert('RGB'),K,'P11 1 etiqueta')
+guardar(im.convert('RGB'),K,'P08 1 etiqueta')
 
-# =============== P05 · No deslices · carrusel de 5 ===============
-K='P05 No deslices'
+# =============== P09 · No deslices · carrusel de 5 ===============
+K='P09 No deslices'
 L=Lienzo(*P,seed=501)
 A=colocar(L,'22',1.0,540,1350+60,'cb')
 G=fit('deslices.',930)
 def atras(d,im):
     T(d,70,420,'No',G); T(d,70,420+round(G.size*0.86),'deslices.',G)
-guardar(L.render(atras,None),K,'P05 1 no deslices')
+guardar(L.render(atras,None),K,'P09 1 no deslices')
 
 L=Lienzo(*P,seed=502)
 A=colocar(L,'16',0.55,1080,1180,'rb'); L.sombra_piso(A,1150,fuerza=0.34)
 G=fit('En serio.',930)
 def atras(d,im): T(d,70,520,'En serio.',G)
 def adelante(d,im): d.text((1000,610),'te va a dar antojo.',font=INK(50),fill=CREMA,anchor='rs')
-guardar(L.render(atras,adelante),K,'P05 2 en serio')
+guardar(L.render(atras,adelante),K,'P09 2 en serio')
 
 L=Lienzo(*P,seed=503)
 A=colocar(L,'08',0.95,540,1350+330,'cb')
 G=fit('Último',930)
 def atras(d,im):
     T(d,70,400,'Último',G); T(d,70,400+round(G.size*0.86),'aviso.',G)
-guardar(L.render(atras,None),K,'P05 3 ultimo aviso')
+guardar(L.render(atras,None),K,'P09 3 ultimo aviso')
 
 L=Lienzo(*P,seed=504)
 A=colocar(L,'11',0.74,540,1350+10,'cb')
 G=fit('Bueno, vos te',930,mx=150)
 def atras(d,im):
     for i,s in enumerate(['Bueno, vos te','lo buscaste.']): T(d,74,230+i*round(G.size*0.92),s,G)
-guardar(L.render(atras,None),K,'P05 4 te lo buscaste')
+guardar(L.render(atras,None),K,'P09 4 te lo buscaste')
 
 L=Lienzo(*P,seed=505)
 A=colocar(L,'05',0.92,1080,1240,'rb'); L.sombra_aire(A,dx=30,dy=44,blur=34,fuerza=0.30)
@@ -123,7 +123,7 @@ def atras(d,im):
 def adelante(d,im):
     numeros(d,80,400)
     poner_logo(im,80,1275,150)
-guardar(L.render(atras,adelante),K,'P05 5 pedi la tuya')
+guardar(L.render(atras,adelante),K,'P09 5 pedi la tuya')
 
 # =============== P10 · La achilata anotada · placa única ===============
 K='P10 La achilata anotada'
@@ -147,8 +147,8 @@ def adelante(d,im):
         d.ellipse((px-7,py-7,px+7,py+7),fill=CREMA)
 guardar(L.render(atras,adelante),K,'P10 1 anotada')
 
-# =============== P13 · Achilata en tu fiesta · carrusel de 4 ===============
-K='P13 Achilata en tu fiesta'
+# =============== P12 · Achilata en tu fiesta · carrusel de 4 ===============
+K='P12 Achilata en tu fiesta'
 L=Lienzo(*P,seed=1301)
 A=colocar(L,'32',0.86,0,1200,'lb'); L.sombra_piso(A,1200,largo=0.30,inclina=0.55,fuerza=0.38)
 G=fit('Achilata en',930,mx=200)
@@ -156,7 +156,7 @@ def atras(d,im):
     T(d,82,150,'Nuevo, para eventos en Salta.',RG(42),stroke=False)
     for i,s in enumerate(['Achilata en','tu fiesta.']): T(d,72,370+i*round(G.size*0.92),s,G)
 def adelante(d,im): poner_logo(im,1000-150,1275,150)
-guardar(L.render(atras,adelante),K,'P13 1 en tu fiesta')
+guardar(L.render(atras,adelante),K,'P12 1 en tu fiesta')
 
 L=Lienzo(*P,seed=1302)
 A=colocar(L,'01',0.80,600,1240,'cb'); L.sombra_piso(A,1240)
@@ -164,7 +164,7 @@ f=fit('no hay fiesta sin',920,mx=130)
 def atras(d,im):
     for i,s in enumerate(['En Tucumán','no hay fiesta sin','achilata.']): T(d,78,220+i*round(f.size*0.94),s,f)
 def adelante(d,im): d.text((1000,520),'ahora tampoco en Salta.',font=INK(46),fill=CREMA,anchor='rs')
-guardar(L.render(atras,adelante),K,'P13 2 en tucuman')
+guardar(L.render(atras,adelante),K,'P12 2 en tucuman')
 
 L=Lienzo(*P,seed=1303)
 A=colocar(L,'10',0.78,700,1350+40,'cb')
@@ -173,7 +173,7 @@ def atras(d,im):
     for i,s in enumerate(['Vamos con','el carrito.']): T(d,80,230+i*100,s,f)
     for i,s in enumerate(['Vasitos, cucharitas y quien sirve.','Casamientos, 15, cumples,','empresas y clubes.']):
         T(d,82,420+i*52,s,RG(40),stroke=False)
-guardar(L.render(atras,None),K,'P13 3 el carrito')
+guardar(L.render(atras,None),K,'P12 3 el carrito')
 
 L=Lienzo(*P,seed=1304)
 A=colocar(L,'13',0.50,1080,1350+150,'rb')
@@ -184,7 +184,7 @@ def adelante(d,im):
     T(d,82,560,'Escribinos con la fecha y los invitados.',RG(40),stroke=False)
     numeros(d,80,610)
     T(d,82,750,'Todo el detalle en el link de la bio.',RG(36),stroke=False)
-guardar(L.render(atras,adelante),K,'P13 4 presupuesto')
+guardar(L.render(atras,adelante),K,'P12 4 presupuesto')
 
 S_=sys.argv[2] if len(sys.argv)>2 else None
 if S_:

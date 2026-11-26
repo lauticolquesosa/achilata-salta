@@ -1,4 +1,4 @@
-# Feed completo 26/11/2026 · reels R03 La textura, R01 Una cucharada y R07 Te la llevamos.
+# Feed completo 26/11/2026 · reels P04 La textura, P07 Una cucharada y P11 Te la llevamos.
 # Se renderizan cuadro por cuadro a 30 fps y se codifican con ffmpeg. Sin audio: el audio se elige en Instagram.
 # Uso: python build_feed_reels.py <carpeta de recortes V>
 from feed_comun import *
@@ -48,7 +48,7 @@ def codificar(escenas,salida,portada_t=None):
             p.stdin.write(np.asarray(fn(i/FPS)).tobytes())
     p.stdin.close(); p.wait()
 
-def carpeta(n): d=f'{C}\\Reels\\{n}\\final'; os.makedirs(d,exist_ok=True); return d
+def carpeta(n): d=f'{C}\\Publicaciones\\{n}\\final'; os.makedirs(d,exist_ok=True); return d
 CIERRE_Y=1180
 def cierre(t,titulo,seed=9,base=None):
     fr=(base or liso(seed)).copy()
@@ -57,8 +57,8 @@ def cierre(t,titulo,seed=9,base=None):
                      (0.5,540,1090,'Helado tucumano en Salta.',RG(44),'ms',False,'t'),
                      (0.75,197,CIERRE_Y,None,None,None,None,'pills')],t)
 
-# ================= R03 · La textura =================
-d=carpeta('R03 La textura')
+# ================= P04 · La textura =================
+d=carpeta('P04 La textura')
 M=[macro('04',W,H,0.5,0.1,1.7,0.06,301),macro('22',W,H,0.5,0.4,3.0,0.06,302),
    macro('22',W,H,0.35,0.45,3.5,0.06,303),macro('22',W,H,0.55,0.42,3.8,0.06,304).transpose(Image.FLIP_LEFT_RIGHT)]
 M=[m.convert('RGB') for m in M]
@@ -67,11 +67,11 @@ fin=liso(305)
 def esc(i):
     return lambda t:texto(zoom(M[i],1+0.05*t/2.4),[(0.15,80,1470 if i==0 else 1010,txt[i],fit(txt[i],900,mx=150),'ls',True,'t')],t)
 escenas=[(2.4,esc(i)) for i in range(4)]+[(2.6,lambda t:cierre(t,'Hay achilata.',base=fin))]
-codificar(escenas,f'{d}\\R03 la textura.mp4')
-fc=fit('Mirá esta',900,mx=260); texto(M[1].copy(),[(-1,80,1010,'Mirá esta',fc,'ls',True,'t'),(-1,80,1010+round(fc.size*0.92),'textura.',fc,'ls',True,'t')],1).save(f'{d}\R03 portada.png')
+codificar(escenas,f'{d}\\P04 la textura.mp4')
+fc=fit('Mirá esta',900,mx=260); texto(M[1].copy(),[(-1,80,1010,'Mirá esta',fc,'ls',True,'t'),(-1,80,1010+round(fc.size*0.92),'textura.',fc,'ls',True,'t')],1).save(f'{d}\P04 portada.png')
 
-# ================= R01 · Una cucharada =================
-d=carpeta('R01 Una cucharada')
+# ================= P07 · Una cucharada =================
+d=carpeta('P07 Una cucharada')
 cortes=[('16',0.78,1080,1460,'rb','piso',311),('14',0.78,0,1920+20,'lb','',312),('02',0.80,1080,1920,'rb','',313),
         ('07',0.85,0,1560,'lb','piso',314),('13',0.80,1080,1920,'rb','',315),('10',0.85,540,1920+40,'cb','',316)]
 E=[estudio(*c) for c in cortes]
@@ -94,11 +94,11 @@ def final(t):
                      (0.2,82,560,'1 kg a $12.000 y medio kilo a $8.000.',RG(42),'ls',False,'t'),
                      (0.4,80,620,None,None,None,None,'pills')],t)
 escenas=[(1.4,primera)]+[(0.9,esc(i)) for i in range(1,6)]+[(2.8,final)]
-codificar(escenas,f'{d}\\R01 una cucharada.mp4')
-f=fit('Una cucharada',920,mx=170); g=round(f.size*0.95); texto(E[0].copy(),[(-1,80,470,'Una cucharada',f,'ls',True,'t'),(-1,80,470+g,'y estás en',f,'ls',True,'t'),(-1,80,470+2*g,'Tucumán.',f,'ls',True,'t')],1).save(f'{d}\R01 portada.png')
+codificar(escenas,f'{d}\\P07 una cucharada.mp4')
+f=fit('Una cucharada',920,mx=170); g=round(f.size*0.95); texto(E[0].copy(),[(-1,80,470,'Una cucharada',f,'ls',True,'t'),(-1,80,470+g,'y estás en',f,'ls',True,'t'),(-1,80,470+2*g,'Tucumán.',f,'ls',True,'t')],1).save(f'{d}\P07 portada.png')
 
-# ================= R07 · Te la llevamos =================
-d=carpeta('R07 Te la llevamos')
+# ================= P11 · Te la llevamos =================
+d=carpeta('P11 Te la llevamos')
 base=estudio('05',1.02,1080,860,'rt','aire',321)
 zonas=[['Grand Bourg.'],['San Lorenzo.'],['San Lorenzo','Chico.'],['El Tipal.'],['La Almudena.']]
 FZ0=fit('San Lorenzo.',920,mx=230); FZ=lambda z:FZ0
@@ -113,6 +113,6 @@ def otra(t):
     return texto(fr,[(-1,82,420,'Y si estás en otra zona,',RG(52),'ls',False,'t'),(0.0,78,640,'consultanos.',FZ('consultanos.'),'ls',True,'t')],t)
 fin=liso(322)
 escenas=[(1.6,zona(0))]+[(1.3,zona(i)) for i in range(1,5)]+[(1.8,otra),(2.8,lambda t:cierre(t,'Pedí la tuya.',base=fin))]
-codificar(escenas,f'{d}\\R07 te la llevamos.mp4')
-texto(base.copy(),[(-1,82,420,'Te la llevamos a',RG(52),'ls',False,'t'),(-1,78,600,'tu casa.',fit('tu casa.',900,mx=260),'ls',True,'t')],1).save(f'{d}\\R07 portada.png')
+codificar(escenas,f'{d}\\P11 te la llevamos.mp4')
+texto(base.copy(),[(-1,82,420,'Te la llevamos a',RG(52),'ls',False,'t'),(-1,78,600,'tu casa.',fit('tu casa.',900,mx=260),'ls',True,'t')],1).save(f'{d}\\P11 portada.png')
 print('ok')
