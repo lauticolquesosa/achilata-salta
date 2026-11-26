@@ -1,7 +1,6 @@
 # P07 · Una cucharada
 
 - **Tipo:** Reel, video vertical de 8 segundos
-- **Cuándo:** día 10, sábado 28 de noviembre, a las 13.00 hs
 - **Medida:** 1080 × 1920 px
 
 ## La idea
@@ -15,9 +14,4 @@ Una cucharada y estás en Tucumán. Para los tucumanos que la extrañan y para l
 Pedí la tuya al 387 483 4041 o al 387 468 4498.
 
 ## Estado
-- [x] Fotos elegidas de toda la galería, en el momento de hacerla
-- [x] Fotos estudiadas, editadas y adaptadas al formato
-- [x] Diseño siguiendo el manual
-- [x] Revisado con `04_Contenido/reglas_de_contenido.md`
-- [x] Enviado al WhatsApp de Lauti, imágenes y texto
-- [ ] Publicado y anotado en `registro_publicaciones.md`
+**No subida.**

@@ -1,7 +1,6 @@
 # P05 · Hace 32 grados
 
 - **Tipo:** Publicación, placa única
-- **Cuándo:** día 9, viernes 27 de noviembre, a las 13.00 hs
 - **Medida:** 1080 × 1350 px por placa
 
 ## La idea
@@ -17,9 +16,4 @@ Medio kilo a $8.000
 387 483 4041 o 387 468 4498
 
 ## Estado
-- [x] Fotos elegidas de toda la galería, en el momento de hacerla
-- [x] Fotos estudiadas, editadas y adaptadas al formato
-- [x] Diseño siguiendo el manual
-- [x] Revisado con `04_Contenido/reglas_de_contenido.md`
-- [x] Enviado al WhatsApp de Lauti, imágenes y texto
-- [ ] Publicado y anotado en `registro_publicaciones.md`
+**No subida.**

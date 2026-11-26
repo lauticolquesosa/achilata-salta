@@ -1,6 +1,6 @@
 # Achilata Salta · @achilatasalta
 
-Este repositorio tiene **todo el proyecto**: el manual de marca, el logo, las fotos, el cronograma y las piezas para Instagram. Es privado.
+Este repositorio tiene **todo el proyecto**: el manual de marca, el logo, las fotos, y las piezas para Instagram. Es privado.
 
 ## Abrirlo en otra computadora
 
@@ -33,7 +33,7 @@ git pull
 
 ## Herramientas
 
-Para regenerar el cronograma, con `python generar.py` desde `04_Contenido/Cronograma/fuente`, hace falta:
+Para los scripts de diseño y el PDF del perfil completo hacen falta:
 ```
 pip install pymupdf pillow playwright
 python -m playwright install chromium
@@ -48,13 +48,13 @@ Para editar fotos también se usan `opencv-python`, `numpy` y `rembg`.
 | `01_Contexto` | El negocio, el producto, Salta, el público y la competencia |
 | `02_Marca` | El manual de marca en Illustrator y PDF, y `logo.ai` con sus PNG |
 | `03_Estrategia` | El sistema de contenido y el perfil de Instagram |
-| `04_Contenido` | Las reglas, el cronograma y una carpeta por pieza: publicaciones, reels e historias |
+| `04_Contenido` | Las reglas, las publicaciones del feed P01 a P12, las historias H01 en adelante y las destacadas |
 | `05_Referencias` | Las cuentas y las imágenes de referencia, y su análisis |
 | `06_Assets` | Los logos, las tramas, el goteo, las fuentes y las fotos |
 | `07_Pendientes.md` | Lo que falta confirmar |
 
 ## Uso y licencias
-- **Código:** los scripts, de `04_Contenido/Cronograma/fuente/` y `06_Assets/fotos/herramientas/`, se pueden usar libremente bajo licencia MIT.
+- **Código:** los scripts, de `06_Assets/fotos/herramientas/`, se pueden usar libremente bajo licencia MIT.
 - **Marca:** el logo, el manual, las piezas y las fotos de Achilata Salta están para ver y aprender de ellos. El uso comercial de la marca no está permitido.
 - **Referencias:** las capturas de `05_Referencias/` son de sus dueños y están solo como referencia.
 - **Fuentes:** Bricolage Grotesque tiene licencia SIL Open Font License.

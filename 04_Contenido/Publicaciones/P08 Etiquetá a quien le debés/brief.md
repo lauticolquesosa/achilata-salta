@@ -1,7 +1,6 @@
 # P08 · Etiquetá a quien le debés
 
 - **Tipo:** Publicación, placa única
-- **Cuándo:** día 10, sábado 28 de noviembre, a las 20.00 hs
 - **Medida:** 1080 × 1350 px por placa
 
 ## La idea
@@ -15,9 +14,4 @@ Etiquetá a quien le debés una achilata. Y que pague esta vez.
 Potes de 1 kg y medio kilo con envío. Pedidos por WhatsApp, link en la bio.
 
 ## Estado
-- [x] Fotos elegidas de toda la galería, en el momento de hacerla
-- [x] Fotos estudiadas, editadas y adaptadas al formato
-- [x] Diseño siguiendo el manual
-- [x] Revisado con `04_Contenido/reglas_de_contenido.md`
-- [x] Enviado al WhatsApp de Lauti, imágenes y texto
-- [ ] Publicado y anotado en `registro_publicaciones.md`
+**No subida.**

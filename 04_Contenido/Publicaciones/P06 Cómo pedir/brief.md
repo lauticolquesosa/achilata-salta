@@ -1,7 +1,6 @@
 # P06 · Cómo pedir
 
 - **Tipo:** Publicación, carrusel de 6 placas
-- **Cuándo:** día 9, viernes 27 de noviembre, a las 20.00 hs
 - **Medida:** 1080 × 1350 px por placa
 
 ## La idea
@@ -20,9 +19,4 @@ Guardalo para el finde. Cómo pedir tu achilata en cuatro pasos:
 Y te la llevamos fría. Envíos a Grand Bourg, San Lorenzo Chico, San Lorenzo, El Tipal y La Almudena. Si estás en otra zona, consultanos.
 
 ## Estado
-- [x] Fotos elegidas de toda la galería, en el momento de hacerla
-- [x] Fotos estudiadas, editadas y adaptadas al formato
-- [x] Diseño siguiendo el manual
-- [x] Revisado con `04_Contenido/reglas_de_contenido.md`
-- [x] Enviado al WhatsApp de Lauti, imágenes y texto
-- [ ] Publicado y anotado en `registro_publicaciones.md`
+**No subida.**

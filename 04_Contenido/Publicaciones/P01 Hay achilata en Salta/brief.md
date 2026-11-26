@@ -1,7 +1,6 @@
 # P01 · Hay achilata en Salta
 
 - **Tipo:** Publicación, carrusel de 5 placas
-- **Cuándo:** día 1, jueves 19 de noviembre, a las 20.00 hs
 - **Medida:** 1080 × 1350 px por placa
 
 ## La idea
@@ -13,9 +12,4 @@ Publicada el 19/11. Estudio rojo con fotos 05, 16, 10 y 11. Placa 1: la palma qu
 Volvimos y llegamos a Salta 🍧 El helado más tucumano, ahora a la vuelta de tu casa. Potes de 1 kg y medio kilo, pedidos por WhatsApp. ¿Vos ya la probaste?
 
 ## Estado
-- [x] Fotos elegidas de toda la galería, en el momento de hacerla
-- [x] Fotos estudiadas, editadas y adaptadas al formato
-- [x] Diseño siguiendo el manual
-- [x] Revisado con `04_Contenido/reglas_de_contenido.md`
-- [x] Enviado al WhatsApp de Lauti, imágenes y texto
-- [x] Publicado y anotado en `registro_publicaciones.md`
+**Subida.**

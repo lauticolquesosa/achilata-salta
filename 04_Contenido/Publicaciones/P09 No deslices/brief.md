@@ -1,7 +1,6 @@
 # P09 · No deslices
 
 - **Tipo:** Publicación, carrusel de 5 placas
-- **Cuándo:** día 11, domingo 29 de noviembre, a las 20.00 hs
 - **Medida:** 1080 × 1350 px por placa
 
 ## La idea
@@ -15,9 +14,4 @@ Te dijimos que no deslices. Bueno, vos te lo buscaste.
 Ahora pedí la tuya por WhatsApp al 387 483 4041 o al 387 468 4498. 1 kg a $12.000 y medio kilo a $8.000.
 
 ## Estado
-- [x] Fotos elegidas de toda la galería, en el momento de hacerla
-- [x] Fotos estudiadas, editadas y adaptadas al formato
-- [x] Diseño siguiendo el manual
-- [x] Revisado con `04_Contenido/reglas_de_contenido.md`
-- [x] Enviado al WhatsApp de Lauti, imágenes y texto
-- [ ] Publicado y anotado en `registro_publicaciones.md`
+**No subida.**

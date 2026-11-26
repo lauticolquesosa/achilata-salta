@@ -1,7 +1,6 @@
 # P11 · Te la llevamos
 
 - **Tipo:** Reel, video vertical de 11 segundos
-- **Cuándo:** día 13, martes 1 de diciembre, a las 20.00 hs
 - **Medida:** 1080 × 1920 px
 
 ## La idea
@@ -15,9 +14,4 @@ Te la llevamos a Grand Bourg, San Lorenzo, San Lorenzo Chico, El Tipal y La Almu
 Pedidos al 387 483 4041 o al 387 468 4498.
 
 ## Estado
-- [x] Fotos elegidas de toda la galería, en el momento de hacerla
-- [x] Fotos estudiadas, editadas y adaptadas al formato
-- [x] Diseño siguiendo el manual
-- [x] Revisado con `04_Contenido/reglas_de_contenido.md`
-- [x] Enviado al WhatsApp de Lauti, imágenes y texto
-- [ ] Publicado y anotado en `registro_publicaciones.md`
+**No subida.**

@@ -1,7 +1,6 @@
 # P10 · La achilata anotada
 
 - **Tipo:** Publicación, placa única
-- **Cuándo:** día 12, lunes 30 de noviembre, a las 20.00 hs
 - **Medida:** 1080 × 1350 px por placa
 
 ## La idea
@@ -15,9 +14,4 @@ La achilata, anotada. Hielo raspado, receta tucumana, sabor clásico y un pote d
 Contanos en los comentarios qué le agregarías a la lista.
 
 ## Estado
-- [x] Fotos elegidas de toda la galería, en el momento de hacerla
-- [x] Fotos estudiadas, editadas y adaptadas al formato
-- [x] Diseño siguiendo el manual
-- [x] Revisado con `04_Contenido/reglas_de_contenido.md`
-- [x] Enviado al WhatsApp de Lauti, imágenes y texto
-- [ ] Publicado y anotado en `registro_publicaciones.md`
+**No subida.**

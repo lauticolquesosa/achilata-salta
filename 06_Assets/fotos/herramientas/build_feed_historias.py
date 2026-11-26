@@ -8,7 +8,7 @@ def colocar(L,n,sc,px,py,ref='cb'):
     ys,xs=np.where(a>0.5); x0,y0,x1,y1=xs.min(),ys.min(),xs.max(),ys.max()
     rx={'c':(x0+x1)/2,'l':x0,'r':x1}[ref[0]]; ry={'b':y1,'t':y0,'c':(y0+y1)/2}[ref[1]]
     return L.poner(F,a,sc,round(px-rx*sc),round(py-ry*sc))
-DEST=C+r'\Destacadas'; PROX=C+r'\Historias\Próximas historias'
+DEST=C+r'\Destacadas'; PROX=C+r'\Historias'   # las historias van todas juntas, numeradas H01 en adelante
 for d in (DEST,PROX): os.makedirs(d,exist_ok=True)
 
 # ================= portadas de destacadas: ícono de línea crema sobre rojo =================
@@ -73,40 +73,36 @@ def historia(ruta,titulo,nota,n,sc,px,py,ref,sombra,lineas,seed,pills=False,huec
     L.render(atras,adelante).save(ruta)
 
 # destacada Pedidos
-historia(f'{DEST}\\Pedidos 2 como pedir.png',['Cómo pedir.'],'en cuatro pasos.','16',0.80,1080,1330,'rb','piso',
+historia(f'{PROX}\\H12 como pedir.png',['Cómo pedir.'],'en cuatro pasos.','16',0.80,1080,1330,'rb','piso',
          ['Escribinos, elegí tu pote,','pasanos tu zona y pagá con','transferencia o efectivo.'],611,pills=True)
-historia(f'{DEST}\\Pedidos 3 pago.png',['Pagás como','quieras.'],'y te la llevamos.','07',0.95,0,1400,'lb','piso',
+historia(f'{PROX}\\H13 pago.png',['Pagás como','quieras.'],'y te la llevamos.','07',0.95,0,1400,'lb','piso',
          ['Transferencia o efectivo.','El alias te lo pasamos por el chat','cuando confirmamos tu pedido.'],612)
 # destacada Eventos
-historia(f'{DEST}\\Eventos 1 en tu fiesta.png',['Achilata en','tu fiesta.'],'nuevo en Salta.','32',0.84,0,1420,'lb','piso',
+historia(f'{PROX}\\H14 achilata en tu fiesta.png',['Achilata en','tu fiesta.'],'nuevo en Salta.','32',0.84,0,1420,'lb','piso',
          ['Vamos con el carrito.','Casamientos, 15, cumples, empresas y clubes.','Vasitos, cucharitas y quien sirve.'],613)
-historia(f'{DEST}\\Eventos 2 presupuesto.png',['Pedí tu','presupuesto.'],'con la fecha y los invitados.','05',0.95,1080,1400,'rb','aire',
+historia(f'{PROX}\\H15 presupuesto eventos.png',['Pedí tu','presupuesto.'],'con la fecha y los invitados.','05',0.95,1080,1400,'rb','aire',
          ['Escribinos y te lo armamos.'],614,pills=True)
 # destacada Achilata
-historia(f'{DEST}\\Achilata 1 que es.png',['Achilata.'],'sustantivo femenino.','01',0.90,540,1470,'cb','piso',
+historia(f'{PROX}\\H16 que es la achilata.png',['Achilata.'],'sustantivo femenino.','01',0.90,540,1470,'cb','piso',
          ['Helado de agua tucumano.','Fucsia, frío y de cuchara.'],615)
-historia(f'{DEST}\\Achilata 2 hay gelata.png',['hay gelata.'],'gracias, nonos italianos.','28',0.85,540,1420,'cb','piso',
+historia(f'{PROX}\\H17 hay gelata.png',['hay gelata.'],'gracias, nonos italianos.','28',0.85,540,1420,'cb','piso',
          ['Dicen que el nombre viene de ahí:','los heladeros italianos gritaban hay gelata','y de tanto escucharlo quedó achilata.'],616)
 
 # las que ya estaban hechas y van a destacadas
-YA={'Menu 1 precios.png':r'Historias\Día 01 jue 19 nov\final\H01 3 precios 20.30.png',
-    'Pedidos 1 numeros.png':r'Historias\Día 05 lun 23 nov\final\H05 2 pedidos.png',
-    'Zonas 1 envios.png':r'Historias\Día 05 lun 23 nov\final\H05 1 envios.png'}
-for k,v in YA.items(): shutil.copy(f'{C}\\{v}',f'{DEST}\\{k}')
-historia(f'{DEST}\\Menu 2 el menu.png',['El menú.'],'corto, como tiene que ser.','28',0.95,540,1450,'cb','piso',
+# H04 precios, H09 envios zonas y H10 pedidos numeros ya existían: no se copian
+historia(f'{PROX}\\H11 el menu.png',['El menú.'],'corto, como tiene que ser.','28',0.95,540,1450,'cb','piso',
          ['1 kg a $12.000.','Medio kilo a $8.000.','Sabor clásico, el de siempre.'],617)
 
 # ================= próximas historias =================
-historia(f'{PROX}\\1 encuesta pote.png',['¿1 kg o','medio kilo?'],'votá acá abajo.','01',0.70,540,1620,'cb','piso',[],621)
-historia(f'{PROX}\\2 ya probaste.png',['¿Ya probaste','achilata?'],'contanos con el emoji.','13',0.80,1080,1920,'rb','',[],622)
-historia(f'{PROX}\\3 hace calor.png',['Hace calor','en Salta.'],'y se derrite todo.','08',0.80,540,1450,'cb','piso',
+historia(f'{PROX}\\H18 encuesta 1 kg o medio kilo.png',['¿1 kg o','medio kilo?'],'votá acá abajo.','01',0.70,540,1620,'cb','piso',[],621)
+historia(f'{PROX}\\H19 ya probaste.png',['¿Ya probaste','achilata?'],'contanos con el emoji.','13',0.80,1080,1920,'rb','',[],622)
+historia(f'{PROX}\\H20 hace calor.png',['Hace calor','en Salta.'],'y se derrite todo.','08',0.80,540,1450,'cb','piso',
          ['¿Cuántos grados hay donde estás?'],623)
-historia(f'{PROX}\\4 pedidos abiertos.png',['Pedidos','abiertos.'],'hoy salimos a repartir.','05',1.0,1080,1380,'rb','aire',
+historia(f'{PROX}\\H21 pedidos abiertos.png',['Pedidos','abiertos.'],'hoy salimos a repartir.','05',1.0,1080,1380,'rb','aire',
          ['Escribinos y te la llevamos.'],624,pills=True)
-historia(f'{PROX}\\5 preguntanos.png',['Preguntanos','lo que quieras.'],'respondemos todo.','16',0.75,1080,1620,'rb','piso',[],625)
-historia(f'{PROX}\\6 finde.png',['Finde de','achilata.'],'pedila con tiempo.','11',0.85,540,1920+10,'cb','',[],626)
+historia(f'{PROX}\\H22 preguntanos.png',['Preguntanos','lo que quieras.'],'respondemos todo.','16',0.75,1080,1620,'rb','piso',[],625)
+historia(f'{PROX}\\H23 finde de achilata.png',['Finde de','achilata.'],'pedila con tiempo.','11',0.85,540,1920+10,'cb','',[],626)
 
 hoja(sorted(glob.glob(DEST+'/portada*.png')),sys.argv[2]+'/hoja_portadas.jpg',w=216,h=384)
-hoja(sorted(p for p in glob.glob(DEST+'/*.png') if 'portada' not in p),sys.argv[2]+'/hoja_dest.jpg',w=216,h=384)
 hoja(sorted(glob.glob(PROX+'/*.png')),sys.argv[2]+'/hoja_prox.jpg',w=216,h=384)
 print('ok')

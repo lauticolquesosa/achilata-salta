@@ -1,7 +1,6 @@
 # P04 · La textura
 
 - **Tipo:** Reel, video vertical de 12 segundos
-- **Cuándo:** día 8, jueves 26 de noviembre, a las 20.00 hs
 - **Medida:** 1080 × 1920 px
 
 ## La idea
@@ -15,9 +14,4 @@ Mirá esta textura. Hielo raspado, color fucsia y receta tucumana.
 Así llega a tu casa, en pote de 1 kg o de medio kilo. Pedidos por WhatsApp, link en la bio.
 
 ## Estado
-- [x] Fotos elegidas de toda la galería, en el momento de hacerla
-- [x] Fotos estudiadas, editadas y adaptadas al formato
-- [x] Diseño siguiendo el manual
-- [x] Revisado con `04_Contenido/reglas_de_contenido.md`
-- [x] Enviado al WhatsApp de Lauti, imágenes y texto
-- [ ] Publicado y anotado en `registro_publicaciones.md`
+**Subida.**

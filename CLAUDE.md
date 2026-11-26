@@ -18,14 +18,9 @@ Es un emprendimiento de Lauti y un amigo que vende **achilata**, el helado de ag
    - Solo potes de 1 kg y medio kilo. **No hay vasitos:** en el feed pueden aparecer como referencia estética, pero nunca se ofrecen como producto ni con precio.
 
 ## Cronograma y piezas
-- **El cronograma es de dos semanas,** del jueves 19/11 al miércoles 2/12/2026. Está en `04_Contenido/Cronograma/`:
-  - `cronograma_2_semanas.md`;
-  - el PDF, `Cronograma Achilata 2 semanas.pdf`;
-  - y su `fuente/`. **Todo sale de `fuente/datos.py`:** si se cambia algo, se edita ahí y se corre `python generar.py`, que rehace el `.md`, las carpetas y el PDF.
-  - El cronograma viejo de 30 días está en `04_Contenido/_archivo cronograma 30 días/`.
-- **Se sube algo todos los días,** y más de jueves a domingo. **El cronograma es una base, no algo fijo:**
-  - Si Lauti pide una pieza que no estaba, como una historia con los precios para hoy, se hace en el momento.
-  - Después se acomoda `datos.py`: si la pieza nueva reemplaza algo previsto, eso se saca o se mueve a otro día; si suma, lo demás queda igual.
+- **El cronograma está congelado desde el 26/11/2026.** `04_Contenido/Cronograma/` está vacío y no se arma nada hasta que Lauti lo pida.
+- **Las publicaciones no tienen fecha.** Lauti las sube cuando le parece. En `04_Contenido/Publicaciones/_indice.md` y en cada `brief.md` solo se marca **Subida** o **No subida**.
+- **Si Lauti pide una pieza nueva,** se hace en el momento y toma el número que sigue.
 - **Cada pieza se hace recién cuando Lauti la pide, nunca por adelantado:**
   1. Revisar **toda** la galería, `06_Assets/fotos/` y lo nuevo en Descargas, y elegir la mejor foto para esa pieza.
   2. Estudiarla al 100 %, editarla y adaptarla al formato, según la sección 1b de `reglas_de_contenido.md`.
@@ -35,11 +30,12 @@ Es un emprendimiento de Lauti y un amigo que vende **achilata**, el helado de ag
   1. Mandar al chat yo de WhatsApp todas las imágenes **como documento y en orden**.
   2. Después, en un mensaje aparte, mandar **solo el texto limpio** para copiar en Instagram.
   3. Anotarla en `registro_publicaciones.md`.
-- **Perfil completo, 26/11/2026:** el plan de feed de 12, las destacadas y las próximas historias, con Rocambolesc como modelo, está en `04_Contenido/Perfil completo/`. Manda sobre el cronograma, que queda en pausa. Títulos en crema, nunca blanco puro, sobre el rojo achilata.
+- **Perfil completo, 26/11/2026:** el plan de feed de 12, las destacadas y las próximas historias, con Rocambolesc como modelo, está en `04_Contenido/Perfil completo/`. Títulos en crema, nunca blanco puro, sobre el rojo achilata.
 - **La presentación del perfil** está en `03_Estrategia/perfil_instagram.md`.
 - **Cada pieza tiene su carpeta con un `brief.md`:**
   - `04_Contenido/Publicaciones/P01` a `P12`: las 12 del feed, reels incluidos, numeradas en el orden en que se suben. **El número es el lugar en la grilla.** Lo que no va a estar en Instagram se borra, no se guarda.
-  - `Historias/Día 01…30`
+  - `04_Contenido/Historias`: todas las historias, de H01 en adelante, cada archivo con su número y de qué se trata, listadas en `_indice.md`. No se marcan como subidas, porque se repiten. Una nueva toma el número que sigue.
+  - `04_Contenido/Destacadas`: las portadas, y en su LEEME qué historias van en cada destacada.
 - **Lo terminado** de cada pieza se guarda en su carpeta, con su PNG o MP4 final.
 - **La publicación vieja ya está archivada.** P01 es la primera desde la vuelta. La cuenta tenía 542 seguidores.
 - **Posicionamiento:** más rica y cuidada que la achilata de barrio, más barata que una heladería artesanal. Nunca se compite por precio. Ver `01_Contexto/03_mercado_salta.md`.

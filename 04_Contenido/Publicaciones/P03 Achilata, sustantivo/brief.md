@@ -1,7 +1,6 @@
 # P03 · Achilata, sustantivo
 
 - **Tipo:** Publicación, carrusel de 4 placas
-- **Cuándo:** día 8, jueves 26 de noviembre, a las 13.00 hs
 - **Medida:** 1080 × 1350 px por placa
 
 ## La idea
@@ -17,9 +16,4 @@ Dicen que el nombre viene de los heladeros italianos que gritaban hay gelata. No
 Pedí por WhatsApp al 387 483 4041 o al 387 468 4498.
 
 ## Estado
-- [x] Fotos elegidas de toda la galería, en el momento de hacerla
-- [x] Fotos estudiadas, editadas y adaptadas al formato
-- [x] Diseño siguiendo el manual
-- [x] Revisado con `04_Contenido/reglas_de_contenido.md`
-- [x] Enviado al WhatsApp de Lauti, imágenes y texto
-- [ ] Publicado y anotado en `registro_publicaciones.md`
+**Subida.**
