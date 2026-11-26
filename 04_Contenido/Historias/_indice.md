@@ -29,6 +29,5 @@ Cada archivo lleva su número y de qué se trata. Para una nueva, se sigue con e
 | H21 | H21 pedidos abiertos.png | Pedidos abiertos, hoy salimos a repartir, con los números y lugar para el enlace a WhatsApp. |  |
 | H22 | H22 preguntanos.png | Preguntanos lo que quieras, para la caja de preguntas. |  |
 | H23 | H23 finde de achilata.png | Finde de achilata, pedila con tiempo, para la cuenta regresiva. |  |
-| H24 | H24 tenemos web.png | Tenemos web, pedí con turno de entrega, Link en la bio. | Pedidos, si se quiere |
-| H25 | H25 los turnos.png | Los turnos: los cuatro, con su horario y hasta qué hora se pide. | Pedidos, si se quiere |
-| H26 | H26 como pedir web.png | Cómo pedir desde la web en tres pasos, y te la llevamos. | Pedidos, si se quiere |
+| H24 | H24 tenemos web.png | Tenemos web, pedí tu achilata desde el celular, Link en la bio. | Pedidos, si se quiere |
+| H25 | H25 como pedir web.png | Cómo pedir desde la web en tres pasos: el link, tus potes, tu dirección y pagás. | Pedidos, si se quiere |

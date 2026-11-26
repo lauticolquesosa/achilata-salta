@@ -2,7 +2,8 @@
 # Rehechas a partir de la P17 y las H06 del colega. Reglas nuevas de Lauti:
 #  - bordes del recorte difuminados y suaves, con sombra natural: Lienzo.suave = 1.8
 #  - el texto nunca pisa el producto: primero se mide dónde termina el texto y el producto va debajo, con aire
-#  - textos breves; un solo peso por renglón, también dentro de la tabla de turnos
+#  - textos breves; un solo peso por renglón
+#  - 26/11: sin turnos por ahora. La placa 2 con mucho aire, potes chicos lado a lado como las placas de sabores de Morgenstern's
 # Uso: python build_p13_web.py <carpeta de recortes V>
 from feed_comun import *
 V=sys.argv[1]
@@ -47,33 +48,35 @@ A=producto(L,'05',fin_texto+AIRE,1.0,0,'r')
 def at(d,im):
     T(d,72,tb,'Pedí desde la web.',G)
 def ad(d,im):
-    d.text((1000,tb+62),'potes, día y turno.',font=INK(46),fill=CREMA,anchor='rs')
+    d.text((1000,tb+62),'desde el celular.',font=INK(46),fill=CREMA,anchor='rs')
     poner_logo(im,80,1275,150)
 guardar(L.render(at,ad),f'{OP}\\P13 1 pedi desde la web.png')
 
-# ---------------- P13 2 · Elegí tus potes ----------------
+# ---------------- P13 2 · Elegí tus potes: dos potes sobre el mismo piso, etiqueta corta debajo, mucho aire ----------------
 L=lienzo(*P,1302)
-G=fit('Elegí tus potes.',930,mx=150); f=XB(84)
-tb=150+round(G.size*0.72); r1=tb+120; r2=r1+96
-t22=r2+AIRE; A=producto(L,'22',t22,max(0.92,(P[1]+40-t22)/815),540,'c',sombra='')   # el borde cortado del pote sale por abajo
+G=fit('Elegí tus potes.',930,mx=150)
+tb=150+round(G.size*0.72); PISO=990
+A=producto(L,'01',PISO-round(900*0.50),0.50,300,'c',sombra='piso',piso=PISO)
+A=producto(L,'28',PISO-round(906*0.40),0.40,790,'c',sombra='piso',piso=PISO)
 def at(d,im):
     T(d,72,tb,'Elegí tus potes.',G)
-    T(d,76,r1,'1 kg',f); T(d,1004,r1,'$12.000',f,anchor='rs')
-    T(d,76,r2,'Medio kilo',f); T(d,1004,r2,'$8.000',f,anchor='rs')
-guardar(L.render(at,None),f'{OP}\\P13 2 elegi tus potes.png')
-
-# ---------------- P13 3 · Elegí tu turno ----------------
-L=lienzo(*P,1303)
-G=fit('Elegí tu turno.',930,mx=150)
-tb=150+round(G.size*0.72)
-ty=tb+40; fin=ty+4*92+3*14; nota=fin+50
-A=producto(L,'13',nota+AIRE,0.62,0,'r',sombra='')
-def at(d,im):
-    T(d,72,tb,'Elegí tu turno.',G)
 def ad(d,im):
-    tabla(d,76,ty,928,92,14,XB(32),RG(24))
-    T(d,80,nota,'Cada turno cierra unas horas antes.',RG(32),stroke=False)
-guardar(L.render(at,ad),f'{OP}\\P13 3 elegi tu turno.png')
+    for x,n,pr in [(300,'1 kg','$12.000'),(790,'Medio kilo','$8.000')]:
+        T(d,x,PISO+120,n,XB(58),anchor='ms'); T(d,x,PISO+172,pr,RG(42),anchor='ms',stroke=False)
+guardar(L.render(at,ad),f'{OP}\\P13 2 elegi tus potes.png')
+
+# ---------------- P13 3 · Poné tu dirección ----------------
+L=lienzo(*P,1303)
+G=fit('Poné tu dirección.',930,mx=150)
+tb=150+round(G.size*0.72); l1=tb+62; l2=l1+46
+A=producto(L,'14',l2+AIRE+40,0.66,0,'l')
+def at(d,im):
+    T(d,72,tb,'Poné tu dirección.',G)
+    T(d,80,l1,'Grand Bourg, San Lorenzo Chico, San Lorenzo,',RG(36),stroke=False)
+    T(d,80,l2,'El Tipal y La Almudena.',RG(36),stroke=False)
+def ad(d,im):
+    d.text((1000,l2+90),'y te la llevamos.',font=INK(46),fill=CREMA,anchor='rs')
+guardar(L.render(at,ad),f'{OP}\\P13 3 pone tu direccion.png')
 
 # ---------------- P13 4 · Pagás como quieras ----------------
 L=lienzo(*P,1304)
@@ -95,34 +98,22 @@ tb=300+round(G.size*0.72); l1=tb+70; lk=l1+92
 A=producto(L,'05',lk+AIRE+30,1.32,0,'r')
 def at(d,im):
     T(d,72,tb,'Tenemos web.',G)
-    T(d,80,l1,'Pedí con turno de entrega.',RG(48),stroke=False)
+    T(d,80,l1,'Pedí tu achilata desde el celular.',RG(48),stroke=False)
     T(d,76,lk,'Link en la bio.',XB(80))
 guardar(L.render(at,None),f'{OH}\\H24 tenemos web.png')
 
-# H25 · Los turnos
-L=lienzo(*S,2501)
-G=fit('Los turnos.',930,mx=230)
-tb=300+round(G.size*0.72); ty=tb+50; fin=ty+4*124+3*18; nota=fin+60
-A=producto(L,'16',nota+AIRE+20,0.66,1080,'r',sombra='piso',piso=1680)
-def at(d,im):
-    T(d,72,tb,'Los turnos.',G)
-def ad(d,im):
-    tabla(d,76,ty,928,124,18,XB(42),RG(30))
-    T(d,80,nota,'Elegís el día y el turno en la web.',RG(40),stroke=False)
-guardar(L.render(at,ad),f'{OH}\\H25 los turnos.png')
-
-# H26 · Cómo pedir: tres pasos cortos y el pote debajo, sin tocar el texto
+# H25 · Cómo pedir: tres pasos cortos y el pote debajo, sin tocar el texto
 L=lienzo(*S,2601)
 G=fit('Cómo pedir.',930,mx=230)
 tb=300+round(G.size*0.72)
-pasos=['1. Entrá al link de la bio.','2. Elegí potes y turno.','3. Pagá como quieras.']
+pasos=['1. Entrá al link de la bio.','2. Elegí tus potes.','3. Poné tu dirección y pagá.']
 ys=[tb+80+i*62 for i in range(3)]; yl=ys[-1]+100
 A=producto(L,'11',yl+AIRE+20,0.80,540,'c',sombra='')
 def at(d,im):
     T(d,72,tb,'Cómo pedir.',G)
     for y,t in zip(ys,pasos): T(d,80,y,t,RG(46),stroke=False)
     T(d,76,yl,'Y te la llevamos.',XB(76))
-guardar(L.render(at,None),f'{OH}\\H26 como pedir web.png')
+guardar(L.render(at,None),f'{OH}\\H25 como pedir web.png')
 
 if len(sys.argv)>2:
     hoja(hechos[:4],sys.argv[2]+'/p13.jpg',w=432,h=540)
