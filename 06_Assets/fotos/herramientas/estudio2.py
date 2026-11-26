@@ -35,6 +35,7 @@ class Lienzo:
         s.sh=np.zeros((H,W),np.float32)
         s.F=np.zeros((H,W,3),np.float32); s.A=np.zeros((H,W),np.float32)
         s.front=[]; s.back=[]
+        s.suave=1.0   # bordes del recorte: 1 es el método de H05; 1.8 o más los difumina para que no se vea mal cortado
     def poner(s,F,a,scale,x,y):
         """pega el recorte escalado con su esquina arriba izquierda en x,y; devuelve la máscara en el lienzo"""
         h,w=a.shape; nw,nh=round(w*scale),round(h*scale)
@@ -87,11 +88,12 @@ class Lienzo:
         band=cv2.GaussianBlur(band,(0,0),1.2)[...,None]
         F=F*(1-band)+inner*band
         # 2 · máscara: se cierra un pixel y se suaviza apenas, como un borde óptico
-        A=cv2.erode(A,np.ones((3,3),np.uint8)); A=cv2.GaussianBlur(A,(0,0),0.9)
+        A=cv2.erode(A,np.ones((3,3),np.uint8)); A=cv2.GaussianBlur(A,(0,0),0.9*s.suave)
         # 3 · light wrap: la luz roja del fondo se mete en el borde del objeto
         bgb=cv2.GaussianBlur(b,(0,0),14)
-        wrap=cv2.GaussianBlur(1-A,(0,0),7)*A
-        F=F*(1-wrap[...,None]*0.55)+bgb*wrap[...,None]*0.55
+        wrap=cv2.GaussianBlur(1-A,(0,0),7*s.suave)*A
+        lw=min(0.7,0.55*s.suave**0.4)
+        F=F*(1-wrap[...,None]*lw)+bgb*wrap[...,None]*lw
         # 4 · rebote: el rojo del estudio tiñe un poco las zonas en sombra del objeto
         lum=F.mean(-1,keepdims=True)/255
         k=0.10*np.clip(1-lum,0,1)**1.2
