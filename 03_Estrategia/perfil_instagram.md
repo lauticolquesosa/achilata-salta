@@ -1,6 +1,6 @@
 # Perfil de Instagram · @achilatasalta
 
-Lo decidimos el 19/11/2026. Instagram permite **150 caracteres** en la presentación; esta usa 143, contando el emoji como 2.
+Lo decidimos el 19/11/2026 y se actualizó el 26/11/2026 con el perfil completo: la presentación suma los eventos, la foto de perfil es `04_Contenido/Perfil completo/foto de perfil 1080.png` y las destacadas son Menú, Pedidos, Zonas, Eventos y Achilata, con ícono de línea crema sobre rojo, en `04_Contenido/Destacadas`. Instagram permite **150 caracteres** en la presentación; esta usa 143, contando el emoji como 2.
 
 ## Nombre
 **Achilata Salta**
@@ -10,8 +10,8 @@ Son 14 de los 30 caracteres que permite. El nombre entra en el buscador de Insta
 ## Presentación
 ```
 Helado tucumano en Salta 🍧
-Potes de 1 kg y medio kilo
-Te la llevamos a San Lorenzo, El Tipal y Grand Bourg
+Potes y carrito para eventos
+Envíos a San Lorenzo, El Tipal, Grand Bourg y más
 Pedí al 387 483 4041 o 387 468 4498
 ```
 

@@ -35,6 +35,7 @@ Es un emprendimiento de Lauti y un amigo que vende **achilata**, el helado de ag
   1. Mandar al chat yo de WhatsApp todas las imágenes **como documento y en orden**.
   2. Después, en un mensaje aparte, mandar **solo el texto limpio** para copiar en Instagram.
   3. Anotarla en `registro_publicaciones.md`.
+- **Perfil completo, 26/11/2026:** el plan de feed de 12, las destacadas y las próximas historias, con Rocambolesc como modelo, está en `04_Contenido/Perfil completo/`. Manda sobre el cronograma, que queda en pausa. Títulos en crema, nunca blanco puro, sobre el rojo achilata.
 - **La presentación del perfil** está en `03_Estrategia/perfil_instagram.md`.
 - **Cada pieza tiene su carpeta con un `brief.md`:**
   - `04_Contenido/Publicaciones/P01…P19`

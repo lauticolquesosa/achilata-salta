@@ -16,3 +16,4 @@
 | 23/11/2026 | Instagram | H05 2, P08 y P02 | Mismo diseño con el recorte integrado de H05 1 v3: sin halo, borde suave, light wrap, rebote rojo y grano parejo | | Reenviados al WhatsApp de Lauti |
 | 24/11/2026 | Instagram | Historia H05 1, v4 | Bajada cambiada: Grand Bourg, San Lorenzo Chico, San Lorenzo, El Tipal, La Almudena y más | | Hecha a pedido. Resto igual a v3. Enviado al WhatsApp de Lauti |
 | 24/11/2026 | Instagram | P02 4 Cómo pedir, v2 | Sin el texto de zonas y pago, botones de WhatsApp más chicos, título a todo el ancho y bloque redistribuido | | Hecha a pedido. Enviado al WhatsApp de Lauti |
+| 26/11/2026 | Instagram | Perfil completo | Feed de 10 publicaciones nuevas con modelo Rocambolesc: P04, P05, P09, P10, P11, P13 y reels R01, R03, R07. 5 destacadas con portada y 12 historias, 6 próximas historias, maqueta, foto de perfil y presentación nueva | | Guía en 04_Contenido/Perfil completo. PDF enviado al WhatsApp de Lauti |
